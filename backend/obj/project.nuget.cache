@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "qhnRm9nUFYA=",
+  "success": false,
+  "projectFilePath": "/Users/konstantinregler/Documents/Polymath Productions/KonstantinWeblearn/backend/backend.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Der Dienstindex für die Quelle \"https://api.nuget.org/v3/index.json\" konnte nicht geladen werden.\n  nodename nor servname provided, or not known (api.nuget.org:443)\n  nodename nor servname provided, or not known",
+      "projectPath": "/Users/konstantinregler/Documents/Polymath Productions/KonstantinWeblearn/backend/backend.csproj",
+      "filePath": "/Users/konstantinregler/Documents/Polymath Productions/KonstantinWeblearn/backend/backend.csproj",
+      "libraryId": "Microsoft.AspNetCore.OpenApi",
+      "targetGraphs": []
+    }
+  ]
+}

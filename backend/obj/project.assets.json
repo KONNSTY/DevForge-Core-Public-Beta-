@@ -1,0 +1,133 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "Konscious.Security.Cryptography.Argon2 >= 1.3.1",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.2",
+      "Microsoft.AspNetCore.OpenApi >= 9.0.2",
+      "Microsoft.CodeAnalysis.CSharp.Scripting >= 4.12.0",
+      "Microsoft.Data.Sqlite >= 9.0.2",
+      "Microsoft.EntityFrameworkCore.Design >= 9.0.2",
+      "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.2",
+      "Serilog.AspNetCore >= 9.0.0",
+      "System.IdentityModel.Tokens.Jwt >= 8.5.0"
+    ]
+  },
+  "packageFolders": {
+    ".nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/konstantinregler/Documents/Polymath Productions/KonstantinWeblearn/backend/backend.csproj",
+      "projectName": "backend",
+      "projectPath": "/Users/konstantinregler/Documents/Polymath Productions/KonstantinWeblearn/backend/backend.csproj",
+      "packagesPath": ".nuget/packages/",
+      "outputPath": "/Users/konstantinregler/Documents/Polymath Productions/KonstantinWeblearn/backend/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/konstantinregler/Documents/Polymath Productions/KonstantinWeblearn/backend/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "dependencies": {
+          "Konscious.Security.Cryptography.Argon2": {
+            "target": "Package",
+            "version": "[1.3.1, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[9.0.2, )"
+          },
+          "Microsoft.AspNetCore.OpenApi": {
+            "target": "Package",
+            "version": "[9.0.2, )"
+          },
+          "Microsoft.CodeAnalysis.CSharp.Scripting": {
+            "target": "Package",
+            "version": "[4.12.0, )"
+          },
+          "Microsoft.Data.Sqlite": {
+            "target": "Package",
+            "version": "[9.0.2, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[9.0.2, )"
+          },
+          "Microsoft.EntityFrameworkCore.Sqlite": {
+            "target": "Package",
+            "version": "[9.0.2, )"
+          },
+          "Serilog.AspNetCore": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
+          "System.IdentityModel.Tokens.Jwt": {
+            "target": "Package",
+            "version": "[8.5.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Der Dienstindex für die Quelle \"https://api.nuget.org/v3/index.json\" konnte nicht geladen werden.\n  nodename nor servname provided, or not known (api.nuget.org:443)\n  nodename nor servname provided, or not known",
+      "libraryId": "Microsoft.AspNetCore.OpenApi"
+    }
+  ]
+}

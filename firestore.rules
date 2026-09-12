@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // DevForge Core Security Rules
+    // Strict isolation: Users (authenticated or anonymous) can only read and write their own progress data.
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      match /progress/{trackId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Public curriculum is read-only for all clients
+    match /curriculum/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
