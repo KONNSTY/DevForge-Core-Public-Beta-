@@ -19,7 +19,9 @@ export function CodeEditor({ language, ...props }: CodeEditorProps) {
   const [mounted, setMounted] = useState(false);
 
   // Hydration fix for next-themes
+  // The mounted flag deliberately changes after hydration so the editor never renders with a mismatched theme.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

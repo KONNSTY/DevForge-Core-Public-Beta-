@@ -1,0 +1,1645 @@
+{
+  "checked_utc": "2026-10-03",
+  "source_note": "Themenübersichten wurden mit den offiziellen CS50-Kurswochen und den öffentlich verlinkten Transkriptdateien abgeglichen. Transkriptlinks zeigen jeweils das vom offiziellen Kurs verlinkte Aufnahmejahr; Archivkurse sind historische Materialien. Lektionstexte und Übungen sind eigenständig formuliert. Quellenstand: 2026-10-03.",
+  "courses": [
+    {
+      "id": "cs50x",
+      "title": "CS50x – Einführung in die Informatik",
+      "official": "https://cs50.harvard.edu/x/",
+      "syllabus_url": "https://cs50.harvard.edu/x/syllabus/",
+      "status": "active",
+      "description": "Einführung in Informatik und Programmierung: Daten, C, Algorithmen, Speicher, Python, SQL, Web und ein selbstständiges Abschlussprojekt.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "Scratch",
+          "topic_outline": "Computer Science. Computational Thinking. Problem Solving: Inputs, Outputs. Representation: Unary, Binary, Decimal, ASCII, Unicode, RGB. Abstraction. Algorithms. Running Times. Pseudocode. Scratch: Functions, Arguments, Return Values; Variables; Boolean Expressions, Conditionals; Loops; Events; Threads.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/0/lang/en/lecture0.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/0/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "bits-und-abstraktion"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "C",
+          "topic_outline": "C. Source Code. Machine Code. Compiler. Correctness, Design, Style. Visual Studio Code. Syntax Highlighting. Escape Sequences. Header Files. Libraries. Manual Pages. Types. Conditionals. Variables. Loops. Linux. Graphical User Interface (GUI). Command-Line Interface (CLI). Constants. Comments. Pseudocode. Operators. Integer Overflow. Floating-Point Imprecision.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/1/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "c-kompilieren-typen"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Arrays",
+          "topic_outline": "Preprocessing. Compiling. Assembling. Linking. Debugging. Arrays. Strings. Command-Line Arguments. Cryptography.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/2/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "c-kompilieren-typen"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Algorithmen",
+          "topic_outline": "Searching: Linear Search, Binary Search. Sorting: Bubble Sort, Selection Sort, Merge Sort. Asymptotic Notation: \\(O\\), \\(\\Omega\\), \\(\\Theta\\). Recursion.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/3/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "sortieren-und-rekursion"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Speicher",
+          "topic_outline": "Pointers. Segmentation Faults. Dynamic Memory Allocation. Stack. Heap. Buffer Overflow. File I/O. Images.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/4/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "c-speicher-zeiger"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Datenstrukturen",
+          "topic_outline": "Abstract Data Types. Queues, Stacks. Linked Lists. Trees, Binary Search Trees. Hash Tables. Tries.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/5/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "speicher-und-datenstrukturen"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Python",
+          "topic_outline": "Python: Functions, Arguments, Return Values; Variables; Boolean Expressions, Conditionals; Loops. Modules, Packages.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/6/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "py-kontrollfluss-daten"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "SQL",
+          "topic_outline": "SQL: Tables; Types; Statements; Constraints; Indexes; Keywords, Functions; Transactions. Race Conditions. SQL Injection Attacks.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/7/lang/en/lecture7.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/7/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "sql-abfragen"
+          ]
+        },
+        {
+          "week": "AI",
+          "title": "CS50x Artificial Intelligence",
+          "topic_outline": "Prompt Engineering. System Prompt. User Prompt. Generative Artificial Intelligence. Artificial Intelligence. Decision Trees. Minimax. Machine Learning. Reinforcement Learning. Explore vs. Exploit. Deep Learning. Neural Networks. Large Language Models. Transformer Architecture. Hallucinations.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/ai/lang/en/ai.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/ai/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "ai-agenten-suche"
+          ]
+        },
+        {
+          "week": 8,
+          "title": "HTML, CSS und JavaScript",
+          "topic_outline": "Internet: Routers; TCP/IP; DNS. HTTP: URLs, GET, POST. HTML: Tags; Attributes. Servers. Regular Expressions. CSS: Properties; Selectors. Frameworks. JavaScript: Variables; Conditionals; Loops. Events.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/8/lang/en/lecture8.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/8/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "html-semantik-formulare"
+          ]
+        },
+        {
+          "week": 9,
+          "title": "Flask",
+          "topic_outline": "Flask. Route. Decorators. Requests, Responses. Sessions. Cookies.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/9/lang/en/lecture9.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/9/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "django-mvc"
+          ]
+        },
+        {
+          "week": 10,
+          "title": "This is CS50 Week 10",
+          "topic_outline": "Fun. Games.",
+          "transcript_url": "https://cdn.cs50.net/2025/fall/lectures/10/lang/en/lecture10.txt",
+          "course_page": "https://cs50.harvard.edu/x/2026/weeks/10/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "cs50x-abschlussprojekt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-ai",
+      "title": "CS50 AI – Künstliche Intelligenz mit Python",
+      "official": "https://cs50.harvard.edu/ai/",
+      "syllabus_url": "https://cs50.harvard.edu/ai/syllabus/",
+      "status": "active",
+      "description": "Suche, Logik, Unsicherheit, Optimierung, maschinelles Lernen, neuronale Netze und Sprache mit Python.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "Suche",
+          "topic_outline": "Search Problems. Depth-First Search. Breadth-First Search. Greedy Best-First Search. A* Search. Minimax. Alpha-Beta Pruning.",
+          "transcript_url": "https://cdn.cs50.net/ai/2020/spring/lectures/0/lang/en/lecture0.txt",
+          "course_page": "https://cs50.harvard.edu/ai/weeks/0/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "ai-agenten-suche"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "Wissen",
+          "topic_outline": "Propositional Logic. Entailment. Inference. Model Checking. Resolution. First Order Logic.",
+          "transcript_url": "https://cdn.cs50.net/ai/2020/spring/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/ai/weeks/1/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "ai-wissen-entscheidung"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Unsicherheit",
+          "topic_outline": "Probability. Conditional Probability. Random Variables. Independence. Bayes’ Rule. Joint Probability. Bayesian Networks. Sampling. Markov Models. Hidden Markov Models.",
+          "transcript_url": "https://cdn.cs50.net/ai/2020/spring/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/ai/weeks/2/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "ai-unsicherheit-optimierung"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Optimierung",
+          "topic_outline": "Local Search. Hill Climbing. Simulated Annealing. Linear Programming. Constraint Satisfaction. Backtracking Search.",
+          "transcript_url": "https://cdn.cs50.net/ai/2020/spring/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/ai/weeks/3/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "ai-unsicherheit-optimierung"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Lernen",
+          "topic_outline": "Supervised Learning. Nearest-Neighbor Classification. Perceptron Learning. Support Vector Machines. Regression. Loss Functions. Overfitting. Regularization. Reinforcement Learning. Markov Decision Processes. Q-Learning. Unsupervised Learning. k-means Clustering.",
+          "transcript_url": "https://cdn.cs50.net/ai/2020/spring/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/ai/weeks/4/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "ai-lernen-evaluation"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Neuronale Netze",
+          "topic_outline": "Artificial Neural Networks. Activation Functions. Gradient Descent. Backpropagation. Overfitting. TensorFlow. Image Convolution. Convolutional Neural Networks. Recurrent Neural Networks.",
+          "transcript_url": "https://cdn.cs50.net/ai/2020/spring/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/ai/weeks/5/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "ai-neuronale-netze"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Sprache",
+          "topic_outline": "Syntax. Semantics. Context-Free Grammar. nltk . n-grams. Bag-of-Words Model. Naive Bayes. Word Representation. word2vec . Attention. Transformers.",
+          "transcript_url": "https://cdn.cs50.net/ai/2023/x/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/ai/weeks/6/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "nlp-spracherkennung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-2d",
+      "title": "CS50 2D – Entwicklung von 2D-Spielen",
+      "official": "https://cs50.harvard.edu/games/",
+      "syllabus_url": "https://cs50.harvard.edu/games/syllabus/",
+      "status": "active",
+      "description": "Spielentwicklung anhand kleiner 2D-Projekte: Schleifen, Eingaben, Physik, Kollisionen, Level und Spielzustände.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "Pong",
+          "topic_outline": "Ein Echtzeitspiel aktualisiert Eingaben, Weltzustand und Darstellung fortlaufend. Pong übt Spielfeldkoordinaten, Paddle-Steuerung, Ballbewegung, Kollision und Punktestand.",
+          "transcript_url": "https://cdn.cs50.net/2d/2025/x/lectures/0/lang/en/lecture0.srt",
+          "course_page": "https://cs50.harvard.edu/games/weeks/0/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "games-01"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "Flappy Bird",
+          "topic_outline": "Ein Side-Scrolling-Spiel kombiniert Schwerkraft, Impuls beim Tastendruck, Hindernisse und Kollisionserkennung. Schwierigkeit entsteht aus nachvollziehbaren Spielregeln, nicht nur aus schneller Bewegung.",
+          "transcript_url": "https://cdn.cs50.net/2d/2025/x/lectures/1/lang/en/lecture1.srt",
+          "course_page": "https://cs50.harvard.edu/games/weeks/1/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "games-02"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Breakout",
+          "topic_outline": "Breakout verbindet bewegten Ball, Schläger, Ziegelraster und Kollisionsreaktionen. Kollisionen müssen in einer konsistenten Reihenfolge erkannt und der Weltzustand danach aktualisiert werden.",
+          "transcript_url": "https://cdn.cs50.net/2d/2025/x/lectures/2/lang/en/lecture2.srt",
+          "course_page": "https://cs50.harvard.edu/games/weeks/2/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "games-03"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Match 3",
+          "topic_outline": "Ein Match-3-Spiel modelliert ein Raster, erkennt benachbarte gleiche Symbole und füllt Lücken nach einer Auflösung neu. Das Raster ist zugleich Datenmodell und Grundlage der Spielregeln.",
+          "transcript_url": "https://cdn.cs50.net/2d/2025/x/lectures/3/lang/en/lecture3.srt",
+          "course_page": "https://cs50.harvard.edu/games/weeks/3/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "games-04"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Super Mario Bros.",
+          "topic_outline": "Plattformspiele verbinden Karten, Schwerkraft, Sprunglogik, horizontale Bewegung und Kamera. Kollisionen mit dem Level bestimmen, ob eine Figur steht, fällt oder anstößt.",
+          "transcript_url": "https://cdn.cs50.net/2d/2025/x/lectures/4/lang/en/lecture4.srt",
+          "course_page": "https://cs50.harvard.edu/games/weeks/4/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "games-05"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Legend of Zelda",
+          "topic_outline": "Ein Abenteuer mit Räumen und Gegenständen lässt sich als Graph aus Orten und erlaubten Übergängen darstellen. Inventar und Ereignisse verändern, welche Aktionen verfügbar sind.",
+          "transcript_url": "https://cdn.cs50.net/2d/2025/x/lectures/5/lang/en/lecture5.srt",
+          "course_page": "https://cs50.harvard.edu/games/weeks/5/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "games-06"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Angry Birds",
+          "topic_outline": "Ein Schleuder-Spiel verwendet eine Flugbahn mit Startgeschwindigkeit, Gravitation und gegebenenfalls Kollisionen. Die Spielphysik sollte stabil und in kleinen Schritten aktualisiert werden.",
+          "transcript_url": "https://cdn.cs50.net/2d/2025/x/lectures/6/lang/en/lecture6.srt",
+          "course_page": "https://cs50.harvard.edu/games/weeks/6/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "games-07"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Pokémon",
+          "topic_outline": "Rundenbasierte Spiele bestehen aus expliziten Phasen: Zugwahl, Aktion, Effekt, Zustandsprüfung und nächster Zug. Datenobjekte halten Figurenwerte, während Regeln den Ausgang berechnen.",
+          "transcript_url": "https://cdn.cs50.net/2d/2025/x/lectures/7/lang/en/lecture7.srt",
+          "course_page": "https://cs50.harvard.edu/games/weeks/7/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "games-08"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-business",
+      "title": "CS50 Business – Informatik für die Wirtschaft",
+      "official": "https://cs50.harvard.edu/business/",
+      "syllabus_url": "https://cs50.harvard.edu/business/syllabus/",
+      "status": "active",
+      "description": "Grundlagen der Informatik und digitalen Systeme für Geschäftsentscheidungen, Daten, KI, Web, Datenbanken und Sicherheit.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "Informationen einordnen",
+          "topic_outline": "Data representation. “Black boxes”. Unary. Binary. Numbers. Bits. Bytes. Text. Images. Videos. Music. Algorithms. Searching. Running time. Pseudocode.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/0/lang/en/lecture0.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/0/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-01"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "Algorithmen analysieren",
+          "topic_outline": "Tasks. Solutions. Algorithms. O. Ω. Runtime. Time complexity. Searching. Sorting. Recursion. Efficiency. Evaluation.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/1/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-02"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Datenstrukturen entwerfen",
+          "topic_outline": "Memory. RAM. Arrays. Elements. Linked lists. Addresses. Pointers. Search trees. Balancing trees. Hash tables. Tries. Collisions. Stacks. Queues. Dictionaries. Abstract data types.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/2/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-03"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Programmieren üben",
+          "topic_outline": "Source code. Machine code. Compilers. Interpreters. Text editors. IDEs. Python. Variables. Strings. Integers. float s. Functions. Conditions. Loops. Lists. Dictionaries. Libraries. APIs.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/3/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-04"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Künstliche Intelligenz bewerten",
+          "topic_outline": "Artificial intelligence. Games. Decision trees. Minimax. Optimization. Depth-limited search. Evaluation functions. Machine learning. Reinforcement learning. Exploring. Exploiting. Neural networks. NLP. Embeddings. Attention. Transformers.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/4/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-05"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Das Internet verstehen",
+          "topic_outline": "Protocols. IP. TCP. Routing. DNS. DHCP. UDP. IPv4 and IPv6. NAT. Private IPs. HTTP. HTTPS. URLs. Schemes. TLDs. Scaling. Cloud computing. Virtualization. Containerization. Availability. Load balancing.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/5/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-06"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Webtechnologien verbinden",
+          "topic_outline": "HTML. Tags. Attributes. DOM. Page elements. iframe s. Hyperlinks. Inputs. Regular expressions. Client-side validation. Server-side validation. Developer tools. CSS. Selectors. Frameworks. JavaScript.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/6/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-07"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Datenbanken betreiben",
+          "topic_outline": "Databases. Flat-file. Relational databases. SQL. CRUD operations. Primary keys. Foreign keys. One-to-one. One-to-many. JOIN s. Nested queries. Many-to-many. Indexes. NoSQL. Race conditions. Injection attacks.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/7/lang/en/lecture7.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/7/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-08"
+          ]
+        },
+        {
+          "week": 8,
+          "title": "Systeme absichern",
+          "topic_outline": "Authentication. Authorization. Passwords. Brute-force attacks. Rate limits. 2FA. Hashing. Rainbow tables. Salts. Cryptography. Secret-key. Public-key. Passkeys. Encryption. Secure deletion. Ransomware.",
+          "transcript_url": "https://cdn.cs50.net/business/2025/x/lectures/8/lang/en/lecture8.txt",
+          "course_page": "https://cs50.harvard.edu/business/weeks/8/",
+          "transcript_version": [
+            "2025"
+          ],
+          "lesson_ids": [
+            "business-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-cybersecurity",
+      "title": "CS50 Cybersecurity – Einführung in Cybersicherheit",
+      "official": "https://cs50.harvard.edu/cybersecurity/",
+      "syllabus_url": "https://cs50.harvard.edu/cybersecurity/syllabus/",
+      "status": "active",
+      "description": "Konten, Daten, Systeme, Software und Privatsphäre aus Sicht von Risiken und Schutzmaßnahmen.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "Konten schützen",
+          "topic_outline": "Authentication. Authorization. Usernames. Passwords. Dictionary Attacks. Brute-Force Attacks. Two-Factor Authentication (2FA). Multi-Factor Authentication: Knowledge; Possession; Inherence. One-Time Password (OTP). SIM Swapping. Keylogging. Credential Stuffing. Social Engineering. Phishing. Machine-in-the-Middle Attacks. Single Sign-On (SSO). Password Managers. Passkeys.",
+          "transcript_url": "https://cdn.cs50.net/cybersecurity/2023/x/lectures/0/lang/en/lecture0.txt",
+          "course_page": "https://cs50.harvard.edu/cybersecurity/weeks/0/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "cyber-konten-passkeys"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "Daten schützen",
+          "topic_outline": "Passwords. Hashing. Dictionary Attacks. Brute-Force Attacks. Rainbow Tables. Salting. One-Way Hash Functions. Cryptographic Hash Functions. Cryptography. Codes. Ciphers. Encryptiong. Decryption. Keys. Secret-Key Cryptography. Cryptanalysis. Public-Key Cryptography. RSA. Key Exchange. Diffie-Hellman. Digital Signatures. Passkeys. Encryption in Transit. End-to-End Encryption. Deletion. Secure Deletion. Full-Disk Encryption. Encryption at Rest. Ransomware. Quantum Computing.",
+          "transcript_url": "https://cdn.cs50.net/cybersecurity/2023/x/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/cybersecurity/weeks/1/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "security-konten-kryptografie"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Systeme schützen",
+          "topic_outline": "Encryption. Wi-Fi. Wi-Fi Protected Access. HTTP. Machine-in-the-Middle Attacks. Packet Sniffing. Cookies. Session Hijacking. HTTPS. TLS. Certificate. X.509. Certificate Authority (CA). SSL Stripping. HSTS. VPN. SSH. Port. Port Scanning. Penetration Testing. Ethical Hacking. Firewall. IP Address. Deep Packet Inspection. Proxy. Malware. Virus. Worm. Botnet. Denial-of-Service Attack (DoS). Distributed Denial-of-Service Attack (DDoS). Antivirus. Automatice Updates. Zero-Day Attacks.",
+          "transcript_url": "https://cdn.cs50.net/cybersecurity/2023/x/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/cybersecurity/weeks/2/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "security-threat-model"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Software schützen",
+          "topic_outline": "Phishing. Code Injection. Cross-Site Scriping (XSS): Reflected; Stored. Character Escapes. SQL Injection. Prepared Statements. Command Injection. system . eval . Developer Tools. Client-Side Validation. Server-Side Validation. Cross-Site Request Forgery (CSRF). GET. POST. Open Worldwide Application Security Project (OWASP). Arbitrary Code Execution (ACE). Remote Code Execution (RCE). Buffer Overflow. Stack Overflow. Cracking. Reverse Engineering. Malware Analysis. Open-Source Software. Closed-Source Software. App Stores. Package Managers. Operating Systems. Bug Bounty. Common Vulnerabilities and Exposures (CVE). Common Vulnerability Scoring System (CVSS). Exploit Prediction Scoring System (EPSS). Known Exploited Vulnerabilities Catalog (KEV).",
+          "transcript_url": "https://cdn.cs50.net/cybersecurity/2023/x/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/cybersecurity/weeks/3/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "security-web-angriffe"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Privatsphäre wahren",
+          "topic_outline": "Web Browsing History. Logs. HTTP Headers. Fingerprinting. Session Cookies. Tracking Cookies. Tracking Parameters. Third-Party Cookies. Private Browsing. Supercookies. DNS. DNS over HTTPS (DoH). DNS over TLS (DoT). Virtual Private Network (VPN). ToR. Permissions. Location-Based Services.",
+          "transcript_url": "https://cdn.cs50.net/cybersecurity/2023/x/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/cybersecurity/weeks/4/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "cyber-systeme-privacy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-lawyers",
+      "title": "CS50 for Lawyers – Informatik für Juristinnen und Juristen",
+      "official": "https://cs50.harvard.edu/law/",
+      "syllabus_url": "https://cs50.harvard.edu/law/syllabus/",
+      "status": "active",
+      "description": "Technische Grundlagen für Juristinnen und Juristen: Algorithmen, Kryptografie, Netzwerke, Web, Datenbanken und digitale Rechtsfragen.",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Rechnerisches Denken",
+          "topic_outline": "Computational Thinking übersetzt ein Problem in Eingaben, Regeln und Ergebnisse. Abstraktion, Zerlegung, Muster und Algorithmen helfen, technische Systeme präzise zu beurteilen.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/0/lang/en/lecture0.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/1/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-01"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Programmiersprachen",
+          "topic_outline": "Programmiersprachen definieren Syntax und Laufzeitverhalten. Quelltext wird interpretiert, kompiliert oder in Zwischencode übersetzt; Versionen, Bibliotheken und Laufzeitumgebung beeinflussen Ergebnisse.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/1/lang/en/lecture1.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/2/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-02"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Algorithmen und Datenstrukturen",
+          "topic_outline": "Algorithmen ordnen technische Entscheidungen in nachvollziehbare Schritte; Datenstrukturen formen, welche Abfragen effizient möglich sind. Beide können Auswirkungen auf Kosten, Zugang und Beweisbarkeit haben.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/2/lang/en/lecture2.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/3/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-03"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Kryptografie",
+          "topic_outline": "Kryptografie schützt Daten mit mathematischen Verfahren. Hashes prüfen Integrität, symmetrische Verschlüsselung nutzt denselben geheimen Schlüssel und asymmetrische Verfahren nutzen zusammengehörige Schlüssel.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/3/lang/en/lecture3.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/4/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-04"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Cybersicherheit I",
+          "topic_outline": "Cybersecurity beginnt mit Risiken, Angriffsflächen und Schutzmaßnahmen. Phishing, schwache Zugangsdaten, veraltete Software und zu weitreichende Rechte sind miteinander verbundene Risiken.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/4/lang/en/lecture4.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/5/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-05"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Internet und Cloud Computing",
+          "topic_outline": "Cloud-Dienste stellen Rechenleistung, Speicher und Plattformen über Netzwerke bereit. Mandantentrennung, Identität, Region, Auftragsverarbeitung und Wiederherstellung sind zentrale Fragen.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/5/lang/en/lecture5.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/6/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-06"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Webentwicklung",
+          "topic_outline": "Webanwendungen kombinieren Browser, Server, Netzwerk und oft Datenbank. Eine Analyse sollte Anfragen, Antworten, Cookies, Sessions, Eingaben und Vertrauensgrenzen verfolgen.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/6/lang/en/lecture6.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/7/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-07"
+          ]
+        },
+        {
+          "week": 8,
+          "title": "Datenbankentwurf",
+          "topic_outline": "Datenbankdesign legt Entitäten, Beziehungen, Schlüssel und Integritätsregeln fest. Das Schema beeinflusst Suche, Berichte, Löschung und Nachweisbarkeit.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/7/lang/en/lecture7.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/8/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-08"
+          ]
+        },
+        {
+          "week": 9,
+          "title": "Cybersicherheit II",
+          "topic_outline": "Fortgeschrittene Sicherheitsanalyse betrachtet Softwarefehler, Lieferkette, Reaktion auf Vorfälle und Datenschutz gemeinsam. Nachweise brauchen Ursprung, Integrität und nachvollziehbare Verarbeitung.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/8/lang/en/lecture8.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/9/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-09"
+          ]
+        },
+        {
+          "week": 10,
+          "title": "Recht und Technologie",
+          "topic_outline": "Technische Systeme beeinflussen Beweiszugang, Privatsphäre, Haftung, Urheberrecht und Diskriminierungsrisiken. Eine tragfähige Prüfung verbindet konkrete technische Tatsachen mit anwendbarer Rechtsordnung.",
+          "transcript_url": "https://cdn.cs50.net/law/2019/winter/lectures/9/lang/en/lecture9.srt",
+          "course_page": "https://cs50.harvard.edu/law/weeks/10/",
+          "transcript_version": [
+            "2019"
+          ],
+          "lesson_ids": [
+            "lawyers-10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-python",
+      "title": "CS50 Python – Programmieren mit Python",
+      "official": "https://cs50.harvard.edu/python/",
+      "syllabus_url": "https://cs50.harvard.edu/python/syllabus/",
+      "status": "active",
+      "description": "Einführung in Python mit Funktionen, Bedingungen, Schleifen, Tests, Dateien, regulären Ausdrücken und Klassen.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "Funktionen",
+          "topic_outline": "Functions. Arguments. Side Effects. Bugs. Return Values. Variables. Comments. Pseudocode. str . Parameters. int . Operators. Interactive Mode. float . def . Scope. return .",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/0/lang/en/lecture0.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/0/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-funktionen-typen"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "Bedingungen",
+          "topic_outline": "if . elif . else . or . and . bool . match .",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/1/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-kontrollfluss-daten"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Schleifen",
+          "topic_outline": "while . for . list . range . continue . break . list . len . dict . None .",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/2/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-kontrollfluss-daten"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Ausnahmen",
+          "topic_outline": "SyntaxError . ValueError . try . except . NameError . else . pass . raise .",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/3/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-fehler-tests"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Bibliotheken",
+          "topic_outline": "Modules. random . import . from . statistics . Command-Line Arguments. sys . sys.argv . IndexError . sys.exit . Slices. Packages. PyPI. pip . cowsay . APIs. requests . JSON. __name__ .",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/4/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-module-dateien"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Unit-Tests",
+          "topic_outline": "assert . AssertionError . pytest . Packages. __init__.py .",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/5/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-fehler-tests"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Dateien einlesen und schreiben",
+          "topic_outline": "list . open . with . sorted . CSV. dict . csv . PIL.",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/6/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-module-dateien"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Reguläre Ausdrücke",
+          "topic_outline": "Regular Expressions. Regexes. re . re.search . re.match . re.fullmatch . re.sub . re.split . re.findall .",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/7/lang/en/lecture7.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/7/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-klassen-regex"
+          ]
+        },
+        {
+          "week": 8,
+          "title": "Objektorientierte Programmierung",
+          "topic_outline": "tuple . Classes. class . Objects. Attributes. Instance Variables. Methods. Instance Methods. __init__ . raise . __str__ . Properties. @property . Decorators. int . str . str.lower . str.strip . list . list.append . dict . Class Methods. @classmethod . Static Methods. @staticmethod . Inheritance. BaseException . Operator Overloading. object.__add__ .",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/8/lang/en/lecture8.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/8/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-klassen-regex"
+          ]
+        },
+        {
+          "week": 9,
+          "title": "Weitere Python-Werkzeuge",
+          "topic_outline": "docs.python.org . set . global . Constants. Type Hints. mypy . Docstrings. peps.python.org . argparse . Unpacking. *args . **kwargs . print . map . List Comprehensions. filter . Dictionary Comprehensions. enumerate . Generators. yield . Iterators.",
+          "transcript_url": "https://cdn.cs50.net/python/2022/x/lectures/9/lang/en/lecture9.txt",
+          "course_page": "https://cs50.harvard.edu/python/weeks/9/",
+          "transcript_version": [
+            "2022"
+          ],
+          "lesson_ids": [
+            "py-module-dateien"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-r",
+      "title": "CS50 R – Programmieren mit R",
+      "official": "https://cs50.harvard.edu/r/",
+      "syllabus_url": "https://cs50.harvard.edu/r/syllabus/",
+      "status": "active",
+      "description": "Programmieren und Datenanalyse mit R: Datenstrukturen, Transformation, Visualisierung, Tests und Pakete.",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Daten darstellen",
+          "topic_outline": "R. Integrated Development Environments. RStudio. Functions. Arguments. Side Effects. Return Values. Objects. Assignment. String Concatenation. Function Composition. Arithmetic. Storage Modes. Coercion. Tables. CSV Files. Data Frames. Vectors. Vector Arithmetic. Special Values: Inf , -Inf , NA , NaN , NULL . Factors.",
+          "transcript_url": "https://cdn.cs50.net/r/2024/x/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/r/weeks/1/",
+          "transcript_version": [
+            "2024"
+          ],
+          "lesson_ids": [
+            "r-01"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Daten umformen",
+          "topic_outline": "Outliers. Transforming Vectors. Subsets. Logical Expressions. Logicals: TRUE , FALSE . Logical Operators. Logical Vectors. Escape Characters. Vector Recycling. Conditionals.",
+          "transcript_url": "https://cdn.cs50.net/r/2024/x/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/r/weeks/2/",
+          "transcript_version": [
+            "2024"
+          ],
+          "lesson_ids": [
+            "r-02"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Funktionen anwenden",
+          "topic_outline": "Defining Functions. Scope. Loops: repeat , while , for . Functional Programming. apply .",
+          "transcript_url": "https://cdn.cs50.net/r/2024/x/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/r/weeks/3/",
+          "transcript_version": [
+            "2024"
+          ],
+          "lesson_ids": [
+            "r-03"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Daten strukturieren",
+          "topic_outline": "Packages. CRAN. tidyverse. dplyr: select , filter , arrange , distinct , group_by , summarize . Tibbles. Pipe Operator. Tidy Data. Normalizing. tidyr. stringr.",
+          "transcript_url": "https://cdn.cs50.net/r/2024/x/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/r/weeks/4/",
+          "transcript_version": [
+            "2024"
+          ],
+          "lesson_ids": [
+            "r-04"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Daten visualisieren",
+          "topic_outline": "ggplot2. Grammar of Graphics: Data, Geometries, Aesthetic Mappings. Columns. Scales: Continuous, Discrete. Viridis Scale. Limits. Labels. Points. Jittering. Lines.",
+          "transcript_url": "https://cdn.cs50.net/r/2024/x/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/r/weeks/5/",
+          "transcript_version": [
+            "2024"
+          ],
+          "lesson_ids": [
+            "r-05"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Programme testen",
+          "topic_outline": "Exceptions. message , warning , stop . Unit Tests. testthat. Floating-Point Imprecision. Test-Driven Development. Behavior-Driven Development. Test Coverage.",
+          "transcript_url": "https://cdn.cs50.net/r/2024/x/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/r/weeks/6/",
+          "transcript_version": [
+            "2024"
+          ],
+          "lesson_ids": [
+            "r-06"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Pakete erstellen",
+          "topic_outline": "Packages. cowsay. Source Code. Package Structure: DESCRIPTION , NAMESPACE , man/ , R/ , tests/ . Licensing. Unit Testing. devtools. Writing Functions. Documenting Functions. Markup Languages. Building Packages. Installing Packages. Distributing Packages.",
+          "transcript_url": "https://cdn.cs50.net/r/2024/x/lectures/7/lang/en/lecture7.txt",
+          "course_page": "https://cs50.harvard.edu/r/weeks/7/",
+          "transcript_version": [
+            "2024"
+          ],
+          "lesson_ids": [
+            "r-07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-scratch",
+      "title": "CS50 Scratch – Programmieren mit visuellen Bausteinen",
+      "official": "https://cs50.harvard.edu/scratch/",
+      "syllabus_url": "https://cs50.harvard.edu/scratch/syllabus/",
+      "status": "active",
+      "description": "Visuelles Programmieren mit Figuren, Ereignissen, Variablen, Bedingungen, Schleifen und eigenen Projekten.",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Figuren und Sprites",
+          "topic_outline": "Sprites sind eigenständige Figuren oder Objekte mit Kostüm, Position und eigenen Skripten. Die Bühne und ihre Koordinaten bestimmen, wo sie erscheinen; Nachrichten lassen Figuren zusammenarbeiten.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/1/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-01"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Funktionen und eigene Blöcke",
+          "topic_outline": "Eigene Blöcke fassen eine Folge sinnvoller Schritte zusammen. Eingaben machen den Block wiederverwendbar; der Aufruf führt ihn aus. Das entspricht Funktionen in textbasierten Sprachen.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/2/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-02"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Ereignisse",
+          "topic_outline": "Ereignisblöcke starten Skripte, wenn etwas passiert: Startsignal, Tastendruck, Klick oder Nachricht. Das Programm reagiert dadurch auf Nutzer und andere Figuren, statt nur eine starre Reihenfolge abzuarbeiten.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/3/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-03"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Werte",
+          "topic_outline": "Werte sind Zahlen, Text oder Wahrheitswerte. Operatoren berechnen neue Werte; ein Ausdruck wie „Punkte + 1“ liefert ein Ergebnis. Der Typ eines Wertes bestimmt, welche Operation sinnvoll ist.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/4/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-04"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Bedingungen",
+          "topic_outline": "Bedingungen wählen abhängig von wahr oder falsch einen Pfad. Vergleiche prüfen beispielsweise Berührung, Grenzen oder Punktestände; verschachtelte Bedingungen sollten übersichtlich bleiben.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/5/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-05"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Schleifen",
+          "topic_outline": "Schleifen wiederholen einen Block. Eine endliche Wiederholung passt zu einer festen Anzahl; eine fortlaufende Schleife passt zu einem Spiel, das auf Eingaben wartet.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/6/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-06"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Variablen",
+          "topic_outline": "Variablen geben veränderlichen Werten einen Namen, etwa Leben, Punktestand oder Geschwindigkeit. Sie können lokal zu einer Figur gehören oder geteilt werden.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/7/lang/en/lecture7.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/7/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-07"
+          ]
+        },
+        {
+          "week": 8,
+          "title": "Abstraktion",
+          "topic_outline": "Abstraktion verbirgt unwichtige Details hinter einem benannten Konzept. Eigene Blöcke, Figuren und Datenmodelle machen das Projekt leichter erklärbar und veränderbar.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/8/lang/en/lecture8.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/8/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-08"
+          ]
+        },
+        {
+          "week": 9,
+          "title": "Ein eigenes Projekt entwickeln",
+          "topic_outline": "Ein eigenes Scratch-Projekt verbindet Planung, Ereignisse, Zustände, Figuren, Tests und Überarbeitung. Beginne mit einer kleinen spielbaren Version und erweitere sie anhand beobachtbarer Ziele.",
+          "transcript_url": "https://cdn.cs50.net/scratch/2021/x/lectures/9/lang/en/lecture9.txt",
+          "course_page": "https://cs50.harvard.edu/scratch/weeks/9/",
+          "transcript_version": [
+            "2021"
+          ],
+          "lesson_ids": [
+            "scratch-09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-sql",
+      "title": "CS50 SQL – Einführung in Datenbanken",
+      "official": "https://cs50.harvard.edu/sql/",
+      "syllabus_url": "https://cs50.harvard.edu/sql/syllabus/",
+      "status": "active",
+      "description": "Relationale Datenbanken mit Abfragen, Beziehungen, Entwurf, Änderungen, Views, Optimierung und Skalierung.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "Abfragen",
+          "topic_outline": "Tables. Databases. Database Management Systems. SQL. SQLite. SELECT . LIMIT . OFFSET . WHERE . Comparisons. NOT . NULL . Pattern Matching. LIKE . Compound Conditions. Range Conditions. Ordering. Aggregate Functions. ROUND . DISTINCT .",
+          "transcript_url": "https://cdn.cs50.net/sql/2023/x/lectures/0/lang/en/lecture0.txt",
+          "course_page": "https://cs50.harvard.edu/sql/weeks/0/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "sql-abfragen"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "Beziehungen",
+          "topic_outline": "Relational Databases. Relationships: One-to-one, One-to-many, Many-to-many. Entity Relationship Diagrams. Keys: Primary Keys, Foreign Keys. Subqueries. IN . Joins: INNER JOIN , Outer Joins, LEFT JOIN , RIGHT JOIN , FULL JOIN , NATURAL JOIN . Sets: INTERSECT , UNION , EXCEPT . Groups: GROUP BY , HAVING .",
+          "transcript_url": "https://cdn.cs50.net/sql/2023/x/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/sql/weeks/1/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "sql-beziehungen-joins"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Datenbanken entwerfen",
+          "topic_outline": "Schemas. Normalizing. Data Types. Storage Classes. Type Affinities. Table Constraints: PRIMARY KEY , FOREIGN KEY . Column Constraints: CHECK , DEFAULT , NOT NULL , UNIQUE . Altering Tables: DROP TABLE , ALTER TABLE , ADD COLUMN , RENAME COLUMN , DROP COLUMN . Charlie.",
+          "transcript_url": "https://cdn.cs50.net/sql/2023/x/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/sql/weeks/2/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "sql-design-integritaet"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Daten schreiben und ändern",
+          "topic_outline": "Create, Read, Update, Delete. INSERT INTO . CSVs. .import . DELETE FROM . Foreign Key Constraints. UPDATE . Triggers. Soft Deletions.",
+          "transcript_url": "https://cdn.cs50.net/sql/2023/x/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/sql/weeks/3/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "sql-schreiben-views-scale"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Views und Ansichten",
+          "topic_outline": "Views. CREATE VIEW . Views for Simplifying. Views for Aggregating. Temporary Views. CREATE TEMPORARY VIEW . Common Table Expressions. Views for Partitioning. Views for Securing. Soft Deletions.",
+          "transcript_url": "https://cdn.cs50.net/sql/2023/x/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/sql/weeks/4/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "sql-schreiben-views-scale"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Abfragen optimieren",
+          "topic_outline": "Indexes. CREATE INDEX . EXPLAIN QUERY PLAN . Covering Indexes. B-Trees. Partial Indexes. VACUUM . Concurrency. Transactions. ACID: Atomicity, Consistency, Isolation, Durability. BEGIN TRANSACTION . COMMIT . ROLLBACK . Race Conditions. Locks.",
+          "transcript_url": "https://cdn.cs50.net/sql/2023/x/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/sql/weeks/5/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "sql-index-views-sicherheit"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Datenbanken skalieren",
+          "topic_outline": "Scalability. MySQL: Integers, Strings, Dates, Times, Real Numbers, Floating-Point Imprecision, Fixed Precision, Altering Tables. Stored Procedures. PostgreSQL. Vertical Scaling. Horizontal Scaling. Replication. Read Replicas. Sharding. Access Controls: GRANT , REVOKE . SQL Injection Attacks. Prepared Statements.",
+          "transcript_url": "https://cdn.cs50.net/sql/2023/x/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/sql/weeks/6/",
+          "transcript_version": [
+            "2023"
+          ],
+          "lesson_ids": [
+            "sql-schreiben-views-scale"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-web",
+      "title": "CS50 Web – Webprogrammierung mit Python und JavaScript",
+      "official": "https://cs50.harvard.edu/web/",
+      "syllabus_url": "https://cs50.harvard.edu/web/syllabus/",
+      "status": "active",
+      "description": "Webanwendungen mit HTML, CSS, Git, Python, Django, SQL, JavaScript, Tests und Sicherheitsgrundlagen.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "HTML und CSS",
+          "topic_outline": "HTML. Document Object Model. Forms. CSS. Selectors. Responsive Design. Bootstrap. Sass.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/0/lang/en/lecture0.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/0/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "html-semantik-formulare"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "Git",
+          "topic_outline": "Git. GitHub. Commits. Merge Conflicts. Branches. Forks. Pull Requests. GitHub Pages.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/1/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "git-versionskontrolle"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Python",
+          "topic_outline": "Python. Variables. Sequences. Functions. Modules. Object-Oriented Programming. Functional Programming. Exceptions.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/2/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "py-funktionen-typen"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Django",
+          "topic_outline": "Web Applications. HTTP. Django. Routes. Templates. Forms. Sessions.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/3/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "django-mvc"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "SQL, Modelle und Migrationen",
+          "topic_outline": "Databases. SQL. Tables. Models. Relationships. Migrations. Django Admin.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/4/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "web-framework-models"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "JavaScript",
+          "topic_outline": "JavaScript. Events. DOM Manipulation. Local Storage. APIs.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/5/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "javascript-grundlagen-dom"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Benutzeroberflächen",
+          "topic_outline": "User Interfaces. Single-Page Applications. Infinite Scroll. Animation. React.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/6/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "react-komponenten-state"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Tests und CI/CD",
+          "topic_outline": "Test-Driven Development. Unit Testing. Django Testing. Selenium. CI/CD. GitHub Actions. Docker.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/7/lang/en/lecture7.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/7/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "web-tests-ci"
+          ]
+        },
+        {
+          "week": 8,
+          "title": "Skalierung und Sicherheit",
+          "topic_outline": "Load Balancing. Autoscaling. Database Replication. Caching. HTTPS. Public-Key Cryptography. Cross-Site Scripting. Cross-Site Request Forgery.",
+          "transcript_url": "https://cdn.cs50.net/web/2020/spring/lectures/8/lang/en/lecture8.txt",
+          "course_page": "https://cs50.harvard.edu/web/weeks/8/",
+          "transcript_version": [
+            "2020"
+          ],
+          "lesson_ids": [
+            "web-skalierung-api"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-mobile",
+      "title": "CS50 Mobile – Entwicklung mobiler Apps",
+      "official": "https://cs50.harvard.edu/mobile/",
+      "syllabus_url": "https://cs50.harvard.edu/mobile/syllabus/",
+      "status": "archived",
+      "description": "Archivierter Kurs über mobile Apps mit JavaScript, React Native, Navigation, Daten, Redux, Tests und Veröffentlichung. Die verwendeten Werkzeuge sind historisch.",
+      "weeks": [
+        {
+          "week": 0,
+          "title": "Überblick und JavaScript",
+          "topic_outline": "Mobile Anwendungen reagieren auf Berührung, Bildschirmgröße und wechselnde Netzwerkbedingungen. JavaScript und React bilden in diesem archivierten Kurs die Grundlage für Komponenten und Zustand.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/0/lang/en/lecture0.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/0/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-01"
+          ]
+        },
+        {
+          "week": 1,
+          "title": "JavaScript und ES6",
+          "topic_outline": "ES6 führte unter anderem `let`, `const`, Arrow Functions, Template Strings, Destructuring und Module ein. Diese Syntax vereinfacht Ausdruck und Struktur, verändert aber nicht automatisch die Programmlogik.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/1/lang/en/lecture1.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/1/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-02"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "React: Props und Zustand",
+          "topic_outline": "Props geben Daten an eine Komponente weiter; State beschreibt veränderliche UI-Daten. Änderungen am State veranlassen React zu einer erneuten Darstellung.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/2/lang/en/lecture2.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/2/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-03"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "React Native",
+          "topic_outline": "React Native rendert native UI-Bausteine und teilt JavaScript-Logik zwischen Plattformen. Navigation, Styles und Geräteschnittstellen werden in der App-Umgebung statt im DOM verwendet.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/3/lang/en/lecture3.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/3/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-04"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Listen und Eingaben",
+          "topic_outline": "Listen werden aus Daten gerendert und brauchen stabile Schlüssel. Eingaben aktualisieren gezielt den Zustand; Validierung und verständliche Rückmeldung gehören zur Interaktion.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/4/lang/en/lecture4.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/4/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-05"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Eingaben und Fehlersuche",
+          "topic_outline": "Touch-Eingaben, Tastatur, Fokus und asynchrone UI-Zustände müssen in Gerätebedingungen getestet werden. Debugging beginnt mit einem reproduzierbaren Fehler und einer Hypothese.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/5/lang/en/lecture5.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/5/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-06"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Navigation",
+          "topic_outline": "Navigation modelliert Wege zwischen Bildschirmen und Übergabe kleiner Parameter. Zurücknavigation muss zum Nutzungskontext passen; geschützte Ziele brauchen Berechtigungsprüfung.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/6/lang/en/lecture6.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/6/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-07"
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Daten",
+          "topic_outline": "Persistenz speichert Zustand über App-Neustarts hinweg. Lokaler Speicher, API und Datenbank haben unterschiedliche Synchronisations-, Datenschutz- und Ausfallbedingungen.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/7/lang/en/lecture7.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/7/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-08"
+          ]
+        },
+        {
+          "week": 8,
+          "title": "Expo-Komponenten",
+          "topic_outline": "Expo bietet Bibliotheken und Werkzeuge für typische Gerätefunktionen. Berechtigungen, Plattformunterschiede und tatsächliche Gerätetests bleiben notwendig.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/8/lang/en/lecture8.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/8/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-09"
+          ]
+        },
+        {
+          "week": 9,
+          "title": "Redux",
+          "topic_outline": "Redux zentralisiert geteilten UI-Zustand mit Aktionen und vorhersehbaren Reducern. Es lohnt sich bei gemeinsam genutztem komplexem Zustand, nicht für jeden lokalen Wert.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/9/lang/en/lecture9.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/9/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-10"
+          ]
+        },
+        {
+          "week": 10,
+          "title": "Asynchrone Abläufe und Werkzeuge",
+          "topic_outline": "Asynchrone Aktionen laden Daten, melden Ladezustand und behandeln Erfolg oder Fehler. Entwicklungswerkzeuge helfen, Zustandsübergänge nachvollziehbar zu machen.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/10/lang/en/lecture10.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/10/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-11"
+          ]
+        },
+        {
+          "week": 11,
+          "title": "Performance",
+          "topic_outline": "Performance misst Startzeit, Reaktionszeit, Speicher und flüssige Darstellung auf echten Geräten. Profiler helfen, unnötige Arbeit von gefühlten Problemen zu unterscheiden.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/11/lang/en/lecture11.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/11/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-12"
+          ]
+        },
+        {
+          "week": 12,
+          "title": "Veröffentlichung und Tests",
+          "topic_outline": "Veröffentlichung umfasst Release-Builds, Konfiguration, Berechtigungen, Plattformprüfung, Crashbeobachtung und Rückmeldungen. Tests decken Logik und Geräteverhalten ab.",
+          "transcript_url": "https://cdn.cs50.net/mobile/2018/spring/lectures/12/lang/en/lecture12.txt",
+          "course_page": "https://cs50.harvard.edu/mobile/weeks/12/",
+          "transcript_version": [
+            "2018"
+          ],
+          "lesson_ids": [
+            "mobile-archive-13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs50-technology",
+      "title": "CS50 Technology – Technologie verstehen",
+      "official": "https://cs50.harvard.edu/technology/",
+      "syllabus_url": "https://cs50.harvard.edu/technology/syllabus/",
+      "status": "archived",
+      "description": "Archivierter Überblick zu Hardware, Internet, Multimedia, Sicherheit, Web und Programmierung; Materialien stammen aus älteren Kursjahren.",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Hardware",
+          "topic_outline": "Computer verarbeiten Eingaben, rechnen, speichern Daten und geben Ergebnisse aus. CPU, Arbeitsspeicher, dauerhafter Speicher und Ein-/Ausgabegeräte erfüllen unterschiedliche Aufgaben.",
+          "transcript_url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/hardware/lang/en/hardware.txt",
+          "course_page": "https://cs50.harvard.edu/technology/weeks/1/",
+          "transcript_version": [
+            "2017"
+          ],
+          "lesson_ids": [
+            "technology-archive-01"
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Internet",
+          "topic_outline": "Das Internet ist ein Verbund von Netzwerken, die über Protokolle Datenpakete austauschen. IP-Adressen und Router transportieren Pakete; DNS hilft, lesbare Namen aufzulösen.",
+          "transcript_url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/internet/lang/en/internet.txt",
+          "course_page": "https://cs50.harvard.edu/technology/weeks/2/",
+          "transcript_version": [
+            "2017"
+          ],
+          "lesson_ids": [
+            "technology-archive-02"
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Multimedia",
+          "topic_outline": "Bilder, Audio und Video werden digital als Zahlen und codierte Formate gespeichert. Auflösung, Abtastrate, Farbtiefe und Kompression beeinflussen Qualität und Größe.",
+          "transcript_url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/multimedia/lang/en/multimedia.txt",
+          "course_page": "https://cs50.harvard.edu/technology/weeks/3/",
+          "transcript_version": [
+            "2017"
+          ],
+          "lesson_ids": [
+            "technology-archive-03"
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Sicherheit",
+          "topic_outline": "Sicherheit schützt Geräte und Informationen durch Zugangskontrolle, Updates, Verschlüsselung, Backups und umsichtiges Verhalten. Bedrohungen nutzen technische und menschliche Schwächen.",
+          "transcript_url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/security/lang/en/security.txt",
+          "course_page": "https://cs50.harvard.edu/technology/weeks/4/",
+          "transcript_version": [
+            "2017"
+          ],
+          "lesson_ids": [
+            "technology-archive-04"
+          ]
+        },
+        {
+          "week": 5,
+          "title": "Webentwicklung",
+          "topic_outline": "Webseiten nutzen HTML für Struktur, CSS für Darstellung und JavaScript für Verhalten. Browser kommunizieren über HTTP mit Servern, die dynamische Inhalte bereitstellen können.",
+          "transcript_url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/web_development/lang/en/web_development.txt",
+          "course_page": "https://cs50.harvard.edu/technology/weeks/5/",
+          "transcript_version": [
+            "2017"
+          ],
+          "lesson_ids": [
+            "technology-archive-05"
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Programmierung",
+          "topic_outline": "Programme formulieren Anweisungen und Regeln, die ein Rechner ausführt. Variablen, Bedingungen, Schleifen und Funktionen bilden grundlegende Bausteine.",
+          "transcript_url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/programming/lang/en/programming.txt",
+          "course_page": "https://cs50.harvard.edu/technology/weeks/6/",
+          "transcript_version": [
+            "2017"
+          ],
+          "lesson_ids": [
+            "technology-archive-06"
+          ]
+        }
+      ]
+    }
+  ],
+  "professional_certificates": [
+    {
+      "id": "ai",
+      "title": "Computer Science for Artificial Intelligence",
+      "provider": "HarvardX / edX",
+      "courses": [
+        "CS50x – Introduction to Computer Science",
+        "CS50 AI – Introduction to Artificial Intelligence with Python"
+      ],
+      "edx": "https://cs50.edx.org/programs/ai"
+    },
+    {
+      "id": "python",
+      "title": "Computer Science for Python Programming",
+      "provider": "HarvardX / edX",
+      "courses": [
+        "CS50x – Introduction to Computer Science",
+        "CS50 Python – Introduction to Programming with Python"
+      ],
+      "edx": "https://cs50.edx.org/programs/python"
+    },
+    {
+      "id": "web",
+      "title": "Computer Science for Web Programming",
+      "provider": "HarvardX / edX",
+      "courses": [
+        "CS50x – Introduction to Computer Science",
+        "CS50 Web – Web Programming with Python and JavaScript"
+      ],
+      "edx": "https://cs50.edx.org/programs/web"
+    },
+    {
+      "id": "databases",
+      "title": "Computer Science for Databases using SQL",
+      "provider": "HarvardX / edX",
+      "courses": [
+        "CS50x – Introduction to Computer Science",
+        "CS50 SQL – Introduction to Databases with SQL"
+      ],
+      "edx": "https://cs50.edx.org/programs/databases"
+    },
+    {
+      "id": "data-science",
+      "title": "Python for Data Science and Machine Learning",
+      "provider": "HarvardX / edX",
+      "courses": [
+        "Introduction to Data Science with Python",
+        "Machine Learning and AI with Python"
+      ],
+      "edx": "https://cs50.edx.org/programs/data",
+      "note": "Angrenzender HarvardX-Pfad, kein CS50-Kursprogramm. CS50 Python wird auf der offiziellen CS50-Python-Seite als mögliche Vorbereitung verlinkt; Inhalte und Zertifikatsstatus können sich ändern."
+    }
+  ]
+}

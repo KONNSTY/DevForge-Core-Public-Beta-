@@ -1,36 +1,48 @@
 "use client";
 
 import Link from "next/link";
-import { getTracks, getLessonsForTrack, getLocalizedLessonContent } from "@/lib/curriculum";
-import { CheckCircle, Circle, Sparkles, ArrowRight } from "lucide-react";
+import { getTracks, getLessonsForTrack, getLocalizedLessonContent, getFirstLesson } from "@/lib/curriculum";
+import { CheckCircle, Circle, Sparkles, ArrowRight, GraduationCap } from "lucide-react";
 import { useProgress } from "@/hooks/useProgress";
 import { useLanguage } from "@/components/language-context";
 
 export default function TracksPage() {
   const tracks = getTracks();
+  const firstLesson = getFirstLesson();
   const { progress } = useProgress();
   const { locale, t } = useLanguage();
 
   return (
-    <div className="max-w-6xl mx-auto py-10 px-4 space-y-10">
+    <div className="mx-auto w-full max-w-6xl min-w-0 space-y-8 px-4 py-8 sm:space-y-10 sm:px-6 sm:py-10 lg:px-8">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b pb-6">
         <div>
           <div className="flex items-center space-x-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
             <Sparkles size={14} />
             <span>{t("curriculum")} (Linear & Open)</span>
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight">{t("all_tracks")}</h1>
+          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{t("all_tracks")}</h1>
           <p className="text-lg text-muted-foreground mt-2 max-w-2xl">
-            Master the full stack from internet networking primitives to industrial AI orchestration.
+            Lerne den gesamten Stack – von Internet-Grundlagen bis zur industriellen KI-Orchestrierung. Alle Inhalte sind kostenlos und ohne Konto zugänglich.
           </p>
         </div>
         <Link
-          href="/tracks/web-grundlagen/lessons/web-01-server"
+          href={firstLesson ? `/tracks/${firstLesson.track_id}/lessons/${firstLesson.lesson_id}` : "/tracks"}
           className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-semibold shadow hover:opacity-90 transition-all text-sm shrink-0"
         >
           <span>{t("next_lesson")} 1</span>
           <ArrowRight size={16} />
         </Link>
+      </div>
+
+      <Link href="/courses" className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/5 px-4 py-2.5 text-sm font-semibold text-primary hover:bg-primary/10">
+        <GraduationCap size={16} />
+        {t("cs50_courses")}
+        <ArrowRight size={14} />
+      </Link>
+
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-cyan-400/25 bg-cyan-400/5 px-4 py-3 text-sm">
+        <span><strong>DevForge Core</strong> ist ein kostenloses Produkt von Polymath Productions / Regler Productions.</span>
+        <a href="https://reglerproductions.com/preise.html" target="_blank" rel="noreferrer" className="font-bold text-cyan-300 hover:underline shrink-0">Polymath-Angebot ansehen →</a>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -45,7 +57,7 @@ export default function TracksPage() {
           return (
             <div 
               key={track.id} 
-              className={`border rounded-2xl p-6 bg-card/60 backdrop-blur flex flex-col justify-between transition-all hover:border-primary/60 hover:shadow-md ${
+              className={`min-w-0 border rounded-2xl p-4 bg-card/60 backdrop-blur flex flex-col justify-between transition-all hover:border-primary/60 hover:shadow-md sm:p-6 ${
                 isFullyDone ? "border-emerald-500/40 bg-emerald-500/5" : ""
               }`}
             >

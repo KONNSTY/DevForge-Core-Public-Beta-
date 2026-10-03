@@ -1,0 +1,2864 @@
+[
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-01",
+    "title": "CS50 Scratch: Sprites",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Sprites ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du sprites in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nSprites sind eigenständige Figuren oder Objekte mit Kostüm, Position und eigenen Skripten. Die Bühne und ihre Koordinaten bestimmen, wo sie erscheinen; Nachrichten lassen Figuren zusammenarbeiten.\n\n## Schrittweises Beispiel\n\nEin Ball-Sprite kann bei jeder Wandberührung seine Richtung ändern, während ein Schläger-Sprite die Eingabe der Tastatur verarbeitet.\n\n```scratch\nsprites = {\"ball\": [0, 0], \"paddle\": [0, -140]}\nprint(sprites)\n```\n\n## Zusammenfassung\n\nSprites bündeln Darstellung und Verhalten einer Figur.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Sprites“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Plane zwei Figuren für ein Fangspiel und notiere, welche Daten jede Figur braucht.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "sprites = {\"ball\": [0, 0], \"paddle\": [0, -140]}\nprint(sprites)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Sprites, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Sprites mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Figur, Kostüm und Skript sind verschiedene Dinge: Ein neues Kostüm erstellt keine neue Figur."
+      ],
+      "summary": [
+        "Sprites bündeln Darstellung und Verhalten einer Figur."
+      ],
+      "questions": [
+        {
+          "prompt": "Wofür steht ein Sprite?",
+          "choices": [
+            "Ein Objekt auf der Bühne, das eigene Kostüme und Skripte haben kann.",
+            "Der gesamte Programmcode einer Anwendung."
+          ],
+          "answer": 0,
+          "explanation": "Sprites bündeln Darstellung und Verhalten einer Figur."
+        }
+      ],
+      "exercise": "Plane zwei Figuren für ein Fangspiel und notiere, welche Daten jede Figur braucht.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 1 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/1/lang/en/lecture1.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-02",
+    "title": "CS50 Scratch: Funktionen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Funktionen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du funktionen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEigene Blöcke fassen eine Folge sinnvoller Schritte zusammen. Eingaben machen den Block wiederverwendbar; der Aufruf führt ihn aus. Das entspricht Funktionen in textbasierten Sprachen.\n\n## Schrittweises Beispiel\n\nEin Block „zeichne Quadrat mit Seitenlänge“ kann eine Größe als Eingabe verwenden und vier Seiten samt Drehungen ausführen.\n\n```scratch\ndef move(distance):\n    return {\"steps\": distance}\nprint(move(30))\n```\n\n## Zusammenfassung\n\nEin benannter Block schafft Wiederverwendung und eine klare Abstraktion.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Funktionen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Entwirf einen wiederverwendbaren Block, der eine Figur um eine einstellbare Anzahl Schritte bewegt.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "def move(distance):\n    return {\"steps\": distance}\nprint(move(30))",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Funktionen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Funktionen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Wenn dieselbe Folge an vielen Stellen kopiert ist, werden spätere Änderungen leicht uneinheitlich."
+      ],
+      "summary": [
+        "Ein benannter Block schafft Wiederverwendung und eine klare Abstraktion."
+      ],
+      "questions": [
+        {
+          "prompt": "Warum einen eigenen Block erstellen?",
+          "choices": [
+            "Wiederholte Schritte benennen und an einer Stelle ändern.",
+            "Damit der Computer automatisch jedes Programm versteht."
+          ],
+          "answer": 0,
+          "explanation": "Ein benannter Block schafft Wiederverwendung und eine klare Abstraktion."
+        }
+      ],
+      "exercise": "Entwirf einen wiederverwendbaren Block, der eine Figur um eine einstellbare Anzahl Schritte bewegt.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 2 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/2/lang/en/lecture2.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-03",
+    "title": "CS50 Scratch: Ereignisse",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Ereignisse ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du ereignisse in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEreignisblöcke starten Skripte, wenn etwas passiert: Startsignal, Tastendruck, Klick oder Nachricht. Das Programm reagiert dadurch auf Nutzer und andere Figuren, statt nur eine starre Reihenfolge abzuarbeiten.\n\n## Schrittweises Beispiel\n\nBeim Drücken der Pfeiltaste sendet der Spieler eine Nachricht; ein zweites Skript aktualisiert daraufhin die Szene.\n\n```scratch\nevents = {\"start\": \"reset game\", \"space\": \"jump\", \"collision\": \"lose life\"}\nprint(events)\n```\n\n## Zusammenfassung\n\nEreignisse verbinden Eingaben und Programmreaktionen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Ereignisse“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Skizziere Ereignisse für Start, Tastendruck und Spielende.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "events = {\"start\": \"reset game\", \"space\": \"jump\", \"collision\": \"lose life\"}\nprint(events)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Ereignisse, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Ereignisse mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Zwei Skripte können gleichzeitig laufen. Gemeinsame Variablen oder Nachrichten brauchen klare Regeln, damit Abläufe vorhersehbar bleiben."
+      ],
+      "summary": [
+        "Ereignisse verbinden Eingaben und Programmreaktionen."
+      ],
+      "questions": [
+        {
+          "prompt": "Was startet ein ereignisgesteuertes Skript?",
+          "choices": [
+            "Ein bestimmtes Ereignis wie Klick oder Tastendruck.",
+            "Nur der letzte Block des Programms."
+          ],
+          "answer": 0,
+          "explanation": "Ereignisse verbinden Eingaben und Programmreaktionen."
+        }
+      ],
+      "exercise": "Skizziere Ereignisse für Start, Tastendruck und Spielende.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 3 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/3/lang/en/lecture3.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-04",
+    "title": "CS50 Scratch: Werte",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Werte ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du werte in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nWerte sind Zahlen, Text oder Wahrheitswerte. Operatoren berechnen neue Werte; ein Ausdruck wie „Punkte + 1“ liefert ein Ergebnis. Der Typ eines Wertes bestimmt, welche Operation sinnvoll ist.\n\n## Schrittweises Beispiel\n\nEin Punktestand ist eine Zahl. Der Name des Levels ist Text. Eine Kollision kann als wahr oder falsch geprüft werden.\n\n```scratch\nvalues = {\"name\": \"Mika\", \"score\": 5, \"running\": True}\nprint(values)\n```\n\n## Zusammenfassung\n\nZahlenwerte eignen sich für Rechenoperationen; Text für Beschriftungen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Werte“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Lege drei Werte für Name, Punkte und Spiel läuft an und nenne ihren Typ.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "values = {\"name\": \"Mika\", \"score\": 5, \"running\": True}\nprint(values)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Werte, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Werte mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Text „5“ und Zahl 5 sehen ähnlich aus, verhalten sich aber verschieden."
+      ],
+      "summary": [
+        "Zahlenwerte eignen sich für Rechenoperationen; Text für Beschriftungen."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche Operation passt zu einer Punktzahl?",
+          "choices": [
+            "Sie als Zahl um 1 erhöhen.",
+            "Den Zahlenwert alphabetisch sortieren."
+          ],
+          "answer": 0,
+          "explanation": "Zahlenwerte eignen sich für Rechenoperationen; Text für Beschriftungen."
+        }
+      ],
+      "exercise": "Lege drei Werte für Name, Punkte und Spiel läuft an und nenne ihren Typ.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 4 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/4/lang/en/lecture4.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-05",
+    "title": "CS50 Scratch: Bedingungen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Bedingungen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du bedingungen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nBedingungen wählen abhängig von wahr oder falsch einen Pfad. Vergleiche prüfen beispielsweise Berührung, Grenzen oder Punktestände; verschachtelte Bedingungen sollten übersichtlich bleiben.\n\n## Schrittweises Beispiel\n\nWenn der Ball den Schläger berührt, ändere die Richtung; sonst bewegt er sich weiter.\n\n```scratch\nlives = 0\nstatus = \"game over\" if lives == 0 else \"playing\"\nprint(status)\n```\n\n## Zusammenfassung\n\nBedingungen verzweigen den Ablauf anhand eines Wahrheitswerts.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Bedingungen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Definiere eine Regel: Bei null Leben endet das Spiel, sonst läuft es weiter.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "lives = 0\nstatus = \"game over\" if lives == 0 else \"playing\"\nprint(status)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Bedingungen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Bedingungen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Die Reihenfolge ist wichtig: Eine allgemeine Bedingung kann einen spezielleren Fall vorher abfangen."
+      ],
+      "summary": [
+        "Bedingungen verzweigen den Ablauf anhand eines Wahrheitswerts."
+      ],
+      "questions": [
+        {
+          "prompt": "Was entscheidet eine Bedingung?",
+          "choices": [
+            "Welcher Programmzweig ausgeführt wird.",
+            "Wie viele Figuren auf der Bühne liegen."
+          ],
+          "answer": 0,
+          "explanation": "Bedingungen verzweigen den Ablauf anhand eines Wahrheitswerts."
+        }
+      ],
+      "exercise": "Definiere eine Regel: Bei null Leben endet das Spiel, sonst läuft es weiter.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 5 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/5/lang/en/lecture5.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-06",
+    "title": "CS50 Scratch: Schleifen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Schleifen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du schleifen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nSchleifen wiederholen einen Block. Eine endliche Wiederholung passt zu einer festen Anzahl; eine fortlaufende Schleife passt zu einem Spiel, das auf Eingaben wartet.\n\n## Schrittweises Beispiel\n\nWiederhole zehn Schritte beim Zeichnen eines Musters; in der Hauptschleife bewege Spielfiguren und prüfe Kollisionen.\n\n```scratch\nprint([2 * i for i in range(1, 6)])\n```\n\n## Zusammenfassung\n\nSchleifen sparen Kopien und passen den Ablauf an die Aufgabe an.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Schleifen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Erzeuge eine Liste mit den ersten fünf geraden Zahlen mithilfe einer Schleife.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "print([2 * i for i in range(1, 6)])",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Schleifen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Schleifen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Eine Endlosschleife ohne Pause oder Ereignisprüfung kann die Szene blockieren oder unnötig Arbeit verursachen."
+      ],
+      "summary": [
+        "Schleifen sparen Kopien und passen den Ablauf an die Aufgabe an."
+      ],
+      "questions": [
+        {
+          "prompt": "Wann ist eine feste Wiederholung passend?",
+          "choices": [
+            "Wenn eine bekannte Anzahl von Durchläufen gebraucht wird.",
+            "Wenn ein Block exakt einmal starten soll."
+          ],
+          "answer": 0,
+          "explanation": "Schleifen sparen Kopien und passen den Ablauf an die Aufgabe an."
+        }
+      ],
+      "exercise": "Erzeuge eine Liste mit den ersten fünf geraden Zahlen mithilfe einer Schleife.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 6 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/6/lang/en/lecture6.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-07",
+    "title": "CS50 Scratch: Variablen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Variablen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du variablen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nVariablen geben veränderlichen Werten einen Namen, etwa Leben, Punktestand oder Geschwindigkeit. Sie können lokal zu einer Figur gehören oder geteilt werden.\n\n## Schrittweises Beispiel\n\nBeim Fangen eines Objekts wird `score` um eins erhöht und das gefangene Objekt neu positioniert.\n\n```scratch\nlives = 3\nlives = max(0, lives - 1)\nprint(lives)\n```\n\n## Zusammenfassung\n\nVariablen bewahren Zustand über mehrere Ereignisse hinweg.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Variablen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Beschreibe die Änderung von Leben nach einer Kollision und prüfe den Grenzfall null.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "lives = 3\nlives = max(0, lives - 1)\nprint(lives)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Variablen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Variablen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Eine geteilte globale Variable ist praktisch, kann aber von mehreren Skripten verändert werden."
+      ],
+      "summary": [
+        "Variablen bewahren Zustand über mehrere Ereignisse hinweg."
+      ],
+      "questions": [
+        {
+          "prompt": "Was speichert ein Punktestand?",
+          "choices": [
+            "Einen veränderlichen Zahlenwert während des Spiels.",
+            "Den vollständigen Inhalt einer Figur."
+          ],
+          "answer": 0,
+          "explanation": "Variablen bewahren Zustand über mehrere Ereignisse hinweg."
+        }
+      ],
+      "exercise": "Beschreibe die Änderung von Leben nach einer Kollision und prüfe den Grenzfall null.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 7 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/7/lang/en/lecture7.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-08",
+    "title": "CS50 Scratch: Abstraktion",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Abstraktion ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du abstraktion in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nAbstraktion verbirgt unwichtige Details hinter einem benannten Konzept. Eigene Blöcke, Figuren und Datenmodelle machen das Projekt leichter erklärbar und veränderbar.\n\n## Schrittweises Beispiel\n\nEin `spawn_enemy(level)`-Block kann Position, Kostüm und Startverhalten eines Gegners bündeln.\n\n```scratch\nparts = [\"read_input\", \"update_world\", \"draw_scene\"]\nprint(parts)\n```\n\n## Zusammenfassung\n\nAbstraktionen reduzieren kognitive Last, ohne die zugrunde liegende Arbeit verschwinden zu lassen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Abstraktion“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Zerlege ein Fangspiel in drei benannte Bausteine mit klarer Aufgabe.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "parts = [\"read_input\", \"update_world\", \"draw_scene\"]\nprint(parts)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Abstraktion, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Abstraktion mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Zu viele Einzeiler-Blöcke verstecken den Ablauf; eine gute Abstraktion benennt einen echten fachlichen Schritt."
+      ],
+      "summary": [
+        "Abstraktionen reduzieren kognitive Last, ohne die zugrunde liegende Arbeit verschwinden zu lassen."
+      ],
+      "questions": [
+        {
+          "prompt": "Was ist eine gute Abstraktion?",
+          "choices": [
+            "Ein verständlicher Name für ein wiederverwendbares Konzept.",
+            "Ein beliebiger Block ohne klaren Zweck."
+          ],
+          "answer": 0,
+          "explanation": "Abstraktionen reduzieren kognitive Last, ohne die zugrunde liegende Arbeit verschwinden zu lassen."
+        }
+      ],
+      "exercise": "Zerlege ein Fangspiel in drei benannte Bausteine mit klarer Aufgabe.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 8 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/8/lang/en/lecture8.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-scratch",
+    "lesson_id": "scratch-09",
+    "title": "CS50 Scratch: Eigenes Projekt",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Eigenes Projekt ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du eigenes projekt in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEin eigenes Scratch-Projekt verbindet Planung, Ereignisse, Zustände, Figuren, Tests und Überarbeitung. Beginne mit einer kleinen spielbaren Version und erweitere sie anhand beobachtbarer Ziele.\n\n## Schrittweises Beispiel\n\nEin Quizspiel braucht Frage, Antwortprüfung, Punktestand und Rückmeldung. Ein erster Prototyp kann eine Frage vollständig abbilden.\n\n```scratch\nmilestones = [\"one playable scene\", \"score rule\", \"restart\", \"test edge cases\"]\nprint(milestones)\n```\n\n## Zusammenfassung\n\nKleine überprüfbare Meilensteine machen Fortschritt sichtbar.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Eigenes Projekt“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Plane ein minimales Projekt mit Nutzereingabe, Zustand, Rückmeldung und zwei Tests.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "milestones = [\"one playable scene\", \"score rule\", \"restart\", \"test edge cases\"]\nprint(milestones)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Eigenes Projekt, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Eigenes Projekt mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Viele Funktionen auf einmal einzubauen erschwert Fehlersuche. Sichere zuerst den kleinsten funktionierenden Ablauf."
+      ],
+      "summary": [
+        "Kleine überprüfbare Meilensteine machen Fortschritt sichtbar."
+      ],
+      "questions": [
+        {
+          "prompt": "Was gehört zu einem testbaren Projektziel?",
+          "choices": [
+            "Ein beobachtbares Verhalten mit klarer Eingabe und erwartetem Ergebnis.",
+            "Nur ein schöner Titelbildschirm."
+          ],
+          "answer": 0,
+          "explanation": "Kleine überprüfbare Meilensteine machen Fortschritt sichtbar."
+        }
+      ],
+      "exercise": "Plane ein minimales Projekt mit Nutzereingabe, Zustand, Rückmeldung und zwei Tests.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Scratch: offizielle Vorlesungswoche 9 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/scratch/2021/x/lectures/9/lang/en/lecture9.txt",
+          "course": "CS50 Scratch"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Scratch bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-r",
+    "lesson_id": "r-01",
+    "title": "CS50 R: Daten darstellen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Daten darstellen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du daten darstellen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nR bietet Vektoren, Matrizen, Listen, Faktoren und Data Frames. Die Struktur entscheidet, welche Operationen sicher und verständlich sind. Ein Vektor enthält typischerweise gleichartige Werte; ein Data Frame fasst Spalten zusammen.\n\n## Schrittweises Beispiel\n\n`c(12, 14, 11)` bildet drei Messwerte als Zahlenvektor ab; `data.frame(day, temperature)` ordnet sie tabellarisch.\n\n```r\ntemperature <- c(12, 14, 11)\nprint(mean(temperature))\n```\n\n## Zusammenfassung\n\nData Frames passen zu rechteckigen Beobachtungsdaten.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Daten darstellen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Lege drei Temperaturmessungen in einem Data Frame ab und bestimme Anzahl und Mittelwert.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "temperature <- c(12, 14, 11)\nprint(mean(temperature))",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Daten darstellen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Daten darstellen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ein einzelner fehlender Wert kann statistische Operationen beeinflussen; fehlende Daten müssen ausdrücklich erkannt werden."
+      ],
+      "summary": [
+        "Data Frames passen zu rechteckigen Beobachtungsdaten."
+      ],
+      "questions": [
+        {
+          "prompt": "Wofür eignet sich ein Data Frame?",
+          "choices": [
+            "Für eine Tabelle aus Spalten mit gleich langen Beobachtungen.",
+            "Als Ersatz für jede beliebige Datei."
+          ],
+          "answer": 0,
+          "explanation": "Data Frames passen zu rechteckigen Beobachtungsdaten."
+        }
+      ],
+      "exercise": "Lege drei Temperaturmessungen in einem Data Frame ab und bestimme Anzahl und Mittelwert.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 R: offizielle Vorlesungswoche 1 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/r/2024/x/lectures/1/lang/en/lecture1.txt",
+          "course": "CS50 R"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. R bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-r",
+    "lesson_id": "r-02",
+    "title": "CS50 R: Daten transformieren",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Daten transformieren ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du daten transformieren in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nTransformation filtert Zeilen, wählt Spalten, berechnet neue Werte oder gruppiert Beobachtungen. Jede Transformation sollte nachvollziehbar sein und ursprüngliche Bedeutung erhalten.\n\n## Schrittweises Beispiel\n\nAus Preisen kann mit einer klar benannten Berechnung ein Nettopreis entstehen; Filter schließen ungültige Messwerte gezielt aus.\n\n```r\nx <- c(-1, 0, 4, 8)\nprint(x[x > 0])\n```\n\n## Zusammenfassung\n\nFilter ändern die betrachtete Teilmenge und müssen fachlich begründet sein.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Daten transformieren“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Filtere Werte größer als null und notiere, warum negative Werte gültig oder fehlerhaft sein könnten.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "x <- c(-1, 0, 4, 8)\nprint(x[x > 0])",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Daten transformieren, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Daten transformieren mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Einheiten zu mischen oder Zeilen stillschweigend zu löschen macht Kennzahlen irreführend."
+      ],
+      "summary": [
+        "Filter ändern die betrachtete Teilmenge und müssen fachlich begründet sein."
+      ],
+      "questions": [
+        {
+          "prompt": "Was bewirkt ein Filter?",
+          "choices": [
+            "Er wählt Beobachtungen aus, die eine Bedingung erfüllen.",
+            "Er ändert automatisch die Maßeinheit aller Werte."
+          ],
+          "answer": 0,
+          "explanation": "Filter ändern die betrachtete Teilmenge und müssen fachlich begründet sein."
+        }
+      ],
+      "exercise": "Filtere Werte größer als null und notiere, warum negative Werte gültig oder fehlerhaft sein könnten.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 R: offizielle Vorlesungswoche 2 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/r/2024/x/lectures/2/lang/en/lecture2.txt",
+          "course": "CS50 R"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. R bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-r",
+    "lesson_id": "r-03",
+    "title": "CS50 R: Funktionen anwenden",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Funktionen anwenden ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du funktionen anwenden in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nVektorisierte Funktionen arbeiten direkt auf ganzen Vektoren. `apply`-Familien und funktionale Muster helfen, wiederkehrende Operationen zu benennen und Datensätze reproduzierbar zu verarbeiten.\n\n## Schrittweises Beispiel\n\n`log(c(1, 10, 100))` berechnet Logarithmen elementweise; `lapply` wendet eine Funktion auf jedes Listenelement an.\n\n```r\nx <- c(2, 3, 4)\nprint(x^2)\n```\n\n## Zusammenfassung\n\nVektorisierung macht typische Datenoperationen knapp und konsistent.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Funktionen anwenden“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Berechne für eine Zahlenliste den quadrierten Wert jedes Elements.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "x <- c(2, 3, 4)\nprint(x^2)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Funktionen anwenden, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Funktionen anwenden mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Eine Schleife oder Funktion sollte verständlich bleiben; Vektorisierung ist kein Ersatz für korrekte Einheiten und Randfallbehandlung."
+      ],
+      "summary": [
+        "Vektorisierung macht typische Datenoperationen knapp und konsistent."
+      ],
+      "questions": [
+        {
+          "prompt": "Was bedeutet vektorisierte Berechnung?",
+          "choices": [
+            "Eine Operation wird auf mehrere Werte einer Sammlung angewandt.",
+            "Nur der erste Wert einer Tabelle wird berechnet."
+          ],
+          "answer": 0,
+          "explanation": "Vektorisierung macht typische Datenoperationen knapp und konsistent."
+        }
+      ],
+      "exercise": "Berechne für eine Zahlenliste den quadrierten Wert jedes Elements.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 R: offizielle Vorlesungswoche 3 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/r/2024/x/lectures/3/lang/en/lecture3.txt",
+          "course": "CS50 R"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. R bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-r",
+    "lesson_id": "r-04",
+    "title": "CS50 R: Daten ordnen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Daten ordnen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du daten ordnen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nTidy-Daten ordnen jede Variable einer Spalte, jede Beobachtung einer Zeile und jede Art Beobachtung einer Tabelle zu. Dieses Format erleichtert Filter, Gruppen und Diagramme.\n\n## Schrittweises Beispiel\n\nMonat, Stadt und Umsatz werden zu Spalten; jede Kombination aus Monat und Stadt ist eine Zeile.\n\n```r\ncolumns = [\"date\", \"location\", \"measurement\"]\nprint(columns)\n```\n\n## Zusammenfassung\n\nEinheitliche Form erleichtert wiederverwendbare Analysen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Daten ordnen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Entwirf Spalten für tägliche Messungen an mehreren Orten.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "columns = [\"date\", \"location\", \"measurement\"]\nprint(columns)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Daten ordnen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Daten ordnen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Kopfzeilen als Daten und Werte als Spalten erschweren Vergleiche und automatische Verarbeitung."
+      ],
+      "summary": [
+        "Einheitliche Form erleichtert wiederverwendbare Analysen."
+      ],
+      "questions": [
+        {
+          "prompt": "Wie ist eine tidy Tabelle organisiert?",
+          "choices": [
+            "Eine Variable pro Spalte und eine Beobachtung pro Zeile.",
+            "Eine Zeile pro Spalte und jedes Jahr als Tabellenkopf."
+          ],
+          "answer": 0,
+          "explanation": "Einheitliche Form erleichtert wiederverwendbare Analysen."
+        }
+      ],
+      "exercise": "Entwirf Spalten für tägliche Messungen an mehreren Orten.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 R: offizielle Vorlesungswoche 4 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/r/2024/x/lectures/4/lang/en/lecture4.txt",
+          "course": "CS50 R"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. R bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-r",
+    "lesson_id": "r-05",
+    "title": "CS50 R: Daten visualisieren",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Daten visualisieren ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du daten visualisieren in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nDiagramme übersetzen Messwerte in visuelle Muster. Achsen, Einheiten, Skalen und Gruppierungen beeinflussen die Aussage und müssen zum Datentyp passen.\n\n## Schrittweises Beispiel\n\nEin Streudiagramm zeigt Zusammenhang zweier Zahlenvariablen; ein Balkendiagramm vergleicht Kategorien.\n\n```r\ncategories = {\"A\": 12, \"B\": 18, \"C\": 9}\nprint(categories)\n```\n\n## Zusammenfassung\n\nDer Diagrammtyp sollte die Fragestellung und Variablenart unterstützen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Daten visualisieren“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Wähle für drei Kategorien eine passende Darstellung und begründe die Achsen.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "categories = {\"A\": 12, \"B\": 18, \"C\": 9}\nprint(categories)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Daten visualisieren, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Daten visualisieren mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Abgeschnittene Achsen oder ungeeignete Diagramme können Unterschiede übertreiben oder verbergen."
+      ],
+      "summary": [
+        "Der Diagrammtyp sollte die Fragestellung und Variablenart unterstützen."
+      ],
+      "questions": [
+        {
+          "prompt": "Welcher Diagrammtyp zeigt zwei numerische Variablen?",
+          "choices": [
+            "Ein Streudiagramm.",
+            "Ein Tortendiagramm ohne Legende."
+          ],
+          "answer": 0,
+          "explanation": "Der Diagrammtyp sollte die Fragestellung und Variablenart unterstützen."
+        }
+      ],
+      "exercise": "Wähle für drei Kategorien eine passende Darstellung und begründe die Achsen.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 R: offizielle Vorlesungswoche 5 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/r/2024/x/lectures/5/lang/en/lecture5.txt",
+          "course": "CS50 R"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. R bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-r",
+    "lesson_id": "r-06",
+    "title": "CS50 R: Programme testen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Programme testen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du programme testen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nTests prüfen erwartete Eigenschaften anhand normaler und ungewöhnlicher Eingaben. Datenfunktionen brauchen Tests für leere Tabellen, NA-Werte, Grenzwerte und unerwartete Typen.\n\n## Schrittweises Beispiel\n\nEine Summenfunktion kann mit zwei Werten, einer leeren Eingabe und einem fehlenden Wert getestet werden.\n\n```r\nstopifnot(sum(c(2, 3)) == 5)\ncat(\"Testidee: leere Eingabe definieren\")\n```\n\n## Zusammenfassung\n\nGezielte Randfälle ergänzen normale Beispiele und machen Erwartungen explizit.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Programme testen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Formuliere erwartete Ergebnisse für leere und nichtleere Zahlenlisten.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "stopifnot(sum(c(2, 3)) == 5)\ncat(\"Testidee: leere Eingabe definieren\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Programme testen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Programme testen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ein Test, der exakt denselben Rechenweg wie der Code verwendet, kann denselben Fehler reproduzieren."
+      ],
+      "summary": [
+        "Gezielte Randfälle ergänzen normale Beispiele und machen Erwartungen explizit."
+      ],
+      "questions": [
+        {
+          "prompt": "Warum Randfälle testen?",
+          "choices": [
+            "Weil ungewöhnliche Eingaben oft versteckte Fehler sichtbar machen.",
+            "Weil ein Test alle möglichen Eingaben beweist."
+          ],
+          "answer": 0,
+          "explanation": "Gezielte Randfälle ergänzen normale Beispiele und machen Erwartungen explizit."
+        }
+      ],
+      "exercise": "Formuliere erwartete Ergebnisse für leere und nichtleere Zahlenlisten.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 R: offizielle Vorlesungswoche 6 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/r/2024/x/lectures/6/lang/en/lecture6.txt",
+          "course": "CS50 R"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. R bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-r",
+    "lesson_id": "r-07",
+    "title": "CS50 R: Pakete erstellen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Pakete erstellen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du pakete erstellen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEin R-Paket bündelt Funktionen, Dokumentation und Tests in wiederverwendbarer Form. Klare Schnittstellen, Versionsangaben und reproduzierbare Abhängigkeiten helfen anderen, es verlässlich einzusetzen.\n\n## Schrittweises Beispiel\n\nEine Funktion für Datenbereinigung kann mit Beispieldaten, README und automatisierten Checks ausgeliefert werden.\n\n```r\npackage_parts <- c(\"functions\", \"documentation\", \"tests\", \"dependencies\")\nprint(package_parts)\n```\n\n## Zusammenfassung\n\nPakete machen Analysecode auffindbar und reproduzierbar.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Pakete erstellen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Skizziere README, Beispiel, Tests und Versionsregeln für ein kleines Datenpaket.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "package_parts <- c(\"functions\", \"documentation\", \"tests\", \"dependencies\")\nprint(package_parts)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Pakete erstellen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Pakete erstellen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Lokale Dateien oder unklare Abhängigkeiten machen Pakete auf anderen Rechnern unbrauchbar."
+      ],
+      "summary": [
+        "Pakete machen Analysecode auffindbar und reproduzierbar."
+      ],
+      "questions": [
+        {
+          "prompt": "Was gehört zu einem wiederverwendbaren Paket?",
+          "choices": [
+            "Dokumentierte Funktionen, Abhängigkeiten und Prüfungen.",
+            "Nur eine Datei mit unbekannten globalen Variablen."
+          ],
+          "answer": 0,
+          "explanation": "Pakete machen Analysecode auffindbar und reproduzierbar."
+        }
+      ],
+      "exercise": "Skizziere README, Beispiel, Tests und Versionsregeln für ein kleines Datenpaket.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 R: offizielle Vorlesungswoche 7 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/r/2024/x/lectures/7/lang/en/lecture7.txt",
+          "course": "CS50 R"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. R bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-2d",
+    "lesson_id": "games-01",
+    "title": "CS50 2D: Pong",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Pong ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du pong in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEin Echtzeitspiel aktualisiert Eingaben, Weltzustand und Darstellung fortlaufend. Pong übt Spielfeldkoordinaten, Paddle-Steuerung, Ballbewegung, Kollision und Punktestand.\n\n## Schrittweises Beispiel\n\nBei jeder Runde wird die Position um Geschwindigkeit × Zeit verändert. Eine Kollision mit dem Rand spiegelt die passende Geschwindigkeitskomponente.\n\n```python\nx, speed, dt = 10, 80, 0.5\nprint(x + speed * dt)\n```\n\n## Zusammenfassung\n\nDelta-Zeit hilft, Bewegung an unterschiedliche Bildraten anzupassen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Pong“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Modelliere Ballposition nach 0,5 Sekunden bei Geschwindigkeit 80 Einheiten pro Sekunde.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "x, speed, dt = 10, 80, 0.5\nprint(x + speed * dt)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Pong, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Pong mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Wenn Bewegung pro Frame statt pro Zeit gemessen wird, läuft das Spiel auf schnellen Geräten schneller."
+      ],
+      "summary": [
+        "Delta-Zeit hilft, Bewegung an unterschiedliche Bildraten anzupassen."
+      ],
+      "questions": [
+        {
+          "prompt": "Wovon sollte zeitbasierte Bewegung abhängen?",
+          "choices": [
+            "Von Geschwindigkeit und vergangener Zeit.",
+            "Nur von der Modellnummer der Grafikkarte."
+          ],
+          "answer": 0,
+          "explanation": "Delta-Zeit hilft, Bewegung an unterschiedliche Bildraten anzupassen."
+        }
+      ],
+      "exercise": "Modelliere Ballposition nach 0,5 Sekunden bei Geschwindigkeit 80 Einheiten pro Sekunde.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 2D: offizielle Vorlesungswoche 0 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/2d/2025/x/lectures/0/lang/en/lecture0.srt",
+          "course": "CS50 2D"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Python bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-2d",
+    "lesson_id": "games-02",
+    "title": "CS50 2D: Flappy Bird",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Flappy Bird ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du flappy bird in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEin Side-Scrolling-Spiel kombiniert Schwerkraft, Impuls beim Tastendruck, Hindernisse und Kollisionserkennung. Schwierigkeit entsteht aus nachvollziehbaren Spielregeln, nicht nur aus schneller Bewegung.\n\n## Schrittweises Beispiel\n\nBei jedem Frame wirkt Schwerkraft auf vertikale Geschwindigkeit; ein Tastendruck setzt einen Aufwärtsimpuls. Röhren bewegen sich entgegen der Spielflugrichtung.\n\n```python\ny, velocity, dt = 100, -120, 0.1\nprint(y + velocity * dt)\n```\n\n## Zusammenfassung\n\nKräfte und Impulse beeinflussen Bewegung über den Zustand des Objekts.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Flappy Bird“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Berechne den nächsten y-Wert anhand von Geschwindigkeit und delta time.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "y, velocity, dt = 100, -120, 0.1\nprint(y + velocity * dt)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Flappy Bird, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Flappy Bird mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Position und Geschwindigkeit sind verschieden: Ein Sprung verändert zunächst die Geschwindigkeit, dann über Zeit die Position."
+      ],
+      "summary": [
+        "Kräfte und Impulse beeinflussen Bewegung über den Zustand des Objekts."
+      ],
+      "questions": [
+        {
+          "prompt": "Was bewirkt ein Sprungimpuls?",
+          "choices": [
+            "Er verändert die vertikale Geschwindigkeit.",
+            "Er setzt alle Hindernisse zurück."
+          ],
+          "answer": 0,
+          "explanation": "Kräfte und Impulse beeinflussen Bewegung über den Zustand des Objekts."
+        }
+      ],
+      "exercise": "Berechne den nächsten y-Wert anhand von Geschwindigkeit und delta time.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 2D: offizielle Vorlesungswoche 1 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/2d/2025/x/lectures/1/lang/en/lecture1.srt",
+          "course": "CS50 2D"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Python bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-2d",
+    "lesson_id": "games-03",
+    "title": "CS50 2D: Breakout",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Breakout ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du breakout in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nBreakout verbindet bewegten Ball, Schläger, Ziegelraster und Kollisionsreaktionen. Kollisionen müssen in einer konsistenten Reihenfolge erkannt und der Weltzustand danach aktualisiert werden.\n\n## Schrittweises Beispiel\n\nBei Treffer auf einen Ziegel wird dieser entfernt und der Ball reflektiert; der Score steigt genau einmal.\n\n```python\nbricks, score = 3, 10\nhit = True\nif hit:\n    bricks -= 1\n    score += 1\nprint(bricks, score)\n```\n\n## Zusammenfassung\n\nKollisionsbehandlung muss den Zustand kontrolliert aktualisieren.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Breakout“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Entwirf eine Funktion, die Trefferzustand und Punktestand verändert.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "bricks, score = 3, 10\nhit = True\nif hit:\n    bricks -= 1\n    score += 1\nprint(bricks, score)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Breakout, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Breakout mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Eine Kollision, die in mehreren Frames weiter erkannt wird, kann Punkte mehrfach vergeben."
+      ],
+      "summary": [
+        "Kollisionsbehandlung muss den Zustand kontrolliert aktualisieren."
+      ],
+      "questions": [
+        {
+          "prompt": "Was sollte nach dem Ziegel-Treffer passieren?",
+          "choices": [
+            "Ziegel entfernen, Ball umkehren und einmal punkten.",
+            "Das gesamte Spielfeld sofort neu erzeugen."
+          ],
+          "answer": 0,
+          "explanation": "Kollisionsbehandlung muss den Zustand kontrolliert aktualisieren."
+        }
+      ],
+      "exercise": "Entwirf eine Funktion, die Trefferzustand und Punktestand verändert.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 2D: offizielle Vorlesungswoche 2 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/2d/2025/x/lectures/2/lang/en/lecture2.srt",
+          "course": "CS50 2D"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Python bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-2d",
+    "lesson_id": "games-04",
+    "title": "CS50 2D: Match 3",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Match 3 ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du match 3 in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEin Match-3-Spiel modelliert ein Raster, erkennt benachbarte gleiche Symbole und füllt Lücken nach einer Auflösung neu. Das Raster ist zugleich Datenmodell und Grundlage der Spielregeln.\n\n## Schrittweises Beispiel\n\nFinde horizontale oder vertikale Folgen gleicher Farben; entferne Treffer und verschiebe darüberliegende Elemente nach unten.\n\n```python\nrow = [\"red\", \"red\", \"red\", \"blue\"]\nprint(row[:3] == [row[0]] * 3)\n```\n\n## Zusammenfassung\n\nEin explizites Rastermodell erleichtert Suche und Aktualisierung.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Match 3“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Zähle gleiche Nachbarwerte in einer Zeile und markiere Dreiergruppen.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "row = [\"red\", \"red\", \"red\", \"blue\"]\nprint(row[:3] == [row[0]] * 3)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Match 3, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Match 3 mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Kettenreaktionen brauchen eine definierte Reihenfolge, sonst hängt das Ergebnis von zufälliger Aktualisierung ab."
+      ],
+      "summary": [
+        "Ein explizites Rastermodell erleichtert Suche und Aktualisierung."
+      ],
+      "questions": [
+        {
+          "prompt": "Wofür steht ein Raster im Spiel?",
+          "choices": [
+            "Für den Zustand jeder Zelle des Spielfelds.",
+            "Für die Liste aller Tastaturkürzel."
+          ],
+          "answer": 0,
+          "explanation": "Ein explizites Rastermodell erleichtert Suche und Aktualisierung."
+        }
+      ],
+      "exercise": "Zähle gleiche Nachbarwerte in einer Zeile und markiere Dreiergruppen.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 2D: offizielle Vorlesungswoche 3 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/2d/2025/x/lectures/3/lang/en/lecture3.srt",
+          "course": "CS50 2D"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Python bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-2d",
+    "lesson_id": "games-05",
+    "title": "CS50 2D: Plattformspiel",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Plattformspiel ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du plattformspiel in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nPlattformspiele verbinden Karten, Schwerkraft, Sprunglogik, horizontale Bewegung und Kamera. Kollisionen mit dem Level bestimmen, ob eine Figur steht, fällt oder anstößt.\n\n## Schrittweises Beispiel\n\nEine Karte kann feste Blöcke als Raster speichern. Vorwärtsbewegung wird geprüft, bevor die neue Position übernommen wird.\n\n```python\nstates = {\"grounded\": [\"jump\", \"run\"], \"airborne\": [\"fall\", \"land\"]}\nprint(states)\n```\n\n## Zusammenfassung\n\nDer Bewegungszustand steuert erlaubte Aktionen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Plattformspiel“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Beschreibe Zustände für stehen, springen und fallen samt erlaubten Übergängen.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "states = {\"grounded\": [\"jump\", \"run\"], \"airborne\": [\"fall\", \"land\"]}\nprint(states)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Plattformspiel, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Plattformspiel mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ein Sprung darf nicht unbegrenzt in der Luft erneut ausgelöst werden, wenn nur Bodensprünge vorgesehen sind."
+      ],
+      "summary": [
+        "Der Bewegungszustand steuert erlaubte Aktionen."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche Information begrenzt einen Bodensprung?",
+          "choices": [
+            "Ob die Figur gerade auf einer Oberfläche steht.",
+            "Wie viele Leveldateien vorhanden sind."
+          ],
+          "answer": 0,
+          "explanation": "Der Bewegungszustand steuert erlaubte Aktionen."
+        }
+      ],
+      "exercise": "Beschreibe Zustände für stehen, springen und fallen samt erlaubten Übergängen.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 2D: offizielle Vorlesungswoche 4 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/2d/2025/x/lectures/4/lang/en/lecture4.srt",
+          "course": "CS50 2D"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Python bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-2d",
+    "lesson_id": "games-06",
+    "title": "CS50 2D: Abenteuer und Zustände",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Abenteuer und Zustände ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du abenteuer und zustände in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEin Abenteuer mit Räumen und Gegenständen lässt sich als Graph aus Orten und erlaubten Übergängen darstellen. Inventar und Ereignisse verändern, welche Aktionen verfügbar sind.\n\n## Schrittweises Beispiel\n\nEine Tür verbindet zwei Räume und kann nur mit Schlüssel geöffnet werden. Der Schlüssel ist Teil des Spielzustands.\n\n```python\nrooms = {\"hall\": [\"kitchen\", \"cellar\"], \"cellar\": [\"hall\"]}\nprint(rooms[\"hall\"])\n```\n\n## Zusammenfassung\n\nGraphen machen Erreichbarkeit und Levelverbindungen überprüfbar.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Abenteuer und Zustände“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Skizziere drei Räume, eine gesperrte Tür und die nötige Inventarbedingung.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "rooms = {\"hall\": [\"kitchen\", \"cellar\"], \"cellar\": [\"hall\"]}\nprint(rooms[\"hall\"])",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Abenteuer und Zustände, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Abenteuer und Zustände mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Wenn Regeln über viele Skripte verteilt sind, entstehen widersprüchliche Zustände oder unerreichbare Räume."
+      ],
+      "summary": [
+        "Graphen machen Erreichbarkeit und Levelverbindungen überprüfbar."
+      ],
+      "questions": [
+        {
+          "prompt": "Was bildet ein Raumgraph ab?",
+          "choices": [
+            "Orte und mögliche Übergänge zwischen ihnen.",
+            "Die Bildrate der Animation."
+          ],
+          "answer": 0,
+          "explanation": "Graphen machen Erreichbarkeit und Levelverbindungen überprüfbar."
+        }
+      ],
+      "exercise": "Skizziere drei Räume, eine gesperrte Tür und die nötige Inventarbedingung.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 2D: offizielle Vorlesungswoche 5 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/2d/2025/x/lectures/5/lang/en/lecture5.srt",
+          "course": "CS50 2D"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Python bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-2d",
+    "lesson_id": "games-07",
+    "title": "CS50 2D: Angry Birds",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Angry Birds ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du angry birds in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEin Schleuder-Spiel verwendet eine Flugbahn mit Startgeschwindigkeit, Gravitation und gegebenenfalls Kollisionen. Die Spielphysik sollte stabil und in kleinen Schritten aktualisiert werden.\n\n## Schrittweises Beispiel\n\nDie Startgeschwindigkeit hat horizontale und vertikale Komponenten; Gravitation ändert vertikale Geschwindigkeit mit der Zeit.\n\n```python\nvy, g, dt = 0, 9.8, 0.2\nprint(vy + g * dt)\n```\n\n## Zusammenfassung\n\nEin physikalisches Modell definiert, wie Zustand pro Zeitschritt fortgeschrieben wird.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Angry Birds“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Berechne vertikale Geschwindigkeit nach 0,2 s bei Gravitation 9,8 m/s².",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "vy, g, dt = 0, 9.8, 0.2\nprint(vy + g * dt)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Angry Birds, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Angry Birds mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Das Spielgefühl hängt auch von Masse, Dämpfung und Kollisionsmaterial ab; ein plausibles Modell muss nicht perfekte reale Physik sein."
+      ],
+      "summary": [
+        "Ein physikalisches Modell definiert, wie Zustand pro Zeitschritt fortgeschrieben wird."
+      ],
+      "questions": [
+        {
+          "prompt": "Was ändert Gravitation direkt?",
+          "choices": [
+            "Die vertikale Geschwindigkeit über die Zeit.",
+            "Die Farbe des Geschosses."
+          ],
+          "answer": 0,
+          "explanation": "Ein physikalisches Modell definiert, wie Zustand pro Zeitschritt fortgeschrieben wird."
+        }
+      ],
+      "exercise": "Berechne vertikale Geschwindigkeit nach 0,2 s bei Gravitation 9,8 m/s².",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 2D: offizielle Vorlesungswoche 6 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/2d/2025/x/lectures/6/lang/en/lecture6.srt",
+          "course": "CS50 2D"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Python bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-2d",
+    "lesson_id": "games-08",
+    "title": "CS50 2D: Pokémon und Menüs",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Pokémon und Menüs ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du pokémon und menüs in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nRundenbasierte Spiele bestehen aus expliziten Phasen: Zugwahl, Aktion, Effekt, Zustandsprüfung und nächster Zug. Datenobjekte halten Figurenwerte, während Regeln den Ausgang berechnen.\n\n## Schrittweises Beispiel\n\nEine Attacke verändert Lebenspunkte nur nach Trefferprüfung und Schadensberechnung; danach wird geprüft, ob eine Figur kampfunfähig ist.\n\n```python\nhp, damage = 30, 7\nhp = max(0, hp - damage)\nprint(hp)\n```\n\n## Zusammenfassung\n\nTrennung hält Berechnung nachvollziehbar und Eingabeoberfläche austauschbar.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Pokémon und Menüs“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Modelliere eine Runde mit Auswahl, Schadensberechnung und Zustandswechsel.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "hp, damage = 30, 7\nhp = max(0, hp - damage)\nprint(hp)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Pokémon und Menüs, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Pokémon und Menüs mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Regeln in UI-Klickhandler einzubauen erschwert Wiederverwendung und Tests."
+      ],
+      "summary": [
+        "Trennung hält Berechnung nachvollziehbar und Eingabeoberfläche austauschbar."
+      ],
+      "questions": [
+        {
+          "prompt": "Warum Spielregeln von der Benutzeroberfläche trennen?",
+          "choices": [
+            "Damit sie unabhängig getestet und über verschiedene Eingaben genutzt werden können.",
+            "Damit die UI keinen Zustand mehr braucht."
+          ],
+          "answer": 0,
+          "explanation": "Trennung hält Berechnung nachvollziehbar und Eingabeoberfläche austauschbar."
+        }
+      ],
+      "exercise": "Modelliere eine Runde mit Auswahl, Schadensberechnung und Zustandswechsel.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 2D: offizielle Vorlesungswoche 7 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/2d/2025/x/lectures/7/lang/en/lecture7.srt",
+          "course": "CS50 2D"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Das Code-Labor führt hier Python als ergänzendes Modell aus. Python bzw. Scratch-Blöcke werden nicht nativ ausgeführt; für diese Kurse ist die Übung eine Konzeptübertragung."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-01",
+    "title": "CS50 Business: Informationen interpretieren",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Informationen interpretieren ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du informationen interpretieren in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nDigitale Arbeit beginnt mit Repräsentationen: Bits, Dateien, Metadaten und Maßeinheiten. Entscheidungen hängen davon ab, ob Quelle, Erhebungsmethode und Bedeutung eines Werts bekannt sind.\n\n## Schrittweises Beispiel\n\nBei einer Kennzahl „120“ muss klar sein, ob sie Nutzer, Euro, Millisekunden oder eine Veränderung gegenüber gestern meint.\n\n```python\nmetric = {\"name\": \"weekly_active_users\", \"value\": 120, \"unit\": \"people\", \"period\": \"week\"}\nprint(metric)\n```\n\n## Zusammenfassung\n\nKontext bestimmt, welche Interpretation sinnvoll ist.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Informationen interpretieren“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Definiere eine Geschäftskennzahl samt Quelle, Einheit und Zeitraum.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "metric = {\"name\": \"weekly_active_users\", \"value\": 120, \"unit\": \"people\", \"period\": \"week\"}\nprint(metric)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Informationen interpretieren, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Informationen interpretieren mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Eine präzise Zahl ohne Definition oder Bezugszeitraum kann trotzdem irreführend sein."
+      ],
+      "summary": [
+        "Kontext bestimmt, welche Interpretation sinnvoll ist."
+      ],
+      "questions": [
+        {
+          "prompt": "Was braucht eine Kennzahl zusätzlich zum Zahlenwert?",
+          "choices": [
+            "Einheit, Definition und Kontext.",
+            "Nur mehr Dezimalstellen."
+          ],
+          "answer": 0,
+          "explanation": "Kontext bestimmt, welche Interpretation sinnvoll ist."
+        }
+      ],
+      "exercise": "Definiere eine Geschäftskennzahl samt Quelle, Einheit und Zeitraum.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 0 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/0/lang/en/lecture0.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-02",
+    "title": "CS50 Business: Algorithmen analysieren",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Algorithmen analysieren ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du algorithmen analysieren in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nProzessschritte lassen sich als Algorithmus betrachten: klare Eingaben, wiederholbare Regeln und überprüfbares Ergebnis. Aufwand wächst mit Datenmenge; Kosten und Wartezeit sind für Geschäftsprozesse relevant.\n\n## Schrittweises Beispiel\n\nManuelle Prüfung jedes Datensatzes wächst linear. Ein Index kann gezielte Suche beschleunigen, braucht aber Pflege.\n\n```python\nn = 1000\nprint(n, \"linear checks vs about\", 10, \"binary steps\")\n```\n\n## Zusammenfassung\n\nWachstum hilft beim Vergleichen, ersetzt aber keine Messung.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Algorithmen analysieren“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Vergleiche lineare Prüfung mit binärer Suche für eine sortierte Kundenliste.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "n = 1000\nprint(n, \"linear checks vs about\", 10, \"binary steps\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Algorithmen analysieren, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Algorithmen analysieren mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Automatisierung spart nicht automatisch Kosten, wenn Fehlerkorrektur oder Ausnahmen dominieren."
+      ],
+      "summary": [
+        "Wachstum hilft beim Vergleichen, ersetzt aber keine Messung."
+      ],
+      "questions": [
+        {
+          "prompt": "Was beschreibt Big O?",
+          "choices": [
+            "Wie der Aufwand bei wachsender Eingabe wächst.",
+            "Exakte Laufzeit auf jedem Computer."
+          ],
+          "answer": 0,
+          "explanation": "Wachstum hilft beim Vergleichen, ersetzt aber keine Messung."
+        }
+      ],
+      "exercise": "Vergleiche lineare Prüfung mit binärer Suche für eine sortierte Kundenliste.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 1 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/1/lang/en/lecture1.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-03",
+    "title": "CS50 Business: Datenstrukturen entwerfen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Datenstrukturen entwerfen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du datenstrukturen entwerfen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nDie Wahl der Datenstruktur beeinflusst Such-, Einfüge- und Aktualisierungskosten. Geschäftsregeln sollten als Datenmodell sichtbar werden, damit derselbe Fakt nicht widersprüchlich mehrfach gespeichert wird.\n\n## Schrittweises Beispiel\n\nKunden besitzen eindeutige IDs; Bestellungen referenzieren die ID statt Name und Adresse zu duplizieren.\n\n```python\ncustomer = {\"id\": 7, \"orders\": [101, 102]}\nprint(customer)\n```\n\n## Zusammenfassung\n\nStabile Schlüssel trennen Identität von veränderbaren Beschriftungen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Datenstrukturen entwerfen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Skizziere Kundschaft und Bestellung mit einer Eins-zu-viele-Beziehung.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "customer = {\"id\": 7, \"orders\": [101, 102]}\nprint(customer)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Datenstrukturen entwerfen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Datenstrukturen entwerfen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ein Datenmodell, das reale Beziehungen ignoriert, macht Berichte inkonsistent."
+      ],
+      "summary": [
+        "Stabile Schlüssel trennen Identität von veränderbaren Beschriftungen."
+      ],
+      "questions": [
+        {
+          "prompt": "Wann ist ein Schlüssel nützlich?",
+          "choices": [
+            "Wenn Datensätze stabil und eindeutig referenziert werden sollen.",
+            "Wenn man eine Tabelle hübscher färben möchte."
+          ],
+          "answer": 0,
+          "explanation": "Stabile Schlüssel trennen Identität von veränderbaren Beschriftungen."
+        }
+      ],
+      "exercise": "Skizziere Kundschaft und Bestellung mit einer Eins-zu-viele-Beziehung.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 2 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/2/lang/en/lecture2.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-04",
+    "title": "CS50 Business: Programmieren üben",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Programmieren üben ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du programmieren üben in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nProgrammierung übersetzt Anforderungen in kleine testbare Schritte. Funktionen, Kontrollfluss, Datenvalidierung und Fehlermeldungen machen Abläufe nachvollziehbar.\n\n## Schrittweises Beispiel\n\nEine Rabattberechnung erhält Listenpreis und Rabattquote und liefert den Preis zurück; Eingaben werden vor der Berechnung geprüft.\n\n```python\ndef net_price(price, discount):\n    if price < 0 or not 0 <= discount <= 1:\n        raise ValueError(\"invalid input\")\n    return round(price * (1 - discount), 2)\nprint(net_price(50, 0.1))\n```\n\n## Zusammenfassung\n\nKleine deterministische Funktionen haben überprüfbare Verträge.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Programmieren üben“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Berechne Nettopreis und decke Rabatt 0 % sowie ungültige Werte ab.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "def net_price(price, discount):\n    if price < 0 or not 0 <= discount <= 1:\n        raise ValueError(\"invalid input\")\n    return round(price * (1 - discount), 2)\nprint(net_price(50, 0.1))",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Programmieren üben, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Programmieren üben mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Eine Formel im Code ist noch keine vollständige Anforderung: Rundung, Grenzen und ungültige Eingaben brauchen Regeln."
+      ],
+      "summary": [
+        "Kleine deterministische Funktionen haben überprüfbare Verträge."
+      ],
+      "questions": [
+        {
+          "prompt": "Was macht eine Funktion leichter testbar?",
+          "choices": [
+            "Klare Eingaben und ein zurückgegebener Wert.",
+            "Versteckte Änderungen an beliebigen globalen Daten."
+          ],
+          "answer": 0,
+          "explanation": "Kleine deterministische Funktionen haben überprüfbare Verträge."
+        }
+      ],
+      "exercise": "Berechne Nettopreis und decke Rabatt 0 % sowie ungültige Werte ab.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 3 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/3/lang/en/lecture3.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-05",
+    "title": "CS50 Business: KI sinnvoll einsetzen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in KI sinnvoll einsetzen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du ki sinnvoll einsetzen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nKI-Systeme schätzen Antworten aus Daten; sie sind nützlich, wenn Ziel, Fehlerkosten und menschliche Kontrolle klar sind. Auswahl von Modell, Daten und Evaluation ist eine Geschäftsentscheidung.\n\n## Schrittweises Beispiel\n\nEin Modell darf eingehende Supportanfragen vorsortieren; ein Mensch prüft kritische oder unsichere Fälle.\n\n```python\nchecks = [\"representative examples\", \"error review\", \"human escalation\", \"privacy\"]\nprint(checks)\n```\n\n## Zusammenfassung\n\nEin Einsatz braucht messbares Ziel und verantwortliche Eskalation.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „KI sinnvoll einsetzen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Erstelle eine Prüfliste für ein Modell, das Kundenanfragen kategorisiert.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "checks = [\"representative examples\", \"error review\", \"human escalation\", \"privacy\"]\nprint(checks)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu KI sinnvoll einsetzen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von KI sinnvoll einsetzen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Eine Demo mit wenigen Beispielen belegt weder Zuverlässigkeit noch faire Leistung im Alltag."
+      ],
+      "summary": [
+        "Ein Einsatz braucht messbares Ziel und verantwortliche Eskalation."
+      ],
+      "questions": [
+        {
+          "prompt": "Was sollte vor einem KI-Einsatz feststehen?",
+          "choices": [
+            "Aufgabe, Fehlerkosten, Datenbasis und Prüfverfahren.",
+            "Nur der Produktname des Modells."
+          ],
+          "answer": 0,
+          "explanation": "Ein Einsatz braucht messbares Ziel und verantwortliche Eskalation."
+        }
+      ],
+      "exercise": "Erstelle eine Prüfliste für ein Modell, das Kundenanfragen kategorisiert.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 4 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/4/lang/en/lecture4.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-06",
+    "title": "CS50 Business: Internet umsetzen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Internet umsetzen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du internet umsetzen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nDas Internet verbindet Netzwerke; DNS übersetzt Namen, IP adressiert Ziele und Protokolle legen Kommunikation fest. Verfügbarkeit und Latenz wirken direkt auf digitale Dienste.\n\n## Schrittweises Beispiel\n\nEin Browser fragt DNS für einen Hostnamen ab, baut eine verschlüsselte Verbindung auf und sendet eine HTTP-Anfrage.\n\n```python\nsteps = [\"URL\", \"DNS\", \"TLS\", \"HTTP request\", \"response\"]\nprint(\" -> \".join(steps))\n```\n\n## Zusammenfassung\n\nDNS ist ein Namensdienst als Teil der Verbindungskette.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Internet umsetzen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Zeichne die Stationen vom Klick auf einen Link bis zur Antwort des Servers.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "steps = [\"URL\", \"DNS\", \"TLS\", \"HTTP request\", \"response\"]\nprint(\" -> \".join(steps))",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Internet umsetzen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Internet umsetzen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "„Im Internet“ bedeutet nicht „für alle sicher erreichbar“; Transport, Zugriff und Dienstverfügbarkeit sind verschieden."
+      ],
+      "summary": [
+        "DNS ist ein Namensdienst als Teil der Verbindungskette."
+      ],
+      "questions": [
+        {
+          "prompt": "Wofür wird DNS genutzt?",
+          "choices": [
+            "Für die Zuordnung von Domainnamen zu Netzwerkadressen.",
+            "Zum Speichern aller Webseiten."
+          ],
+          "answer": 0,
+          "explanation": "DNS ist ein Namensdienst als Teil der Verbindungskette."
+        }
+      ],
+      "exercise": "Zeichne die Stationen vom Klick auf einen Link bis zur Antwort des Servers.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 5 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/5/lang/en/lecture5.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-07",
+    "title": "CS50 Business: Web zusammenfügen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Web zusammenfügen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du web zusammenfügen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEine Website kombiniert strukturierte Inhalte, Gestaltung und Verhalten. HTML beschreibt Bedeutung, CSS Präsentation und JavaScript Interaktion; serverseitiger Code und APIs liefern Daten.\n\n## Schrittweises Beispiel\n\nEin Formular sammelt Eingaben, sendet sie per HTTP und zeigt Erfolg oder einen verständlichen Fehler.\n\n```python\nflow = [\"form\", \"validate\", \"POST\", \"server checks\", \"database\", \"feedback\"]\nprint(flow)\n```\n\n## Zusammenfassung\n\nSemantik hilft Browsern, Assistenztechnik und Wartung.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Web zusammenfügen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Skizziere den Weg einer Formulareingabe bis zur gespeicherten Antwort.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "flow = [\"form\", \"validate\", \"POST\", \"server checks\", \"database\", \"feedback\"]\nprint(flow)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Web zusammenfügen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Web zusammenfügen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Clientseitige Validierung verbessert Bedienung, ersetzt aber keine serverseitige Prüfung."
+      ],
+      "summary": [
+        "Semantik hilft Browsern, Assistenztechnik und Wartung."
+      ],
+      "questions": [
+        {
+          "prompt": "Wofür ist semantisches HTML wichtig?",
+          "choices": [
+            "Für Struktur, Zugänglichkeit und verständliche Dokumentbedeutung.",
+            "Nur für die Farbe der Seite."
+          ],
+          "answer": 0,
+          "explanation": "Semantik hilft Browsern, Assistenztechnik und Wartung."
+        }
+      ],
+      "exercise": "Skizziere den Weg einer Formulareingabe bis zur gespeicherten Antwort.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 6 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/6/lang/en/lecture6.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-08",
+    "title": "CS50 Business: Datenbanken bereitstellen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Datenbanken bereitstellen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du datenbanken bereitstellen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nEine Datenbank verwaltet strukturierte, gemeinsam genutzte Informationen. Schema, Berechtigungen, Backups, Migrationen und Abfrageplanung gehören zum Betrieb.\n\n## Schrittweises Beispiel\n\nEine Migration ergänzt eine optionale Spalte; ein Backup wird erstellt und Wiederherstellung regelmäßig geprobt.\n\n```python\nsteps = [\"backup\", \"apply migration\", \"verify\", \"monitor\", \"rollback plan\"]\nprint(steps)\n```\n\n## Zusammenfassung\n\nBetriebsfähigkeit zeigt sich erst durch eine erfolgreiche Wiederherstellung.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Datenbanken bereitstellen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Plane sichere Veröffentlichung einer Schemaänderung inklusive Rollback.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "steps = [\"backup\", \"apply migration\", \"verify\", \"monitor\", \"rollback plan\"]\nprint(steps)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Datenbanken bereitstellen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Datenbanken bereitstellen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "„Backup vorhanden“ ist nicht gleich „Daten wiederherstellbar“; Restore-Zeit und Konsistenz müssen geprüft werden."
+      ],
+      "summary": [
+        "Betriebsfähigkeit zeigt sich erst durch eine erfolgreiche Wiederherstellung."
+      ],
+      "questions": [
+        {
+          "prompt": "Warum Restore testen?",
+          "choices": [
+            "Damit klar ist, ob und wie schnell Daten tatsächlich wiederhergestellt werden.",
+            "Damit Indizes automatisch entstehen."
+          ],
+          "answer": 0,
+          "explanation": "Betriebsfähigkeit zeigt sich erst durch eine erfolgreiche Wiederherstellung."
+        }
+      ],
+      "exercise": "Plane sichere Veröffentlichung einer Schemaänderung inklusive Rollback.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 7 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/7/lang/en/lecture7.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-business",
+    "lesson_id": "business-09",
+    "title": "CS50 Business: Systeme absichern",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Systeme absichern ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du systeme absichern in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nSicherheit schützt Vertraulichkeit, Integrität und Verfügbarkeit durch Kontrollen passend zu Risiken. Identitäten, Berechtigungen, Aktualisierungen, Verschlüsselung und Reaktion auf Vorfälle gehören zusammen.\n\n## Schrittweises Beispiel\n\nEin Admin-Konto mit MFA, minimale Rollenrechte und getestete Updates reduzieren unterschiedliche Angriffswege.\n\n```python\ncontrols = {\"stolen password\": \"MFA\", \"overbroad access\": \"role checks\", \"data loss\": \"tested backup\"}\nprint(controls)\n```\n\n## Zusammenfassung\n\nBegrenzte Berechtigungen reduzieren mögliche Schäden.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Systeme absichern“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Erstelle ein Bedrohungs- und Kontrollpaar für ein internes Geschäftsdashboard.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "controls = {\"stolen password\": \"MFA\", \"overbroad access\": \"role checks\", \"data loss\": \"tested backup\"}\nprint(controls)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Systeme absichern, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Systeme absichern mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ein einzelnes Werkzeug löst nicht alle Risiken; Kontrollen müssen zur Bedrohung und zum Betrieb passen."
+      ],
+      "summary": [
+        "Begrenzte Berechtigungen reduzieren mögliche Schäden."
+      ],
+      "questions": [
+        {
+          "prompt": "Was bedeutet Least Privilege?",
+          "choices": [
+            "Jede Identität erhält nur die erforderlichen Rechte.",
+            "Alle Mitarbeitenden erhalten Adminrechte."
+          ],
+          "answer": 0,
+          "explanation": "Begrenzte Berechtigungen reduzieren mögliche Schäden."
+        }
+      ],
+      "exercise": "Erstelle ein Bedrohungs- und Kontrollpaar für ein internes Geschäftsdashboard.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 Business: offizielle Vorlesungswoche 8 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/business/2025/x/lectures/8/lang/en/lecture8.txt",
+          "course": "CS50 Business"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-01",
+    "title": "CS50 for Lawyers: Computational Thinking",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Computational Thinking ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du computational thinking in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nComputational Thinking übersetzt ein Problem in Eingaben, Regeln und Ergebnisse. Abstraktion, Zerlegung, Muster und Algorithmen helfen, technische Systeme präzise zu beurteilen.\n\n## Schrittweises Beispiel\n\nEin digitales Aktenregister braucht eindeutige Akten-ID, Suchregeln, Zugriffsrechte und nachvollziehbare Änderungsprotokolle.\n\n```python\npipeline = [\"documents\", \"criteria\", \"filter\", \"results\", \"review\"]\nprint(pipeline)\n```\n\n## Zusammenfassung\n\nTechnische Beschreibung und normative Bewertung sind unterschiedliche Arbeitsschritte.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Computational Thinking“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Beschreibe Eingaben, Verarbeitung, Ausgabe und mögliche Fehler eines Dokumentfilters.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "pipeline = [\"documents\", \"criteria\", \"filter\", \"results\", \"review\"]\nprint(pipeline)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Computational Thinking, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Computational Thinking mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ein technischer Begriff ersetzt keine rechtliche Einordnung; Annahmen über Datenfluss und Verantwortliche müssen offengelegt werden."
+      ],
+      "summary": [
+        "Technische Beschreibung und normative Bewertung sind unterschiedliche Arbeitsschritte."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche Frage klärt einen Algorithmus?",
+          "choices": [
+            "Welche geordneten Schritte aus Eingaben ein Ergebnis erzeugen.",
+            "Welche Rechtsnorm automatisch gilt."
+          ],
+          "answer": 0,
+          "explanation": "Technische Beschreibung und normative Bewertung sind unterschiedliche Arbeitsschritte."
+        }
+      ],
+      "exercise": "Beschreibe Eingaben, Verarbeitung, Ausgabe und mögliche Fehler eines Dokumentfilters.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 1 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/0/lang/en/lecture0.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-02",
+    "title": "CS50 for Lawyers: Programmiersprachen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Programmiersprachen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du programmiersprachen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nProgrammiersprachen definieren Syntax und Laufzeitverhalten. Quelltext wird interpretiert, kompiliert oder in Zwischencode übersetzt; Versionen, Bibliotheken und Laufzeitumgebung beeinflussen Ergebnisse.\n\n## Schrittweises Beispiel\n\nDieselbe Regel kann als Skript auf einem Server oder als Code im Browser laufen, mit unterschiedlichen Zugriffsrechten und Risiken.\n\n```python\nsystem = {\"language\": \"Python\", \"input\": \"CSV\", \"dependency\": \"csv module\", \"runtime\": \"local\"}\nprint(system)\n```\n\n## Zusammenfassung\n\nReproduzierbarkeit braucht genaue Versionen und Umgebung.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Programmiersprachen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Liste für ein kleines Programm Sprache, Eingaben, Abhängigkeiten und Laufzeitort.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "system = {\"language\": \"Python\", \"input\": \"CSV\", \"dependency\": \"csv module\", \"runtime\": \"local\"}\nprint(system)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Programmiersprachen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Programmiersprachen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Quelltext allein erklärt nicht, welche Daten zur Laufzeit geladen oder wohin sie übertragen werden."
+      ],
+      "summary": [
+        "Reproduzierbarkeit braucht genaue Versionen und Umgebung."
+      ],
+      "questions": [
+        {
+          "prompt": "Warum Laufzeit und Abhängigkeiten prüfen?",
+          "choices": [
+            "Sie verändern Verhalten, verfügbare Funktionen und Angriffsfläche.",
+            "Sie bestimmen nur die Schriftart des Codes."
+          ],
+          "answer": 0,
+          "explanation": "Reproduzierbarkeit braucht genaue Versionen und Umgebung."
+        }
+      ],
+      "exercise": "Liste für ein kleines Programm Sprache, Eingaben, Abhängigkeiten und Laufzeitort.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 2 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/1/lang/en/lecture1.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-03",
+    "title": "CS50 for Lawyers: Algorithmen und Datenstrukturen",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Algorithmen und Datenstrukturen ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du algorithmen und datenstrukturen in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nAlgorithmen ordnen technische Entscheidungen in nachvollziehbare Schritte; Datenstrukturen formen, welche Abfragen effizient möglich sind. Beide können Auswirkungen auf Kosten, Zugang und Beweisbarkeit haben.\n\n## Schrittweises Beispiel\n\nEine Trefferliste kann über Relevanz sortiert werden. Die Sortierregel und Datenqualität beeinflussen, welche Ergebnisse oben stehen.\n\n```python\naudit = [\"inputs\", \"ranking rule\", \"error cases\", \"review path\"]\nprint(audit)\n```\n\n## Zusammenfassung\n\nKriterien und Daten erklären, wie der Algorithmus Ergebnisse beeinflusst.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Algorithmen und Datenstrukturen“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Prüfe ein hypothetisches Bewerbungsranking: nenne Daten, Regel, mögliche Fehler und Einspruchsmöglichkeit.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "audit = [\"inputs\", \"ranking rule\", \"error cases\", \"review path\"]\nprint(audit)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Algorithmen und Datenstrukturen, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Algorithmen und Datenstrukturen mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ein Ranking ist nicht neutral, wenn Kriterien oder Trainingsdaten bestimmte Gruppen benachteiligen."
+      ],
+      "summary": [
+        "Kriterien und Daten erklären, wie der Algorithmus Ergebnisse beeinflusst."
+      ],
+      "questions": [
+        {
+          "prompt": "Was sollte bei einem automatisierten Ranking dokumentiert werden?",
+          "choices": [
+            "Datenquellen, Kriterien und Auswirkungen der Sortierregel.",
+            "Nur die Farbe des Ergebnisses."
+          ],
+          "answer": 0,
+          "explanation": "Kriterien und Daten erklären, wie der Algorithmus Ergebnisse beeinflusst."
+        }
+      ],
+      "exercise": "Prüfe ein hypothetisches Bewerbungsranking: nenne Daten, Regel, mögliche Fehler und Einspruchsmöglichkeit.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 3 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/2/lang/en/lecture2.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-04",
+    "title": "CS50 for Lawyers: Kryptografie",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Kryptografie ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du kryptografie in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nKryptografie schützt Daten mit mathematischen Verfahren. Hashes prüfen Integrität, symmetrische Verschlüsselung nutzt denselben geheimen Schlüssel und asymmetrische Verfahren nutzen zusammengehörige Schlüssel.\n\n## Schrittweises Beispiel\n\nHTTPS nutzt Zertifikate und Schlüsselaustausch, um Kommunikation mit einem Server vertraulich und authentifiziert zu beginnen.\n\n```python\ngoals = {\"confidentiality\": \"encryption\", \"integrity\": \"hash/MAC\", \"authenticity\": \"signature/certificate\"}\nprint(goals)\n```\n\n## Zusammenfassung\n\nIntegritätsprüfung und Vertraulichkeit lösen unterschiedliche Aufgaben.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Kryptografie“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Ordne Vertraulichkeit, Integrität und Authentizität je eine technische Maßnahme zu.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "goals = {\"confidentiality\": \"encryption\", \"integrity\": \"hash/MAC\", \"authenticity\": \"signature/certificate\"}\nprint(goals)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Kryptografie, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Kryptografie mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Verschlüsselung schützt nicht vor einem kompromittierten Endgerät oder vor Daten, die Empfänger anschließend weitergeben."
+      ],
+      "summary": [
+        "Integritätsprüfung und Vertraulichkeit lösen unterschiedliche Aufgaben."
+      ],
+      "questions": [
+        {
+          "prompt": "Worin unterscheiden sich Hash und Verschlüsselung?",
+          "choices": [
+            "Ein Hash ist nicht zum Zurückwandeln gedacht; Verschlüsselung kann mit Schlüssel entschlüsselt werden.",
+            "Beide Verfahren sind immer umkehrbar."
+          ],
+          "answer": 0,
+          "explanation": "Integritätsprüfung und Vertraulichkeit lösen unterschiedliche Aufgaben."
+        }
+      ],
+      "exercise": "Ordne Vertraulichkeit, Integrität und Authentizität je eine technische Maßnahme zu.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 4 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/3/lang/en/lecture3.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-05",
+    "title": "CS50 for Lawyers: Cybersecurity I",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Cybersecurity I ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du cybersecurity i in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nCybersecurity beginnt mit Risiken, Angriffsflächen und Schutzmaßnahmen. Phishing, schwache Zugangsdaten, veraltete Software und zu weitreichende Rechte sind miteinander verbundene Risiken.\n\n## Schrittweises Beispiel\n\nEin Threat Model identifiziert schützenswerte Daten, Angreiferziele, Vertrauensgrenzen und präventive sowie detektive Kontrollen.\n\n```python\nrisk = {\"asset\": \"case file\", \"threat\": \"account takeover\", \"control\": \"MFA + access log\"}\nprint(risk)\n```\n\n## Zusammenfassung\n\nRisiko priorisiert Schutzmaßnahmen nach Bedrohung und Schaden.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Cybersecurity I“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Erstelle für eine vertrauliche Datei ein kurzes Threat Model.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "risk = {\"asset\": \"case file\", \"threat\": \"account takeover\", \"control\": \"MFA + access log\"}\nprint(risk)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Cybersecurity I, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Cybersecurity I mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Eine Schwachstelle ist nicht automatisch ein eingetretener Vorfall; Wahrscheinlichkeit und Auswirkung gehören zur Risikobewertung."
+      ],
+      "summary": [
+        "Risiko priorisiert Schutzmaßnahmen nach Bedrohung und Schaden."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche zwei Faktoren bestimmen Risiko häufig?",
+          "choices": [
+            "Wahrscheinlichkeit und mögliche Auswirkung.",
+            "Dateigröße und Schriftfarbe."
+          ],
+          "answer": 0,
+          "explanation": "Risiko priorisiert Schutzmaßnahmen nach Bedrohung und Schaden."
+        }
+      ],
+      "exercise": "Erstelle für eine vertrauliche Datei ein kurzes Threat Model.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 5 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/4/lang/en/lecture4.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-06",
+    "title": "CS50 for Lawyers: Internet und Cloud",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Internet und Cloud ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du internet und cloud in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nCloud-Dienste stellen Rechenleistung, Speicher und Plattformen über Netzwerke bereit. Mandantentrennung, Identität, Region, Auftragsverarbeitung und Wiederherstellung sind zentrale Fragen.\n\n## Schrittweises Beispiel\n\nEine Akte kann in einem Cloud-Speicher liegen; Rollen regeln Zugriff, Verschlüsselung schützt gespeicherte Daten und Logs zeigen administrative Zugriffe.\n\n```python\nresponsibilities = {\"facility\": \"provider\", \"user_roles\": \"customer\", \"data_policy\": \"shared\"}\nprint(responsibilities)\n```\n\n## Zusammenfassung\n\nVerantwortungsgrenzen hängen vom genutzten Dienst und der Konfiguration ab.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Internet und Cloud“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Ordne Identitätsverwaltung, physische Rechenzentren und Kundendatenverschlüsselung Verantwortlichen zu.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "responsibilities = {\"facility\": \"provider\", \"user_roles\": \"customer\", \"data_policy\": \"shared\"}\nprint(responsibilities)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Internet und Cloud, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Internet und Cloud mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Cloud bedeutet nicht automatisch sicher oder unsicher: Verantwortung verteilt sich zwischen Anbieter und Betreiber."
+      ],
+      "summary": [
+        "Verantwortungsgrenzen hängen vom genutzten Dienst und der Konfiguration ab."
+      ],
+      "questions": [
+        {
+          "prompt": "Was ist Shared Responsibility?",
+          "choices": [
+            "Anbieter und Kunde tragen unterschiedliche Sicherheitsaufgaben.",
+            "Der Anbieter haftet technisch für jede Fehlkonfiguration."
+          ],
+          "answer": 0,
+          "explanation": "Verantwortungsgrenzen hängen vom genutzten Dienst und der Konfiguration ab."
+        }
+      ],
+      "exercise": "Ordne Identitätsverwaltung, physische Rechenzentren und Kundendatenverschlüsselung Verantwortlichen zu.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 6 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/5/lang/en/lecture5.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-07",
+    "title": "CS50 for Lawyers: Webentwicklung",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Webentwicklung ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du webentwicklung in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nWebanwendungen kombinieren Browser, Server, Netzwerk und oft Datenbank. Eine Analyse sollte Anfragen, Antworten, Cookies, Sessions, Eingaben und Vertrauensgrenzen verfolgen.\n\n## Schrittweises Beispiel\n\nEin Browser sendet ein Formular; der Server validiert die Daten, prüft die Sitzung und gibt eine passende Antwort zurück.\n\n```python\nrequest_path = [\"browser\", \"TLS\", \"server auth\", \"authorization\", \"database\"]\nprint(request_path)\n```\n\n## Zusammenfassung\n\nClientanzeigen lassen sich ändern; serverseitige Regeln schützen Ressourcen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Webentwicklung“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Zeichne die Grenze zwischen Browser und Server für eine geschützte Aktion.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "request_path = [\"browser\", \"TLS\", \"server auth\", \"authorization\", \"database\"]\nprint(request_path)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Webentwicklung, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Webentwicklung mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ein Schloss-Symbol bedeutet verschlüsselte Verbindung, aber weder vertrauenswürdigen Inhalt noch korrekte Autorisierung."
+      ],
+      "summary": [
+        "Clientanzeigen lassen sich ändern; serverseitige Regeln schützen Ressourcen."
+      ],
+      "questions": [
+        {
+          "prompt": "Wo muss eine Berechtigung geprüft werden?",
+          "choices": [
+            "Auf dem Server für jede geschützte Aktion.",
+            "Nur durch ausgeblendete Schaltflächen im Browser."
+          ],
+          "answer": 0,
+          "explanation": "Clientanzeigen lassen sich ändern; serverseitige Regeln schützen Ressourcen."
+        }
+      ],
+      "exercise": "Zeichne die Grenze zwischen Browser und Server für eine geschützte Aktion.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 7 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/6/lang/en/lecture6.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-08",
+    "title": "CS50 for Lawyers: Datenbankdesign",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Datenbankdesign ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du datenbankdesign in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nDatenbankdesign legt Entitäten, Beziehungen, Schlüssel und Integritätsregeln fest. Das Schema beeinflusst Suche, Berichte, Löschung und Nachweisbarkeit.\n\n## Schrittweises Beispiel\n\nEine Tabelle für Personen und eine für Akten verknüpfen Akten mit stabiler ID; Zugriffe können separat protokolliert werden.\n\n```python\nschema = [\"cases(id, owner_id)\", \"people(id)\", \"audit(case_id, actor_id, action, time)\"]\nprint(schema)\n```\n\n## Zusammenfassung\n\nReferenzielle Integrität verhindert verwaiste Beziehungen.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Datenbankdesign“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Skizziere eine Akte mit verantwortlicher Person und Änderungsprotokoll.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "schema = [\"cases(id, owner_id)\", \"people(id)\", \"audit(case_id, actor_id, action, time)\"]\nprint(schema)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Datenbankdesign, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Datenbankdesign mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Personenbezogene Daten sollten nicht ohne Zweck und Aufbewahrungsregel vervielfacht werden."
+      ],
+      "summary": [
+        "Referenzielle Integrität verhindert verwaiste Beziehungen."
+      ],
+      "questions": [
+        {
+          "prompt": "Was bewirkt ein Fremdschlüssel?",
+          "choices": [
+            "Er stellt sicher, dass ein Verweis auf einen passenden Datensatz zeigt.",
+            "Er verschlüsselt jede Spalte automatisch."
+          ],
+          "answer": 0,
+          "explanation": "Referenzielle Integrität verhindert verwaiste Beziehungen."
+        }
+      ],
+      "exercise": "Skizziere eine Akte mit verantwortlicher Person und Änderungsprotokoll.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 8 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/7/lang/en/lecture7.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-09",
+    "title": "CS50 for Lawyers: Cybersecurity II",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Cybersecurity II ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du cybersecurity ii in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nFortgeschrittene Sicherheitsanalyse betrachtet Softwarefehler, Lieferkette, Reaktion auf Vorfälle und Datenschutz gemeinsam. Nachweise brauchen Ursprung, Integrität und nachvollziehbare Verarbeitung.\n\n## Schrittweises Beispiel\n\nBei einem Sicherheitsvorfall werden Zugangsdaten widerrufen, Beweise gesichert, betroffene Systeme eingegrenzt und Entscheidungen dokumentiert.\n\n```python\nincident = [\"contain access\", \"preserve logs\", \"scope impact\", \"notify responsible people\"]\nprint(incident)\n```\n\n## Zusammenfassung\n\nEindämmung und nachvollziehbare Dokumentation schützen Personen und Beweise.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Cybersecurity II“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Entwirf eine kurze Incident-Checkliste mit Eindämmung, Beweissicherung und Kommunikation.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "incident = [\"contain access\", \"preserve logs\", \"scope impact\", \"notify responsible people\"]\nprint(incident)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Cybersecurity II, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Cybersecurity II mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Ad-hoc-Bereinigung vor Beweissicherung kann wichtige Spuren zerstören."
+      ],
+      "summary": [
+        "Eindämmung und nachvollziehbare Dokumentation schützen Personen und Beweise."
+      ],
+      "questions": [
+        {
+          "prompt": "Was ist ein sinnvoller erster Schritt bei Verdacht auf kompromittierte Zugangsdaten?",
+          "choices": [
+            "Zugang kontrolliert sperren/widerrufen und Vorfallplan aktivieren.",
+            "Logs ungeprüft löschen."
+          ],
+          "answer": 0,
+          "explanation": "Eindämmung und nachvollziehbare Dokumentation schützen Personen und Beweise."
+        }
+      ],
+      "exercise": "Entwirf eine kurze Incident-Checkliste mit Eindämmung, Beweissicherung und Kommunikation.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 9 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/8/lang/en/lecture8.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs50-lawyers",
+    "lesson_id": "lawyers-10",
+    "title": "CS50 for Lawyers: Recht und Technologie",
+    "difficulty": "beginner",
+    "coach_context": "Diese Lektion führt in Recht und Technologie ein und verbindet das Konzept mit einer kleinen eigenen Übung.",
+    "mental_model_and_code": "## Lernziele\n\nNach dieser Lektion kannst du recht und technologie in eigenen Worten erklären, ein kleines Beispiel entwerfen und eine typische Grenze benennen.\n\n## Erklärung\n\nTechnische Systeme beeinflussen Beweiszugang, Privatsphäre, Haftung, Urheberrecht und Diskriminierungsrisiken. Eine tragfähige Prüfung verbindet konkrete technische Tatsachen mit anwendbarer Rechtsordnung.\n\n## Schrittweises Beispiel\n\nBei einem automatisierten Entscheidungssystem sind Zweck, Datenquelle, menschliche Überprüfung, Dokumentation und betroffene Personen zu untersuchen.\n\n```python\nreview = [\"purpose\", \"data categories\", \"decision impact\", \"human review\", \"retention\", \"appeal\"]\nprint(review)\n```\n\n## Zusammenfassung\n\nDie technische Tatsachengrundlage grenzt die rechtliche Prüfung ein.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meine Erklärung zu „Recht und Technologie“ und stelle eine Rückfrage zu einer Randbedingung.",
+      "verification_heuristic": "Vergleiche Eingabe, erwartetes Ergebnis und Randfälle unabhängig mit dem Beispiel."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Erstelle ein Fragenraster für ein KI-System, das sensible Anträge vorsortiert.",
+      "starter_code": "# Schreibe eine eigene kleine Lösung.\n",
+      "hints": [
+        "Bestimme zuerst Eingabe, Zustand und gewünschtes Ergebnis.",
+        "Prüfe auch einen Grenz- oder Fehlerfall."
+      ],
+      "solution_code": "review = [\"purpose\", \"data categories\", \"decision impact\", \"human review\", \"retention\", \"appeal\"]\nprint(review)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Einsteigerlektion zu Recht und Technologie, mit eigenem Beispiel und Übung.",
+      "learning_objectives": [
+        "Erkläre die Grundidee von Recht und Technologie mit einem eigenen Beispiel.",
+        "Ordne passende Eingaben, Zustände und Ergebnisse zu.",
+        "Nenne eine typische Fehlerquelle und eine Gegenmaßnahme."
+      ],
+      "prerequisites": [
+        "Keine. Fachbegriffe werden in der Erklärung eingeführt."
+      ],
+      "common_mistakes": [
+        "Technische Möglichkeit begründet weder rechtliche Zulässigkeit noch einen bestimmten Rechtsrat."
+      ],
+      "summary": [
+        "Die technische Tatsachengrundlage grenzt die rechtliche Prüfung ein."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche Informationen braucht eine belastbare Technikbewertung?",
+          "choices": [
+            "Systemzweck, Datenfluss, Beteiligte, Risiken und einschlägige Rechtsfragen.",
+            "Nur den Produktnamen."
+          ],
+          "answer": 0,
+          "explanation": "Die technische Tatsachengrundlage grenzt die rechtliche Prüfung ein."
+        }
+      ],
+      "exercise": "Erstelle ein Fragenraster für ein KI-System, das sensible Anträge vorsortiert.",
+      "estimated_minutes": 30,
+      "sources": [
+        {
+          "label": "CS50 for Lawyers: offizielle Vorlesungswoche 10 und öffentliches Transkript",
+          "url": "https://cdn.cs50.net/law/2019/winter/lectures/9/lang/en/lecture9.srt",
+          "course": "CS50 for Lawyers"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Die Fallstudie verwendet ein ausführbares Python-Modell; die technische/rechtliche Bewertung bleibt eine eigenständige Denkaufgabe."
+    },
+    "xp": 30
+  },
+  {
+    "track_id": "cs-grundlagen",
+    "lesson_id": "cs50x-abschlussprojekt",
+    "title": "Eigenes Fullstack-Abschlussprojekt planen und vorzeigen",
+    "difficulty": "intermediate",
+    "coach_context": "Verbinde Datenmodell, Benutzeroberfläche, Logik, Tests und Veröffentlichung zu einem kleinen Produkt.",
+    "mental_model_and_code": "## Ziel\n\nEin Abschlussprojekt zeigt, dass du ein Problem selbstständig in ein überprüfbares Produkt verwandeln kannst. Wähle eine kleine Zielgruppe und konkrete Aufgabe, etwa einen Lernplaner, ein Inventar oder eine Leseliste.\n\n## Vorgehen\n\n1. Beschreibe Nutzerproblem und drei messbare Akzeptanzkriterien.\n2. Skizziere Seiten, Daten und Berechtigungen.\n3. Baue einen vollständigen Ablauf von Eingabe bis gespeicherter Antwort.\n4. Ergänze Validierung, verständliche Fehlerzustände und Tests.\n5. Dokumentiere lokale Einrichtung, Entscheidungen und Grenzen.\n6. Veröffentliche eine Demo ohne echte Geheimnisse oder unnötige Nutzerdaten.\n\n## Beispiel\n\nFür eine Leseliste: Ein Titel lässt sich hinzufügen, Status ändern und entfernen. Tests decken leere Titel und unbekannte IDs ab. Eine zweite Person muss die App anhand der Dokumentation starten können.\n\nEin eigenes Portfolio-Projekt ersetzt keine offizielle HarvardX-Einreichung.",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Prüfe meinen Projektplan: Welche Akzeptanzbedingung fehlt, und welcher Randfall könnte den Ablauf brechen?",
+      "verification_heuristic": "Starte das Projekt frisch anhand der Anleitung und probiere jeden Akzeptanzfall selbst."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Schreibe drei beobachtbare Akzeptanzkriterien für eine kleine Anwendung und ergänze positive und ungültige Testfälle.",
+      "starter_code": "criteria = []\n# Ergänze konkrete Projektkriterien.\n",
+      "hints": [
+        "Formuliere „Wenn …, dann …“.",
+        "Berücksichtige Berechtigungen und ungültige Eingaben."
+      ],
+      "solution_code": "criteria = [\n    \"Wenn ein Eintrag gespeichert wird, erscheint er in der Liste.\",\n    \"Wenn der Titel leer ist, wird nichts gespeichert.\",\n    \"Wenn eine unbekannte ID geändert wird, bleibt der Bestand unverändert.\",\n]\nfor item in criteria:\n    print(\"-\", item)",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Vom Lernstoff zu einem nachvollziehbaren Junior-Portfolio-Projekt.",
+      "learning_objectives": [
+        "Ein kleines Produktproblem und prüfbare Kriterien definieren.",
+        "UI, Daten, Logik, Berechtigungen und Tests zusammen planen.",
+        "Eine frische Installation anhand verständlicher Schritte prüfen."
+      ],
+      "prerequisites": [
+        "Grundlagen von Programmierung, Web und Datenmodellierung empfohlen; die Lektion bleibt frei zugänglich."
+      ],
+      "common_mistakes": [
+        "Zu viele Funktionen auf einmal planen; echte Zugangsdaten einchecken; nur den Erfolgsfall testen; eine Setup-Anleitung vergessen."
+      ],
+      "summary": [
+        "Ein kleines fertiges Produkt ist aussagekräftiger als viele unfertige Features.",
+        "Tests, Einrichtung und sichere Veröffentlichung gehören zum Projekt."
+      ],
+      "questions": [
+        {
+          "prompt": "Was macht ein Akzeptanzkriterium überprüfbar?",
+          "choices": [
+            "Es beschreibt ein beobachtbares Ergebnis für konkrete Eingaben.",
+            "Es nennt nur eine Programmiersprache.",
+            "Es verspricht, dass nie Fehler auftreten."
+          ],
+          "answer": 0,
+          "explanation": "Konkrete Ein- und Ausgaben lassen sich manuell oder automatisiert prüfen."
+        }
+      ],
+      "exercise": "Plane ein kleines Produkt mit drei Akzeptanzkriterien, einem Datenmodell, zwei Randfällen und einer Setup-Anleitung.",
+      "estimated_minutes": 90,
+      "sources": [
+        {
+          "label": "CS50x: offizieller Kursabschluss und Final Project Orientierung",
+          "url": "https://cs50.harvard.edu/x/2026/project/",
+          "course": "CS50x"
+        }
+      ],
+      "beyond_cs50": true,
+      "execution_note": "Die Übung entwirft und prüft Akzeptanzkriterien; sie veröffentlicht keine Anwendung."
+    },
+    "xp": 60
+  }
+]

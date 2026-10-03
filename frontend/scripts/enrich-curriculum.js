@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * DevForge Core Enterprise Curriculum Enrichment Script
  * Emits full, idiomatic, high-fidelity content across all 6 locales (DE, EN, ID, ZH, KO, JA)

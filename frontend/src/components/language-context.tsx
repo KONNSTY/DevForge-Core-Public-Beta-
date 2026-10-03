@@ -21,6 +21,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const saved = localStorage.getItem("devforge_preferred_locale") as SupportedLocale;
     if (saved && SUPPORTED_LOCALES.some(l => l.code === saved)) {
+      // Read persisted preferences after hydration to avoid a server/client locale mismatch.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLocaleState(saved);
     }
   }, []);

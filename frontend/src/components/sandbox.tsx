@@ -1,27 +1,28 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 interface SandboxProps {
   htmlContent: string;
   cssContent: string;
   jsContent: string;
+  executionId: number;
   onResult?: (result: SandboxResult) => void;
 }
 
 export type SandboxResult = {
   success: boolean;
   error?: string;
-  logs: any[];
+  logs: unknown[];
 };
 
-export function Sandbox({ htmlContent, cssContent, jsContent, onResult }: SandboxProps) {
+export function Sandbox({ htmlContent, cssContent, jsContent, executionId, onResult }: SandboxProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isReady, setIsReady] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      // Validate origin if necessary in production
+      if (event.source !== iframeRef.current?.contentWindow) return;
       if (event.data?.type === 'SANDBOX_READY') {
         setIsReady(true);
       } else if (event.data?.type === 'SANDBOX_RESULT') {
@@ -30,6 +31,7 @@ export function Sandbox({ htmlContent, cssContent, jsContent, onResult }: Sandbo
     };
 
     window.addEventListener('message', handleMessage);
+    iframeRef.current?.contentWindow?.postMessage({ type: 'SANDBOX_PING' }, '*');
     return () => window.removeEventListener('message', handleMessage);
   }, [onResult]);
 
@@ -41,7 +43,7 @@ export function Sandbox({ htmlContent, cssContent, jsContent, onResult }: Sandbo
       type: 'EXECUTE',
       payload: { html: htmlContent, css: cssContent, js: jsContent }
     }, '*');
-  }, [htmlContent, cssContent, jsContent, isReady]);
+  }, [htmlContent, cssContent, jsContent, executionId, isReady]);
 
   // The runner script injected into the iframe
   const runnerScript = `
@@ -53,7 +55,9 @@ export function Sandbox({ htmlContent, cssContent, jsContent, onResult }: Sandbo
     };
 
     window.addEventListener('message', (event) => {
-      if (event.data?.type === 'EXECUTE') {
+      if (event.data?.type === 'SANDBOX_PING') {
+        window.parent.postMessage({ type: 'SANDBOX_READY' }, '*');
+      } else if (event.data?.type === 'EXECUTE') {
         const { html, css, js } = event.data.payload;
         
         try {
@@ -84,7 +88,7 @@ export function Sandbox({ htmlContent, cssContent, jsContent, onResult }: Sandbo
         } catch (err) {
           window.parent.postMessage({
             type: 'SANDBOX_RESULT',
-            payload: { success: false, error: err.toString(), logs: [...logs] }
+          payload: { success: false, error: err instanceof Error ? err.message : String(err), logs: [...logs] }
           }, '*');
         }
       }
@@ -117,6 +121,7 @@ export function Sandbox({ htmlContent, cssContent, jsContent, onResult }: Sandbo
       className="w-full h-full border rounded-md bg-white"
       sandbox="allow-scripts"
       srcDoc={iframeSrc}
+      onLoad={() => setIsReady(true)}
       title="Code Sandbox"
     />
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Network, Activity, Cpu, Database, Server, Laptop, CheckCircle2, Shield, Zap } from "lucide-react";
+import { Network, Activity, Cpu, Database, Server, Laptop, Zap } from "lucide-react";
 
 export function SystemArchitectureInspector() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,35 +18,35 @@ export function SystemArchitectureInspector() {
     },
     {
       id: 2,
-      name: "Strict Auth & Rate Gate",
-      icon: Shield,
-      tech: "ASP.NET Core JWT Middleware",
-      desc: "Zero anonymous progress writes. Reject with 401 Unauthorized unless signed with OWASP Argon2id issued bearer token.",
-      latency: "2ms"
+      name: "Lokaler Fortschritt",
+      icon: Database,
+      tech: "localStorage + BroadcastChannel",
+      desc: "XP und abgeschlossene Lektionen bleiben ausschließlich in deinem Browser. Es gibt keine Konten, keine Anmeldung und keine Synchronisation mit einem Profilserver.",
+      latency: "0ms"
     },
     {
       id: 3,
-      name: "CQRS Dispatcher",
+      name: "Offenes Curriculum",
       icon: Server,
-      tech: "Minimal API Handler Pipeline",
-      desc: "Separation of Commands (Register, SaveProgress, IncrementStreak) and Queries (GetUser, GetProgress, InspectLogs).",
-      latency: "4ms"
+      tech: "JSON + TypeScript",
+      desc: "Alle Lernpfade werden aus lesbaren, versionierbaren Dateien geladen. Die Inhalte sind ohne Login und ohne externen Dienst verfügbar.",
+      latency: "1ms"
     },
     {
       id: 4,
-      name: "Execution Engine Sandbox",
+      name: "Browser-Sandbox",
       icon: Cpu,
-      tech: "Microsoft.CodeAnalysis.CSharp.Scripting",
-      desc: "In-memory Roslyn compilation script runner executing arbitrary C# syntax trees with strict timeout fences.",
-      latency: "18ms"
+      tech: "iframe + postMessage",
+      desc: "HTML, CSS und JavaScript laufen isoliert in einem lokalen iframe. Ausgaben werden kontrolliert zurück in das Terminal der Übung gespiegelt.",
+      latency: "lokal"
     },
     {
       id: 5,
-      name: "Relational Persistence",
+      name: "Optionale lokale Runner",
       icon: Database,
-      tech: "EF Core + SQLite (WAL Mode)",
-      desc: "Indexed Foreign Key constraints (UserId -> Progress), unique composites, and streak tracking.",
-      latency: "3ms"
+      tech: "ASP.NET Core / Python",
+      desc: "C# und Python können für lokale Übungen über den optionalen lokalen Runner ausgeführt werden. Der Runner ist nicht für eine öffentliche, ungeschützte Bereitstellung gedacht.",
+      latency: "optional"
     }
   ];
 
@@ -54,8 +54,9 @@ export function SystemArchitectureInspector() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 transition-colors"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-primary/20 bg-primary/10 p-0 text-xs font-semibold text-primary transition-colors hover:bg-primary/20 sm:h-auto sm:w-auto sm:space-x-1.5 sm:px-2.5 sm:py-1"
         title="System Architecture Inspector"
+        aria-label="Architektur-Inspektor öffnen"
       >
         <Network size={14} />
         <span className="hidden md:inline">Architektur-Inspektor</span>
@@ -72,7 +73,7 @@ export function SystemArchitectureInspector() {
                 <div>
                   <h2 className="text-xl font-extrabold tracking-tight">System Architecture Inspector</h2>
                   <p className="text-xs text-muted-foreground">
-                    End-to-End Enterprise Flow: Web Client → Strict Auth Gate → CQRS Pipeline → Roslyn Sandbox → EF Core
+                    Accountfreie Architektur: Browser → lokaler Fortschritt → Sandbox → optionaler lokaler Code-Runner
                   </p>
                 </div>
               </div>
@@ -124,13 +125,13 @@ export function SystemArchitectureInspector() {
                 </span>
               </div>
               <p className="text-xs text-foreground/90 leading-relaxed font-sans">
-                {activeStep ? steps.find(s => s.id === activeStep)?.desc : "DevForge Core implementiert eine Zero-Secrets, cloud-native verteilte Architektur mit deterministischer Sandboxing-Isolierung und OWASP-kalibriertem Argon2id Token-Schutz."}
+                {activeStep ? steps.find(s => s.id === activeStep)?.desc : "DevForge Core ist bewusst kostenlos, accountfrei und ohne API-Schlüssel nutzbar. Die Kernfunktionen laufen lokal im Browser; serverseitige Runner sind nur eine optionale Entwicklungsumgebung."}
               </p>
               <div className="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-muted-foreground">
-                <span className="px-2 py-0.5 rounded bg-background border">Zero-Trust Pipeline</span>
-                <span className="px-2 py-0.5 rounded bg-background border">In-Memory SQLite WAL Mode</span>
-                <span className="px-2 py-0.5 rounded bg-background border">Roslyn CSharpScript 4.12</span>
-                <span className="px-2 py-0.5 rounded bg-background border">Argon2id (OWASP 64MB)</span>
+                <span className="px-2 py-0.5 rounded bg-background border">Keine Accounts</span>
+                <span className="px-2 py-0.5 rounded bg-background border">Keine API-Schlüssel</span>
+                <span className="px-2 py-0.5 rounded bg-background border">Lokale Speicherung</span>
+                <span className="px-2 py-0.5 rounded bg-background border">Polymath Productions</span>
               </div>
             </div>
           </div>

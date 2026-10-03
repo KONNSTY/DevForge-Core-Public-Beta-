@@ -1,0 +1,13 @@
+# Public HTTPS ingress for the DevForge standalone Next.js container.
+# Import this block into the shared Caddyfile; the service shares the
+# polymath_intern Docker network with Caddy.
+devforgecore.reglerproductions.com {
+	reverse_proxy devforgecore:3000
+
+	header {
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		-Server
+	}
+}

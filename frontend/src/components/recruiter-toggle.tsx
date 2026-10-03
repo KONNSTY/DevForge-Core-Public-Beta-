@@ -10,7 +10,9 @@ export function RecruiterToggle() {
   return (
     <button
       onClick={toggleRecruiterMode}
-      className={`w-full flex items-center justify-between p-3 rounded-md transition-colors border ${
+      aria-pressed={isRecruiterMode}
+      title="Recruiter Mode"
+      className={`inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors sm:h-auto sm:w-auto sm:justify-between sm:px-3 sm:py-2 ${
         isRecruiterMode
           ? "bg-primary/10 border-primary text-primary"
           : "bg-muted/50 border-transparent hover:bg-muted"
@@ -18,9 +20,11 @@ export function RecruiterToggle() {
     >
       <div className="flex items-center space-x-2">
         <Briefcase size={16} />
-        <span className="text-sm font-medium">Recruiter Mode</span>
+        <span className="hidden text-sm font-medium sm:inline">Recruiter Mode</span>
       </div>
-      {isRecruiterMode ? <Eye size={16} /> : <EyeOff size={16} className="text-muted-foreground" />}
+      <span className="hidden sm:inline">
+        {isRecruiterMode ? <Eye size={16} /> : <EyeOff size={16} className="text-muted-foreground" />}
+      </span>
     </button>
   );
 }

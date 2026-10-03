@@ -46,8 +46,8 @@ export default function ImpressumPage() {
             <p>
               <strong>Fortschrittsspeicherung:</strong> Dein Lernfortschritt, XP und Code-Experimente werden primär <em>clientseitig in deinem Browser (localStorage)</em> gespeichert.
             </p>
-            <p>
-              <strong>Cloud-Synchronisation:</strong> Sofern aktiviert, erfolgt die Speicherung anonymisiert über Firebase Firestore im kostenlosen Spark-Tier. Es werden keinerlei Klarnamen oder sensible Daten erfasst.
+          <p>
+              <strong>Keine Cloud-Profile:</strong> Es gibt keine Accounts, keine Anmeldung und keine Firebase-/Profil-Synchronisation. Lernfortschritt, XP und Code-Experimente bleiben in deinem Browser und werden nicht an DevForge Core übertragen.
             </p>
             <p>
               <strong>Server-Logs:</strong> Beim Abruf von Seiten erfasst der Webserver temporär die üblichen technischen Verbindungsdaten (IP-Adresse, Browser-Typ, Zugriffszeit), um den sicheren Betrieb zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO).
@@ -59,11 +59,14 @@ export default function ImpressumPage() {
       <section className="p-6 rounded-xl border border-primary/20 bg-primary/5 space-y-4">
         <h2 className="text-xl font-bold">Open-Source & Haftungsausschluss</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          DevForge Core ist als freies Bildungswerkzeug konzipiert. Alle Lerninhalte, interaktiven Code-Beispiele und Tests werden nach bestem Wissen erstellt. Für eventuelle Fehler in Codebeispielen oder für Konsequenzen, die aus der Nutzung der erlernten Konzepte in Produktivumgebungen resultieren, wird keine Haftung übernommen.
+          DevForge Core ist ein kostenloses Produkt von <a href="https://reglerproductions.com/" target="_blank" rel="noreferrer" className="text-primary hover:underline">Regler Productions / Polymath Productions</a>. Alle Lerninhalte, interaktiven Code-Beispiele und Tests werden nach bestem Wissen erstellt. Für eventuelle Fehler in Codebeispielen oder für Konsequenzen, die aus der Nutzung der erlernten Konzepte in Produktivumgebungen resultieren, wird keine Haftung übernommen.
+        </p>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Der Quellcode kann öffentlich auf GitHub einsehbar sein. Dieses Projekt enthält derzeit bewusst keine LICENSE-Datei. Ohne ausdrückliche Lizenz ist die Nutzung, Veränderung und Weiterverteilung nicht automatisch freigegeben.
         </p>
         <div className="flex items-center space-x-4 pt-2">
           <a
-            href="https://github.com"
+            href="https://github.com/KONNSTY"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center space-x-2 text-sm font-medium text-foreground hover:text-primary transition-colors"

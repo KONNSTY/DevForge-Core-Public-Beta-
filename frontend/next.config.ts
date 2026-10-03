@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: "/Users/konstantinregler/Documents/Polymath Productions/KonstantinWeblearn/frontend",
-  },
+  output: "standalone",
   async headers() {
     return [
       {

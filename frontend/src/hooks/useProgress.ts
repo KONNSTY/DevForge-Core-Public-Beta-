@@ -10,71 +10,62 @@ export type ProgressData = {
 
 const STORAGE_KEY = 'weblearn-progress';
 const CHANNEL_NAME = 'weblearn-progress-sync';
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5050";
+
+function persistProgress(data: ProgressData) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
 
 export function useProgress() {
   const [progress, setProgress] = useState<ProgressData>({});
   const [isHydrated, setIsHydrated] = useState(false);
 
-  // Initial load: LocalStorage + Optional Backend Sync if JWT exists
+  // Progress is intentionally local-only: there are no accounts or profile APIs.
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       try {
+        // Persisted progress is read after hydration to keep the server render deterministic.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setProgress(JSON.parse(stored));
       } catch (e) {
         console.error('Failed to parse progress data', e);
       }
     }
     setIsHydrated(true);
-
-    // Sync from remote backend if authenticated
-    const token = localStorage.getItem('devforge_jwt');
-    if (token) {
-      fetch(`${API_BASE}/api/v1/progress`, {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-      .then(res => res.ok ? res.json() : null)
-      .then(records => {
-        if (records && Array.isArray(records)) {
-          setProgress(prev => {
-            const merged = { ...prev };
-            for (const r of records) {
-              if (!merged[r.trackId]) {
-                merged[r.trackId] = { completedLessons: [], xp: 0, lastAccessed: Date.now() };
-              }
-              if (!merged[r.trackId].completedLessons.includes(r.lessonId)) {
-                merged[r.trackId].completedLessons.push(r.lessonId);
-                merged[r.trackId].xp += 50;
-              }
-            }
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-            return merged;
-          });
-        }
-      })
-      .catch(() => {});
-    }
   }, []);
 
   // Broadcast channel for cross-tab sync
   useEffect(() => {
-    const channel = new BroadcastChannel(CHANNEL_NAME);
-    channel.onmessage = (event) => {
-      setProgress(event.data);
+    const onStorage = (event: StorageEvent) => {
+      if (event.key !== STORAGE_KEY || !event.newValue) return;
+      try {
+        setProgress(JSON.parse(event.newValue));
+      } catch {
+        // Ignore malformed data from another tab.
+      }
     };
-    return () => channel.close();
+    window.addEventListener('storage', onStorage);
+
+    const channel = typeof BroadcastChannel === 'undefined' ? null : new BroadcastChannel(CHANNEL_NAME);
+    if (channel) channel.onmessage = (event) => setProgress(event.data);
+
+    return () => {
+      window.removeEventListener('storage', onStorage);
+      channel?.close();
+    };
   }, []);
 
   const updateProgress = useCallback((newData: ProgressData) => {
     setProgress(newData);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(newData));
-    const channel = new BroadcastChannel(CHANNEL_NAME);
-    channel.postMessage(newData);
-    channel.close();
+    persistProgress(newData);
+    if (typeof BroadcastChannel !== 'undefined') {
+      const channel = new BroadcastChannel(CHANNEL_NAME);
+      channel.postMessage(newData);
+      channel.close();
+    }
   }, []);
 
-  const markLessonComplete = useCallback((trackId: string, lessonId: string, xpReward: number, codeSnapshot = "") => {
+  const markLessonComplete = useCallback((trackId: string, lessonId: string, xpReward: number) => {
     setProgress((prev) => {
       const trackProgress = prev[trackId] || { completedLessons: [], xp: 0, lastAccessed: Date.now() };
       
@@ -92,28 +83,11 @@ export function useProgress() {
         },
       };
 
-      // Local Sync
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-      const channel = new BroadcastChannel(CHANNEL_NAME);
-      channel.postMessage(updated);
-      channel.close();
-
-      // Remote Enterprise Backend Sync (Strict Auth Gate)
-      const token = localStorage.getItem('devforge_jwt');
-      if (token) {
-        fetch(`${API_BASE}/api/v1/progress/complete`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
-          },
-          body: JSON.stringify({
-            trackId,
-            lessonId,
-            codeSnapshot,
-            executionMetricsJson: JSON.stringify({ completedAt: new Date().toISOString() })
-          })
-        }).catch(() => {});
+      persistProgress(updated);
+      if (typeof BroadcastChannel !== 'undefined') {
+        const channel = new BroadcastChannel(CHANNEL_NAME);
+        channel.postMessage(updated);
+        channel.close();
       }
 
       return updated;

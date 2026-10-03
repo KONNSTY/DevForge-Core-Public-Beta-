@@ -3,6 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 import { getLessonById, getAdjacentLessons, getLocalizedLessonContent } from "@/lib/curriculum";
 import { Playground } from "@/components/playground";
+import { LessonPractice } from "@/components/lesson-practice";
 import { useProgress } from "@/hooks/useProgress";
 import { useLanguage } from "@/components/language-context";
 import { SeniorThoughtLog } from "@/components/senior-thought-log";
@@ -49,6 +50,15 @@ export default function LessonPage() {
     markLessonComplete(lesson.track_id, lesson.lesson_id, lesson.xp);
   };
 
+  const handleContinue = () => {
+    handleComplete();
+    router.push(
+      nextLesson
+        ? `/tracks/${nextLesson.track_id}/lessons/${nextLesson.lesson_id}`
+        : "/tracks"
+    );
+  };
+
   // Derive initial language for playground
   let defaultLang: "html" | "css" | "javascript" | "csharp" | "python" = "html";
   let initialHtml = "<!-- Write your code here -->";
@@ -64,13 +74,18 @@ export default function LessonPage() {
     defaultLang = "python";
   } else {
     initialHtml = lesson.interactive_challenge.starter_code;
-    defaultLang = "html";
+    if (lesson.interactive_challenge.runtime === "browser_sandbox" && lesson.interactive_challenge.starter_code.startsWith("//")) {
+      initialJs = lesson.interactive_challenge.starter_code;
+      defaultLang = "javascript";
+    } else {
+      defaultLang = "html";
+    }
   }
 
   return (
-    <div className="flex flex-col xl:flex-row h-full min-h-[calc(100vh-112px)] overflow-hidden">
+    <div className="flex min-h-full flex-col overflow-visible pb-24 xl:flex-row xl:pb-0">
       {/* Left Column: Didactics, i18n & Senior ADR */}
-      <div className="w-full xl:w-5/12 overflow-y-auto p-6 xl:p-8 border-r bg-card/20 flex flex-col justify-between">
+      <div className="flex w-full flex-col justify-between border-r bg-card/20 p-3 sm:p-6 xl:w-5/12 xl:overflow-y-auto xl:p-8">
         <div className="space-y-6">
           {/* Top navigation row */}
           <div>
@@ -104,7 +119,7 @@ export default function LessonPage() {
               )}
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4">{localized.title}</h1>
+            <h1 className="mb-4 text-2xl font-extrabold tracking-tight sm:text-3xl">{localized.title}</h1>
             
             {/* 1. & 2. Kernidee & Warum brauche ich das? */}
             <div className="p-4 rounded-xl bg-primary/5 border border-primary/20 text-sm leading-relaxed text-foreground">
@@ -112,7 +127,7 @@ export default function LessonPage() {
                 <span>💡 {t("everyday_analogy")}</span>
               </div>
               <p className="italic text-muted-foreground">
-                "{localized.coach_context}"
+                &quot;{localized.coach_context}&quot;
               </p>
             </div>
           </div>
@@ -127,6 +142,8 @@ export default function LessonPage() {
               <ReactMarkdown>{localized.mental_model_and_code}</ReactMarkdown>
             </div>
           </div>
+
+          <LessonPractice lesson={lesson} />
 
           {/* Senior Engineering Thought Log (ADR) */}
           {lesson.senior_thought_log && isRecruiterMode && (
@@ -203,7 +220,7 @@ export default function LessonPage() {
         </div>
 
         {/* 7. Linearer 'Nächste Lektion' & Navigations-Block */}
-        <div className="pt-8 mt-8 border-t border-border/40 space-y-3">
+        <div className="hidden pt-8 mt-8 border-t border-border/40 space-y-3 xl:block">
           <div className="flex items-center justify-between gap-4">
             {prevLesson ? (
               <Link
@@ -250,7 +267,7 @@ export default function LessonPage() {
       </div>
 
       {/* Right Column: 6. Deterministic Sandboxed Test Runner */}
-      <div className="w-full xl:w-7/12 flex flex-col h-[75vh] xl:h-auto border-t xl:border-t-0">
+      <div className="flex min-h-[540px] w-full flex-col border-t sm:min-h-[680px] xl:min-h-0 xl:w-7/12 xl:border-t-0">
         <div className="p-4 border-b bg-muted/20 flex flex-col space-y-2">
           <div className="flex items-center space-x-2">
             <Target className="text-primary" size={18} />
@@ -259,6 +276,14 @@ export default function LessonPage() {
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             {lesson.interactive_challenge.task_description}
           </p>
+          {lesson.interactive_challenge.hints.length > 0 && (
+            <details className="rounded-lg border border-border/60 px-3 py-2 text-xs">
+              <summary className="cursor-pointer font-semibold text-primary">Hinweise auf Wunsch anzeigen</summary>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-muted-foreground">
+                {lesson.interactive_challenge.hints.map((hint) => <li key={hint}>{hint}</li>)}
+              </ul>
+            </details>
+          )}
         </div>
         <div className="flex-1 overflow-hidden p-3 sm:p-4">
           <Playground 
@@ -267,9 +292,42 @@ export default function LessonPage() {
             initialJs={initialJs}
             initialCsharp={initialCsharp}
             initialPython={initialPython}
+            solutionCode={lesson.interactive_challenge.solution_code}
           />
         </div>
       </div>
+
+      {/* Mobile navigation stays available after the exercise without forcing a long scroll back up. */}
+      <nav
+        aria-label="Lektionsnavigation"
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-background/95 p-2 shadow-[0_-8px_24px_rgba(0,0,0,0.18)] backdrop-blur supports-[backdrop-filter]:bg-background/80 safe-area-bottom xl:hidden"
+      >
+        <div className="mx-auto flex max-w-2xl items-center gap-2">
+          <button
+            type="button"
+            onClick={handleComplete}
+            disabled={isCompleted}
+            className={`min-w-0 flex-1 truncate rounded-lg border px-3 py-3 text-left text-xs font-bold transition-colors sm:text-sm ${
+              isCompleted
+                ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                : "border-primary/30 bg-primary/10 text-primary hover:bg-primary/20"
+            }`}
+          >
+            {isCompleted ? `✓ ${t("completed")}` : t("complete_lesson")}
+          </button>
+          <button
+            type="button"
+            onClick={handleContinue}
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-3 text-xs font-bold text-primary-foreground shadow-sm transition-opacity hover:opacity-90 min-[400px]:px-4 sm:text-sm"
+          >
+            <span className="hidden min-[400px]:inline">
+              {nextLesson ? t("next_lesson") : t("curriculum")}
+            </span>
+            <ArrowRight size={16} aria-hidden="true" />
+            <span className="sr-only">{nextLesson ? t("next_lesson") : t("curriculum")}</span>
+          </button>
+        </div>
+      </nav>
     </div>
   );
 }

@@ -1,0 +1,1218 @@
+[
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-01",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Einstieg und JavaScript",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Einstieg und JavaScript; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nMobile Anwendungen reagieren auf Berührung, Bildschirmgröße und wechselnde Netzwerkbedingungen. JavaScript und React bilden in diesem archivierten Kurs die Grundlage für Komponenten und Zustand.\n\n## Beispiel\n\nEin Bildschirm zeigt eine Liste von Aufgaben; die Daten bleiben im Zustand der App und werden als UI dargestellt.\n\n## Was du mitnehmen solltest\n\nMobile UX berücksichtigt Gerätegrenzen und Eingabeformen.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Einstieg und JavaScript anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Nenne zwei Tests für eine Aufgabenliste auf kleinem Bildschirm.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Einstieg und JavaScript\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 0: Einstieg und JavaScript.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Einstieg und JavaScript.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Mobile Oberfläche ist nicht automatisch responsive oder offlinefähig."
+      ],
+      "summary": [
+        "Mobile UX berücksichtigt Gerätegrenzen und Eingabeformen."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche Besonderheit unterscheidet Mobile-Apps von einer reinen Desktopseite?",
+          "choices": [
+            "Touch, Gerätezustand und begrenzte Bildschirmfläche müssen berücksichtigt werden.",
+            "Ein Smartphone kann immer unbegrenzt Netzwerk und Speicher nutzen."
+          ],
+          "answer": 0,
+          "explanation": "Mobile UX berücksichtigt Gerätegrenzen und Eingabeformen."
+        }
+      ],
+      "exercise": "Nenne zwei Tests für eine Aufgabenliste auf kleinem Bildschirm.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/0/lang/en/lecture0.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-02",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: ES6 und moderne JavaScript-Syntax",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu ES6 und moderne JavaScript-Syntax; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nES6 führte unter anderem `let`, `const`, Arrow Functions, Template Strings, Destructuring und Module ein. Diese Syntax vereinfacht Ausdruck und Struktur, verändert aber nicht automatisch die Programmlogik.\n\n## Beispiel\n\n`const name = \"Ada\"` bindet eine Variable; `items.map(item => item.title)` transformiert Elemente.\n\n## Was du mitnehmen solltest\n\nBindings und Objektmutabilität sind getrennte Fragen.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre ES6 und moderne JavaScript-Syntax anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Erkläre, warum ein `const`-Array weiterhin veränderbar sein kann.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"ES6 und moderne JavaScript-Syntax\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 1: ES6 und moderne JavaScript-Syntax.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept ES6 und moderne JavaScript-Syntax.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "`const` macht ein Objekt unveränderlich; tatsächlich verhindert es nur die Neuzuweisung der Bindung."
+      ],
+      "summary": [
+        "Bindings und Objektmutabilität sind getrennte Fragen."
+      ],
+      "questions": [
+        {
+          "prompt": "Was garantiert `const`?",
+          "choices": [
+            "Die Variable kann nicht neu zugewiesen werden.",
+            "Alle Eigenschaften des referenzierten Objekts bleiben unveränderlich."
+          ],
+          "answer": 0,
+          "explanation": "Bindings und Objektmutabilität sind getrennte Fragen."
+        }
+      ],
+      "exercise": "Erkläre, warum ein `const`-Array weiterhin veränderbar sein kann.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/1/lang/en/lecture1.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-03",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: React: Props und State",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu React: Props und State; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nProps geben Daten an eine Komponente weiter; State beschreibt veränderliche UI-Daten. Änderungen am State veranlassen React zu einer erneuten Darstellung.\n\n## Beispiel\n\nEin Zähler erhält die Startzahl als Prop und hält die aktuelle Zahl im State.\n\n## Was du mitnehmen solltest\n\nDie Herkunft eines Werts klärt, wer ihn ändern darf.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre React: Props und State anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Zeichne Elternkomponente, Prop und lokalen State eines Zählers.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"React: Props und State\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 2: React: Props und State.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept React: Props und State.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Props direkt zu verändern umgeht den Datenfluss und erzeugt schwer nachvollziehbare UI."
+      ],
+      "summary": [
+        "Die Herkunft eines Werts klärt, wer ihn ändern darf."
+      ],
+      "questions": [
+        {
+          "prompt": "Was unterscheidet Props von State?",
+          "choices": [
+            "Props kommen von außen; State wird in der Komponente verwaltet.",
+            "Props sind automatisch dauerhaft in einer Datenbank gespeichert."
+          ],
+          "answer": 0,
+          "explanation": "Die Herkunft eines Werts klärt, wer ihn ändern darf."
+        }
+      ],
+      "exercise": "Zeichne Elternkomponente, Prop und lokalen State eines Zählers.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/2/lang/en/lecture2.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-04",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: React Native",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu React Native; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nReact Native rendert native UI-Bausteine und teilt JavaScript-Logik zwischen Plattformen. Navigation, Styles und Geräteschnittstellen werden in der App-Umgebung statt im DOM verwendet.\n\n## Beispiel\n\nEine `View` gruppiert Inhalt, `Text` zeigt Beschriftung; Navigation führt zwischen Bildschirmen.\n\n## Was du mitnehmen solltest\n\nÄhnliche Konzepte bedeuten keine identische Laufzeit.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre React Native anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Ordne View, Text und Pressable ihren UI-Aufgaben zu.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"React Native\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 3: React Native.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept React Native.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Web-CSS und DOM-Elemente lassen sich nicht beliebig direkt in native Komponenten übertragen."
+      ],
+      "summary": [
+        "Ähnliche Konzepte bedeuten keine identische Laufzeit."
+      ],
+      "questions": [
+        {
+          "prompt": "Was rendert React Native?",
+          "choices": [
+            "Native Plattformkomponenten über eine gemeinsame React-Programmieroberfläche.",
+            "HTML direkt in einem Browserfenster."
+          ],
+          "answer": 0,
+          "explanation": "Ähnliche Konzepte bedeuten keine identische Laufzeit."
+        }
+      ],
+      "exercise": "Ordne View, Text und Pressable ihren UI-Aufgaben zu.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/3/lang/en/lecture3.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-05",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Listen und Nutzereingabe",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Listen und Nutzereingabe; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nListen werden aus Daten gerendert und brauchen stabile Schlüssel. Eingaben aktualisieren gezielt den Zustand; Validierung und verständliche Rückmeldung gehören zur Interaktion.\n\n## Beispiel\n\nEine Einkaufsliste rendert jedes Element anhand einer stabilen ID und fügt über ein Eingabefeld einen Eintrag hinzu.\n\n## Was du mitnehmen solltest\n\nStabile Identität verhindert falsche Zuordnung während Updates.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Listen und Nutzereingabe anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Plane IDs und Validierung für eine editierbare Aufgabenliste.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Listen und Nutzereingabe\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 4: Listen und Nutzereingabe.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Listen und Nutzereingabe.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Arrayposition als Schlüssel wird bei Sortierung oder Löschen mehrdeutig."
+      ],
+      "summary": [
+        "Stabile Identität verhindert falsche Zuordnung während Updates."
+      ],
+      "questions": [
+        {
+          "prompt": "Warum stabile Schlüssel?",
+          "choices": [
+            "Damit UI-Elemente ihren Datensätzen bei Änderungen zugeordnet bleiben.",
+            "Damit die Liste automatisch verschlüsselt wird."
+          ],
+          "answer": 0,
+          "explanation": "Stabile Identität verhindert falsche Zuordnung während Updates."
+        }
+      ],
+      "exercise": "Plane IDs und Validierung für eine editierbare Aufgabenliste.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/4/lang/en/lecture4.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-06",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Eingabe und Debugging",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Eingabe und Debugging; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nTouch-Eingaben, Tastatur, Fokus und asynchrone UI-Zustände müssen in Gerätebedingungen getestet werden. Debugging beginnt mit einem reproduzierbaren Fehler und einer Hypothese.\n\n## Beispiel\n\nEin Submit-Button wird während des Speicherns deaktiviert; ein Fehler zeigt eine erneute Aktion an.\n\n## Was du mitnehmen solltest\n\nReproduktion macht Hypothesen überprüfbar.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Eingabe und Debugging anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Schreibe Reproduktionsschritte für ein doppelt abgesendetes Formular.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Eingabe und Debugging\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 5: Eingabe und Debugging.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Eingabe und Debugging.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Ein schneller Tap oder ein abgebrochenes Netz kann doppelte oder verlorene Aktionen erzeugen."
+      ],
+      "summary": [
+        "Reproduktion macht Hypothesen überprüfbar."
+      ],
+      "questions": [
+        {
+          "prompt": "Was hilft bei einem reproduzierbaren Fehler?",
+          "choices": [
+            "Schritte, Eingaben und erwartetes Verhalten dokumentieren.",
+            "Den Code zufällig mehrfach ändern."
+          ],
+          "answer": 0,
+          "explanation": "Reproduktion macht Hypothesen überprüfbar."
+        }
+      ],
+      "exercise": "Schreibe Reproduktionsschritte für ein doppelt abgesendetes Formular.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/5/lang/en/lecture5.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-07",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Navigation",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Navigation; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nNavigation modelliert Wege zwischen Bildschirmen und Übergabe kleiner Parameter. Zurücknavigation muss zum Nutzungskontext passen; geschützte Ziele brauchen Berechtigungsprüfung.\n\n## Beispiel\n\nVon einer Aufgabenliste führt ein Tap zur Detailansicht mit stabiler Aufgaben-ID.\n\n## Was du mitnehmen solltest\n\nDie Zielansicht kann den benötigten Datensatz anhand seiner ID laden.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Navigation anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Zeichne einen Navigationsfluss für Liste, Detail und Bearbeiten.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Navigation\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 6: Navigation.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Navigation.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Große Datensätze als Navigationsparameter zu übertragen macht Zuständigkeiten und Aktualisierung unklar."
+      ],
+      "summary": [
+        "Die Zielansicht kann den benötigten Datensatz anhand seiner ID laden."
+      ],
+      "questions": [
+        {
+          "prompt": "Was sollte zwischen List- und Detailansicht übergeben werden?",
+          "choices": [
+            "Eine stabile ID oder ein schlanker erforderlicher Parameter.",
+            "Die vollständige Datenbank."
+          ],
+          "answer": 0,
+          "explanation": "Die Zielansicht kann den benötigten Datensatz anhand seiner ID laden."
+        }
+      ],
+      "exercise": "Zeichne einen Navigationsfluss für Liste, Detail und Bearbeiten.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/6/lang/en/lecture6.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-08",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Persistenz und Daten",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Persistenz und Daten; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nPersistenz speichert Zustand über App-Neustarts hinweg. Lokaler Speicher, API und Datenbank haben unterschiedliche Synchronisations-, Datenschutz- und Ausfallbedingungen.\n\n## Beispiel\n\nEinstellungen lassen sich lokal sichern; geteilte Aufgaben können serverseitig synchronisiert werden.\n\n## Was du mitnehmen solltest\n\nSpeicherort beeinflusst Datenschutz, Verfügbarkeit und Synchronisierung.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Persistenz und Daten anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Klassifiziere Einstellungen, Cache und geteilte Notizen nach Speicherort.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Persistenz und Daten\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 7: Persistenz und Daten.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Persistenz und Daten.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Ein Cache ist nicht automatisch die maßgebliche Datenquelle und kann veraltet sein."
+      ],
+      "summary": [
+        "Speicherort beeinflusst Datenschutz, Verfügbarkeit und Synchronisierung."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche Entscheidung braucht lokale Speicherung?",
+          "choices": [
+            "Welche Daten offline verfügbar sein sollen und wie Konflikte behandelt werden.",
+            "Nur welche Farbe das Icon hat."
+          ],
+          "answer": 0,
+          "explanation": "Speicherort beeinflusst Datenschutz, Verfügbarkeit und Synchronisierung."
+        }
+      ],
+      "exercise": "Klassifiziere Einstellungen, Cache und geteilte Notizen nach Speicherort.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/7/lang/en/lecture7.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-09",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Expo-Komponenten",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Expo-Komponenten; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nExpo bietet Bibliotheken und Werkzeuge für typische Gerätefunktionen. Berechtigungen, Plattformunterschiede und tatsächliche Gerätetests bleiben notwendig.\n\n## Beispiel\n\nKamera oder Standort werden erst nach verständlicher Begründung und erteilter Berechtigung verwendet.\n\n## Was du mitnehmen solltest\n\nGerätezugriff betrifft Nutzerkontrolle und Laufzeitverfügbarkeit.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Expo-Komponenten anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Schreibe eine UX-Rückmeldung für verweigerte Kameraberechtigung.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Expo-Komponenten\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 8: Expo-Komponenten.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Expo-Komponenten.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Eine Bibliothek abstrahiert die Hardware, aber nicht Einwilligung oder Plattformrichtlinien."
+      ],
+      "summary": [
+        "Gerätezugriff betrifft Nutzerkontrolle und Laufzeitverfügbarkeit."
+      ],
+      "questions": [
+        {
+          "prompt": "Was muss vor Gerätezugriff geklärt werden?",
+          "choices": [
+            "Zweck, Berechtigung und Verhalten bei Ablehnung.",
+            "Nur ob das Paket installiert ist."
+          ],
+          "answer": 0,
+          "explanation": "Gerätezugriff betrifft Nutzerkontrolle und Laufzeitverfügbarkeit."
+        }
+      ],
+      "exercise": "Schreibe eine UX-Rückmeldung für verweigerte Kameraberechtigung.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/8/lang/en/lecture8.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-10",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Redux",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Redux; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nRedux zentralisiert geteilten UI-Zustand mit Aktionen und vorhersehbaren Reducern. Es lohnt sich bei gemeinsam genutztem komplexem Zustand, nicht für jeden lokalen Wert.\n\n## Beispiel\n\nEine Aktion `taskAdded` beschreibt eine Änderung; ein Reducer liefert den nächsten Zustand.\n\n## Was du mitnehmen solltest\n\nWerkzeugwahl sollte durch Komplexität und gemeinsame Nutzung begründet sein.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Redux anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Ordne drei Werte lokalem oder gemeinsamem Zustand zu.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Redux\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 9: Redux.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Redux.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Zu frühe Zentralisierung erzeugt Boilerplate und schwer sichtbare Abhängigkeiten."
+      ],
+      "summary": [
+        "Werkzeugwahl sollte durch Komplexität und gemeinsame Nutzung begründet sein."
+      ],
+      "questions": [
+        {
+          "prompt": "Wann ist zentraler Zustand sinnvoll?",
+          "choices": [
+            "Wenn mehrere Bereiche komplexe Daten gemeinsam benötigen.",
+            "Für jede lokale Textfeld-Eingabe."
+          ],
+          "answer": 0,
+          "explanation": "Werkzeugwahl sollte durch Komplexität und gemeinsame Nutzung begründet sein."
+        }
+      ],
+      "exercise": "Ordne drei Werte lokalem oder gemeinsamem Zustand zu.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/9/lang/en/lecture9.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-11",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Asynchrones Redux und Werkzeuge",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Asynchrones Redux und Werkzeuge; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nAsynchrone Aktionen laden Daten, melden Ladezustand und behandeln Erfolg oder Fehler. Entwicklungswerkzeuge helfen, Zustandsübergänge nachvollziehbar zu machen.\n\n## Beispiel\n\nEin Ladeprozess durchläuft `idle`, `loading`, `success` oder `error`; wiederholte Anfragen brauchen klare Regeln.\n\n## Was du mitnehmen solltest\n\nSichtbare Zustände verhindern falsche Annahmen über Daten.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Asynchrones Redux und Werkzeuge anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Entwirf Zustandsübergänge für einen fehlgeschlagenen Synchronisationsversuch.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Asynchrones Redux und Werkzeuge\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 10: Asynchrones Redux und Werkzeuge.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Asynchrones Redux und Werkzeuge.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Ein Fehlerzustand darf nicht als leere erfolgreiche Antwort angezeigt werden."
+      ],
+      "summary": [
+        "Sichtbare Zustände verhindern falsche Annahmen über Daten."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche UI-Zustände sollte ein Datenabruf unterscheiden?",
+          "choices": [
+            "Laden, Erfolg und Fehler.",
+            "Nur „fertig“."
+          ],
+          "answer": 0,
+          "explanation": "Sichtbare Zustände verhindern falsche Annahmen über Daten."
+        }
+      ],
+      "exercise": "Entwirf Zustandsübergänge für einen fehlgeschlagenen Synchronisationsversuch.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/10/lang/en/lecture10.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-12",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Performance",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Performance; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nPerformance misst Startzeit, Reaktionszeit, Speicher und flüssige Darstellung auf echten Geräten. Profiler helfen, unnötige Arbeit von gefühlten Problemen zu unterscheiden.\n\n## Beispiel\n\nLange Listen werden begrenzt gerendert; Bilder werden passend skaliert und Datenabrufe gebündelt.\n\n## Was du mitnehmen solltest\n\nMesswerte lenken Arbeit zum tatsächlichen Engpass.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Performance anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Nenne drei Messgrößen für eine mobile Listenansicht.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Performance\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 11: Performance.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Performance.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Memoisierung ohne Messung erhöht Komplexität und kann Fehler verschleiern."
+      ],
+      "summary": [
+        "Messwerte lenken Arbeit zum tatsächlichen Engpass."
+      ],
+      "questions": [
+        {
+          "prompt": "Was sollte vor Optimierung geschehen?",
+          "choices": [
+            "Engpass messen und reproduzieren.",
+            "Jede Komponente vorsorglich zwischenspeichern."
+          ],
+          "answer": 0,
+          "explanation": "Messwerte lenken Arbeit zum tatsächlichen Engpass."
+        }
+      ],
+      "exercise": "Nenne drei Messgrößen für eine mobile Listenansicht.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/11/lang/en/lecture11.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-mobile",
+    "lesson_id": "mobile-archive-13",
+    "title": "CS50 Mobile – Entwicklung mobiler Apps: Veröffentlichen und testen",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Veröffentlichen und testen; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nVeröffentlichung umfasst Release-Builds, Konfiguration, Berechtigungen, Plattformprüfung, Crashbeobachtung und Rückmeldungen. Tests decken Logik und Geräteverhalten ab.\n\n## Beispiel\n\nEine Version wird auf Testgeräten geprüft, mit minimalen Rechten gebaut und schrittweise ausgerollt.\n\n## Was du mitnehmen solltest\n\nBetriebsbereitschaft umfasst Build, Tests und Reaktion nach Veröffentlichung.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Veröffentlichen und testen anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Erstelle eine Release-Checkliste für Login, Offlinefall, Berechtigungen und Crashbericht.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Veröffentlichen und testen\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 12: Veröffentlichen und testen.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Veröffentlichen und testen.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Ein lokaler Entwicklungsbuild beweist nicht, dass ein Release korrekt signiert oder konfiguriert ist."
+      ],
+      "summary": [
+        "Betriebsbereitschaft umfasst Build, Tests und Reaktion nach Veröffentlichung."
+      ],
+      "questions": [
+        {
+          "prompt": "Was gehört vor ein Release?",
+          "choices": [
+            "Release-Build prüfen, kritische Abläufe testen und Fehlerbeobachtung vorbereiten.",
+            "Nur Versionsnummer ändern."
+          ],
+          "answer": 0,
+          "explanation": "Betriebsbereitschaft umfasst Build, Tests und Reaktion nach Veröffentlichung."
+        }
+      ],
+      "exercise": "Erstelle eine Release-Checkliste für Login, Offlinefall, Berechtigungen und Crashbericht.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Mobile – Entwicklung mobiler Apps: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/mobile/2018/spring/lectures/12/lang/en/lecture12.txt",
+          "course": "CS50 Mobile – Entwicklung mobiler Apps"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-technology",
+    "lesson_id": "technology-archive-01",
+    "title": "CS50 Technology – Technologie verstehen: Hardware",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Hardware; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nComputer verarbeiten Eingaben, rechnen, speichern Daten und geben Ergebnisse aus. CPU, Arbeitsspeicher, dauerhafter Speicher und Ein-/Ausgabegeräte erfüllen unterschiedliche Aufgaben.\n\n## Beispiel\n\nEine Anwendung lädt Daten vom SSD-Speicher in den Arbeitsspeicher; die CPU verarbeitet Instruktionen.\n\n## Was du mitnehmen solltest\n\nArbeits- und Dauerspeicher erfüllen verschiedene Rollen.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Hardware anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Ordne Browser-Cache, geöffnetes Dokument und gespeicherte Datei grob ein.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Hardware\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 1: Hardware.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Hardware.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Speicherplatz und Arbeitsspeicher sind nicht dasselbe."
+      ],
+      "summary": [
+        "Arbeits- und Dauerspeicher erfüllen verschiedene Rollen."
+      ],
+      "questions": [
+        {
+          "prompt": "Was ist der Unterschied zwischen RAM und SSD?",
+          "choices": [
+            "RAM hält Arbeitsdaten kurzfristig; SSD speichert Daten dauerhaft.",
+            "Beide verlieren immer beim Ausschalten alle Daten."
+          ],
+          "answer": 0,
+          "explanation": "Arbeits- und Dauerspeicher erfüllen verschiedene Rollen."
+        }
+      ],
+      "exercise": "Ordne Browser-Cache, geöffnetes Dokument und gespeicherte Datei grob ein.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Technology – Technologie verstehen: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/hardware/lang/en/hardware.txt",
+          "course": "CS50 Technology – Technologie verstehen"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-technology",
+    "lesson_id": "technology-archive-02",
+    "title": "CS50 Technology – Technologie verstehen: Internet",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Internet; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nDas Internet ist ein Verbund von Netzwerken, die über Protokolle Datenpakete austauschen. IP-Adressen und Router transportieren Pakete; DNS hilft, lesbare Namen aufzulösen.\n\n## Beispiel\n\nBeim Aufruf einer Seite werden Pakete über mehrere Netze weitergeleitet; Antworten müssen nicht denselben Weg nehmen.\n\n## Was du mitnehmen solltest\n\nDas Internet transportiert verschiedene Dienste.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Internet anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Erkläre anhand eines Beispiels den Unterschied zwischen Internet und Web.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Internet\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 2: Internet.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Internet.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Internet und Web sind nicht synonym: Das Web ist ein Dienst, der das Internet nutzt."
+      ],
+      "summary": [
+        "Das Internet transportiert verschiedene Dienste."
+      ],
+      "questions": [
+        {
+          "prompt": "Was ist das World Wide Web?",
+          "choices": [
+            "Ein Dienst auf dem Internet für verknüpfte Ressourcen und HTTP.",
+            "Die physische Hardware eines einzelnen Routers."
+          ],
+          "answer": 0,
+          "explanation": "Das Internet transportiert verschiedene Dienste."
+        }
+      ],
+      "exercise": "Erkläre anhand eines Beispiels den Unterschied zwischen Internet und Web.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Technology – Technologie verstehen: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/internet/lang/en/internet.txt",
+          "course": "CS50 Technology – Technologie verstehen"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-technology",
+    "lesson_id": "technology-archive-03",
+    "title": "CS50 Technology – Technologie verstehen: Multimedia",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Multimedia; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nBilder, Audio und Video werden digital als Zahlen und codierte Formate gespeichert. Auflösung, Abtastrate, Farbtiefe und Kompression beeinflussen Qualität und Größe.\n\n## Beispiel\n\nEin Bild mit mehr Pixeln kann mehr Details zeigen, benötigt aber häufig mehr Speicher und Bandbreite.\n\n## Was du mitnehmen solltest\n\nQualität und Dateigröße stehen in einem gewählten Verhältnis.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Multimedia anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Vergleiche ein verlustfreies und verlustbehaftetes Format für ein Logo.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Multimedia\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 3: Multimedia.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Multimedia.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Kompression kann verlustbehaftet sein; Dateiendung verrät nicht immer vollständigen Codec oder Qualität."
+      ],
+      "summary": [
+        "Qualität und Dateigröße stehen in einem gewählten Verhältnis."
+      ],
+      "questions": [
+        {
+          "prompt": "Was bewirkt verlustbehaftete Kompression?",
+          "choices": [
+            "Sie reduziert Größe und entfernt dafür nicht exakt wiederherstellbare Information.",
+            "Sie verdoppelt immer die Bildqualität."
+          ],
+          "answer": 0,
+          "explanation": "Qualität und Dateigröße stehen in einem gewählten Verhältnis."
+        }
+      ],
+      "exercise": "Vergleiche ein verlustfreies und verlustbehaftetes Format für ein Logo.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Technology – Technologie verstehen: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/multimedia/lang/en/multimedia.txt",
+          "course": "CS50 Technology – Technologie verstehen"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-technology",
+    "lesson_id": "technology-archive-04",
+    "title": "CS50 Technology – Technologie verstehen: Sicherheit",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Sicherheit; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nSicherheit schützt Geräte und Informationen durch Zugangskontrolle, Updates, Verschlüsselung, Backups und umsichtiges Verhalten. Bedrohungen nutzen technische und menschliche Schwächen.\n\n## Beispiel\n\nEinzigartige Zugangsdaten und MFA erschweren Kontoübernahme; Updates schließen bekannte Fehler.\n\n## Was du mitnehmen solltest\n\nEin ungetestetes Backup kann im Notfall unbrauchbar sein.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Sicherheit anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Nenne eine Schutzmaßnahme für Gerät, Konto und Datei.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Sicherheit\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 4: Sicherheit.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Sicherheit.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Sicherheit ist kein einmaliger Schalter und kein einzelnes Produkt."
+      ],
+      "summary": [
+        "Ein ungetestetes Backup kann im Notfall unbrauchbar sein."
+      ],
+      "questions": [
+        {
+          "prompt": "Warum braucht ein Backup einen Wiederherstellungstest?",
+          "choices": [
+            "Damit nachweisbar ist, dass Daten im Ernstfall zurückkommen.",
+            "Damit ein Passwort automatisch länger wird."
+          ],
+          "answer": 0,
+          "explanation": "Ein ungetestetes Backup kann im Notfall unbrauchbar sein."
+        }
+      ],
+      "exercise": "Nenne eine Schutzmaßnahme für Gerät, Konto und Datei.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Technology – Technologie verstehen: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/security/lang/en/security.txt",
+          "course": "CS50 Technology – Technologie verstehen"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-technology",
+    "lesson_id": "technology-archive-05",
+    "title": "CS50 Technology – Technologie verstehen: Webentwicklung",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Webentwicklung; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nWebseiten nutzen HTML für Struktur, CSS für Darstellung und JavaScript für Verhalten. Browser kommunizieren über HTTP mit Servern, die dynamische Inhalte bereitstellen können.\n\n## Beispiel\n\nEin Link lädt eine Ressource; ein Formular sendet strukturierte Eingaben an einen Server.\n\n## Was du mitnehmen solltest\n\nWebtechnologien haben unterschiedliche Verantwortlichkeiten.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Webentwicklung anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Ordne HTML, CSS, JavaScript und HTTP je eine Aufgabe zu.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Webentwicklung\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 5: Webentwicklung.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Webentwicklung.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Eine attraktive Oberfläche allein sagt nichts über Zugänglichkeit, Sicherheit oder Serververarbeitung aus."
+      ],
+      "summary": [
+        "Webtechnologien haben unterschiedliche Verantwortlichkeiten."
+      ],
+      "questions": [
+        {
+          "prompt": "Welche Aufgabe hat HTML?",
+          "choices": [
+            "Inhalt und semantische Struktur beschreiben.",
+            "Netzwerkverbindungen verschlüsseln."
+          ],
+          "answer": 0,
+          "explanation": "Webtechnologien haben unterschiedliche Verantwortlichkeiten."
+        }
+      ],
+      "exercise": "Ordne HTML, CSS, JavaScript und HTTP je eine Aufgabe zu.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Technology – Technologie verstehen: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/web_development/lang/en/web_development.txt",
+          "course": "CS50 Technology – Technologie verstehen"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  },
+  {
+    "track_id": "cs50-technology",
+    "lesson_id": "technology-archive-06",
+    "title": "CS50 Technology – Technologie verstehen: Programmierung",
+    "difficulty": "beginner",
+    "coach_context": "Historische Einführung zu Programmierung; die Plattform führt das Konzept mit eigenen Beispielen weiter.",
+    "mental_model_and_code": "## Erklärung\n\nProgramme formulieren Anweisungen und Regeln, die ein Rechner ausführt. Variablen, Bedingungen, Schleifen und Funktionen bilden grundlegende Bausteine.\n\n## Beispiel\n\nEin Programm liest einen Temperaturwert, vergleicht ihn mit einer Grenze und zeigt abhängig davon einen Hinweis.\n\n## Was du mitnehmen solltest\n\nKontrollfluss modelliert Entscheidungen und Wiederholungen.\n",
+    "jargon_buster": [],
+    "ai_engineering_leverage": {
+      "assistant": "Optionaler Lernpartner (ohne Verbindung aus dieser Plattform)",
+      "golden_prompt": "Erkläre Programmierung anhand eines neuen Beispiels und nenne eine Grenze.",
+      "verification_heuristic": "Unterscheide fachliche Regel, Datenfluss und tatsächliche Systemumgebung."
+    },
+    "interactive_challenge": {
+      "runtime": "python_server",
+      "task_description": "Beschreibe Eingabe, Bedingung und Ausgabe für eine einfache Wetterwarnung.",
+      "starter_code": "# Bearbeite die Fragestellung in eigenen Worten.\n",
+      "hints": [
+        "Notiere zuerst Akteure, Daten und Ziel.",
+        "Prüfe, was bei einer ungültigen Eingabe passiert."
+      ],
+      "solution_code": "print(\"Arbeite die Fragen Schritt für Schritt durch.\")\nprint(\"Programmierung\")",
+      "automated_test_suite": []
+    },
+    "learning_guide": {
+      "short_description": "Historische Kurswoche 6: Programmierung.",
+      "learning_objectives": [
+        "Erkläre das Grundkonzept Programmierung.",
+        "Ordne ein Beispiel und eine Grenze des Konzepts zu."
+      ],
+      "prerequisites": [
+        "Keine."
+      ],
+      "common_mistakes": [
+        "Ein Programm liefert nur für Eingaben zuverlässige Ergebnisse, die es sinnvoll behandelt."
+      ],
+      "summary": [
+        "Kontrollfluss modelliert Entscheidungen und Wiederholungen."
+      ],
+      "questions": [
+        {
+          "prompt": "Wofür ist eine Bedingung?",
+          "choices": [
+            "Für eine Entscheidung abhängig von einem Wahrheitswert.",
+            "Zum dauerhaften Speichern beliebiger Daten."
+          ],
+          "answer": 0,
+          "explanation": "Kontrollfluss modelliert Entscheidungen und Wiederholungen."
+        }
+      ],
+      "exercise": "Beschreibe Eingabe, Bedingung und Ausgabe für eine einfache Wetterwarnung.",
+      "estimated_minutes": 20,
+      "sources": [
+        {
+          "label": "CS50 Technology – Technologie verstehen: Archivvorlesung und Transkript",
+          "url": "https://cdn.cs50.net/cscie1a/2017/fall/lectures/programming/lang/en/programming.txt",
+          "course": "CS50 Technology – Technologie verstehen"
+        }
+      ],
+      "beyond_cs50": false,
+      "execution_note": "Archivkurs: historische Technologieversion. Die Aufgabe ist eine konzeptuelle Übung; die alte App- bzw. Laufzeitumgebung wird nicht bereitgestellt."
+    },
+    "xp": 20
+  }
+]

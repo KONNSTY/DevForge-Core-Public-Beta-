@@ -7,7 +7,6 @@ import { useProgress } from "@/hooks/useProgress";
 import { Zap, ChevronRight, BookOpen } from "lucide-react";
 import { RecruiterToggle } from "@/components/recruiter-toggle";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { AuthModalButton } from "@/components/auth-modal";
 import { SystemArchitectureInspector } from "@/components/architecture-inspector";
 
 export function AppHeader() {
@@ -43,30 +42,39 @@ export function AppHeader() {
   }
 
   return (
-    <header className="h-14 border-b flex items-center justify-between px-3 sm:px-6 shrink-0 bg-background/80 backdrop-blur sticky top-0 z-30 gap-2">
+    <header className="min-h-14 border-b flex items-center justify-between gap-2 px-3 py-2 sm:h-14 sm:px-6 sm:py-0 shrink-0 bg-background/80 backdrop-blur sticky top-0 z-30">
       {/* Left: Breadcrumbs */}
-      <div className="flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm overflow-hidden">
+      <div className="min-w-0 flex flex-1 items-center space-x-1.5 overflow-hidden text-xs sm:space-x-2 sm:text-sm">
         <Link href="/tracks" className="text-muted-foreground hover:text-foreground transition-colors font-medium flex items-center space-x-1 shrink-0">
           <BookOpen size={14} className="mr-0.5" />
-          <span>DevForge</span>
+          <span className="hidden sm:inline">DevForge</span>
         </Link>
         {breadcrumbTrack && (
           <>
             <ChevronRight size={13} className="text-muted-foreground/60 shrink-0" />
-            <span className="text-muted-foreground max-w-[100px] sm:max-w-[160px] truncate hidden xs:inline">
+            <span className="hidden max-w-[100px] truncate text-muted-foreground sm:inline sm:max-w-[160px]">
               {breadcrumbTrack}
             </span>
           </>
         )}
         <ChevronRight size={13} className="text-muted-foreground/60 shrink-0" />
-        <span className="font-semibold text-foreground max-w-[120px] sm:max-w-[200px] truncate">
+        <span className="min-w-0 font-semibold text-foreground max-w-[120px] sm:max-w-[200px] truncate">
           {breadcrumbTitle}
         </span>
       </div>
 
-      {/* Right: Architecture Inspector, Language Switcher, XP, Auth, Recruiter */}
-      <div className="flex items-center space-x-2 sm:space-x-3 shrink-0">
+      {/* Right: Architecture Inspector, Polymath CTA, Language Switcher, XP, Recruiter */}
+      <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
         <SystemArchitectureInspector />
+
+        <a
+          href="https://reglerproductions.com/preise.html"
+          target="_blank"
+          rel="noreferrer"
+          className="hidden lg:inline-flex items-center rounded-md border border-cyan-400/40 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300 hover:bg-cyan-400/20 transition-colors"
+        >
+          Polymath Angebot
+        </a>
 
         <LanguageSwitcher />
 
@@ -74,8 +82,6 @@ export function AppHeader() {
           <Zap size={13} className="fill-amber-500" />
           <span>{totalXp} XP</span>
         </div>
-
-        <AuthModalButton />
 
         <RecruiterToggle />
       </div>

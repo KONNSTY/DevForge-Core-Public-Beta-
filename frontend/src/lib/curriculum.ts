@@ -1,4 +1,5 @@
 import curriculumData from '../data/curriculum.json';
+import cs50CourseData from '../data/cs50-courses.json';
 import { SupportedLocale } from './i18n';
 
 export type Difficulty = "beginner" | "intermediate" | "advanced";
@@ -22,7 +23,7 @@ export interface AutomatedTest {
 }
 
 export interface InteractiveChallenge {
-  runtime: "browser_sandbox" | "roslyn_csharp" | "pyodide_python" | "sqlite_in_memory";
+  runtime: "browser_sandbox" | "roslyn_csharp" | "pyodide_python" | "python_server" | "sqlite_in_memory";
   task_description: string;
   starter_code: string;
   hints: string[];
@@ -55,6 +56,19 @@ export interface Lesson {
   mental_model_and_code: string;
   ai_engineering_leverage: AiEngineeringLeverage;
   interactive_challenge: InteractiveChallenge;
+  learning_guide?: {
+    short_description: string;
+    learning_objectives: string[];
+    prerequisites: string[];
+    common_mistakes: string[];
+    summary: string[];
+    questions: { prompt: string; choices: string[]; answer: number; explanation: string }[];
+    exercise: string;
+    estimated_minutes: number;
+    sources: { label: string; url: string; course: string }[];
+    beyond_cs50?: boolean;
+    execution_note?: string;
+  };
   xp: number;
   senior_thought_log?: SeniorThoughtLogData;
   content_matrix?: Partial<Record<SupportedLocale, LocalizedContent>>;
@@ -70,149 +84,64 @@ export interface TrackMetadata {
 }
 
 export const tracksMetadata: TrackMetadata[] = [
-  {
-    id: "web-grundlagen",
-    order: 1,
-    title: "1. Wie das Internet funktioniert",
-    concept: "Browser, Server und wie Webseiten auf den Bildschirm kommen",
-    localized_titles: {
-      de: { title: "1. Wie das Internet funktioniert", concept: "Browser, Server und wie Webseiten auf den Bildschirm kommen" },
-      en: { title: "1. How the Internet Works", concept: "Browsers, servers, and how packets turn into screens" },
-      id: { title: "1. Cara Kerja Internet", concept: "Peramban, server, dan bagaimana halaman web ditampilkan" },
-      zh: { title: "1. 互联网底层运行机制", concept: "浏览器、服务器与网页渲染全流程" },
-      ko: { title: "1. 인터넷의 동작 원리", concept: "브라우저, 서버, 그리고 웹페이지가 화면에 렌더링되는 원리" },
-      ja: { title: "1. インターネットの動作原理", concept: "ブラウザ、サーバー、Webページが画面に描画される仕組み" }
-    }
-  },
-  {
-    id: "html-einstieg",
-    order: 2,
-    title: "2. HTML – Das Skelett jeder Webseite",
-    concept: "Texte, Buttons, Bilder und Formulare verständlich aufbauen",
-    localized_titles: {
-      de: { title: "2. HTML – Das Skelett jeder Webseite", concept: "Texte, Buttons, Bilder und Formulare verständlich aufbauen" },
-      en: { title: "2. HTML – The Structural Skeleton", concept: "Semantic text, buttons, media, and accessible forms" },
-      id: { title: "2. HTML – Kerangka Situs Web", concept: "Menyusun teks, tombol, gambar, dan formulir dengan mudah" },
-      zh: { title: "2. HTML – 网页核心骨架", concept: "通俗构建文本、按钮、图片与高可用表单" },
-      ko: { title: "2. HTML – 웹페이지의 뼈대", concept: "텍스트, 버튼, 이미지, 폼 요소를 직관적으로 구성하기" },
-      ja: { title: "2. HTML – Webページの骨格", concept: "テキスト、ボタン、画像、フォームの構造的マークアップ" }
-    }
-  },
-  {
-    id: "css-einstieg",
-    order: 3,
-    title: "3. CSS – Kleidung und Design",
-    concept: "Farben, Abstände, Flexbox und moderne Layouts ohne Frust",
-    localized_titles: {
-      de: { title: "3. CSS – Kleidung und Design", concept: "Farben, Abstände, Flexbox und moderne Layouts ohne Frust" },
-      en: { title: "3. CSS – Styling and Layouts", concept: "Colors, box model, Flexbox, and CSS Grid without headaches" },
-      id: { title: "3. CSS – Tata Letak & Gaya", concept: "Warna, jarak, Flexbox, dan tata letak modern tanpa frustrasi" },
-      zh: { title: "3. CSS – 样式与现代布局", concept: "色彩、盒模型、Flexbox 与 Grid 现代化布局" },
-      ko: { title: "3. CSS – 스타일링과 레이아웃", concept: "색상, 여백, Flexbox 및 CSS Grid를 활용한 직관적 디자인" },
-      ja: { title: "3. CSS – スタイルとモダンレイアウト", concept: "カラー、ボックスモデル、Flexbox、CSS Gridの完全攻略" }
-    }
-  },
-  {
-    id: "js-programmieren",
-    order: 4,
-    title: "4. JavaScript – Das Gehirn der Webseite",
-    concept: "Logik, Reaktionen auf Klicks, Daten speichern und Schleifen",
-    localized_titles: {
-      de: { title: "4. JavaScript – Das Gehirn der Webseite", concept: "Logik, Reaktionen auf Klicks, Daten speichern und Schleifen" },
-      en: { title: "4. JavaScript – Client-side Brain", concept: "State, DOM events, asynchronous operations, and APIs" },
-      id: { title: "4. JavaScript – Otak Halaman Web", concept: "Logika pemrograman, aksi klik, penyimpanan data, dan API" },
-      zh: { title: "4. JavaScript – 网页的逻辑大脑", concept: "变量、函数、事件循环与网络数据请求" },
-      ko: { title: "4. JavaScript – 웹페이지의 두뇌", concept: "논리 연산, 클릭 이벤트 처리, 데이터 저장 및 비동기 통신" },
-      ja: { title: "4. JavaScript – 動的制御の頭脳", concept: "ロジック、イベント処理、データ保持、Fetch API" }
-    }
-  },
-  {
-    id: "ts-sicherheit",
-    order: 5,
-    title: "5. TypeScript – Der Sicherheitsgurt",
-    concept: "Typen definieren, Fehler vor dem Ausführen verhindern",
-    localized_titles: {
-      de: { title: "5. TypeScript – Der Sicherheitsgurt", concept: "Typen definieren, Fehler vor dem Ausführen verhindern" },
-      en: { title: "5. TypeScript – Safety Harness", concept: "Static typing, generics, interfaces, and compile-time guarantees" },
-      id: { title: "5. TypeScript – Sabuk Pengaman Koding", concept: "Definisi tipe data, mencegah bug sebelum kode dijalankan" },
-      zh: { title: "5. TypeScript – 工业级类型安全带", concept: "静态类型、接口契约与编译期缺陷阻截" },
-      ko: { title: "5. TypeScript – 코드 안전벨트", concept: "타입 정의, 인터페이스 계약, 실행 전 버그 사전 차단" },
-      ja: { title: "5. TypeScript – 型安全のシートベルト", concept: "型定義、インターフェース、コンパイル時エラー検出" }
-    }
-  },
-  {
-    id: "react-bausteine",
-    order: 6,
-    title: "6. React – Webseiten aus LEGO bauen",
-    concept: "Wiederverwendbare Komponenten, State und moderne Web-Apps",
-    localized_titles: {
-      de: { title: "6. React – Webseiten aus LEGO bauen", concept: "Wiederverwendbare Komponenten, State und moderne Web-Apps" },
-      en: { title: "6. React – Component Architecture", concept: "Reusable components, reactive state, and declarative UI" },
-      id: { title: "6. React – Membangun Web dari LEGO", concept: "Komponen yang dapat digunakan kembali, state, dan aplikasi web" },
-      zh: { title: "6. React – 积木式现代组件工程", concept: "可复用组件、响应式状态与虚拟 DOM" },
-      ko: { title: "6. React – 레고 블록처럼 쌓는 웹", concept: "재사용 가능한 컴포넌트, 상태 관리, 최신 SPA 구조" },
-      ja: { title: "6. React – LEGOのように組み立てるWeb", concept: "再利用可能なコンポーネント、State管理、現代的SPA構築" }
-    }
-  },
-  {
-    id: "csharp-backend",
-    order: 7,
-    title: "7. C# & .NET – Das Kraftwerk im Hintergrund",
-    concept: "Objektorientierte Programmierung verständlich gemacht",
-    localized_titles: {
-      de: { title: "7. C# & .NET – Das Kraftwerk im Hintergrund", concept: "Objektorientierte Programmierung verständlich gemacht" },
-      en: { title: "7. C# & .NET – Enterprise Engine", concept: "Strict typing, OOP architectures, LINQ, and CLR runtime" },
-      id: { title: "7. C# & .NET – Pembangkit Tenaga Backend", concept: "Pemrograman berorientasi objek yang kuat dan terstruktur" },
-      zh: { title: "7. C# & .NET – 高性能后端核心引擎", concept: "面向对象编程、强类型规范、LINQ 与 CLR 运行时" },
-      ko: { title: "7. C# & .NET – 백엔드 엔진룸", concept: "객체 지향 프로그래밍, LINQ, 강력한 타입 시스템" },
-      ja: { title: "7. C# & .NET – 堅牢なバックエンドエンジン", concept: "オブジェクト指向設計、LINQ、型安全なCLRランタイム" }
-    }
-  },
-  {
-    id: "aspnet-web-api",
-    order: 8,
-    title: "8. ASP.NET Core – Eigene APIs bauen",
-    concept: "Wie das Backend dem Frontend antwortet",
-    localized_titles: {
-      de: { title: "8. ASP.NET Core – Eigene APIs bauen", concept: "Wie das Backend dem Frontend antwortet" },
-      en: { title: "8. ASP.NET Core – High-Performance APIs", concept: "Minimal APIs, pipeline middleware, JSON contracts, and auth" },
-      id: { title: "8. ASP.NET Core – Membangun Web API", concept: "Bagaimana backend merespons permintaan frontend" },
-      zh: { title: "8. ASP.NET Core – 构建工业级 Web API", concept: "Minimal API 架构、管道中间件与高性能 JSON 响应" },
-      ko: { title: "8. ASP.NET Core – 나만의 웹 API 구축", concept: "프론트엔드와 통신하는 고성능 백엔드 API 설계" },
-      ja: { title: "8. ASP.NET Core – 高速Web APIの構築", concept: "フロントエンドと通信するエンドポイント設計とJSON応答" }
-    }
-  },
-  {
-    id: "datenbanken-sql",
-    order: 9,
-    title: "9. Datenbanken & SQL – Das Langzeitgedächtnis",
-    concept: "Daten sicher in Tabellen speichern, verknüpfen und abfragen",
-    localized_titles: {
-      de: { title: "9. Datenbanken & SQL – Das Langzeitgedächtnis", concept: "Daten sicher in Tabellen speichern, verknüpfen und abfragen" },
-      en: { title: "9. Databases & SQL – Persistent Memory", concept: "Relational tables, ACID transactions, queries, and joins" },
-      id: { title: "9. Basis Data & SQL – Memori Jangka Panjang", concept: "Menyimpan data dengan aman, menghubungkan tabel, dan kueri" },
-      zh: { title: "9. 数据库与 SQL – 系统的长期记忆", concept: "关系型表结构设计、ACID 事务与高效多表关联" },
-      ko: { title: "9. 데이터베이스 & SQL – 영구 기억 저장소", concept: "데이터 테이블 설계, 인덱싱, 정밀 쿼리 및 JOIN 기법" },
-      ja: { title: "9. データベースとSQL – データの長期記憶", concept: "テーブル設計、ACIDトランザクション、JOIN結合クエリ" }
-    }
-  },
-  {
-    id: "python-ki-lab",
-    order: 10,
-    title: "10. Extra-Pfad: Python & KI-Engineering",
-    concept: "Getrennter Pfad für moderne KI-Programmierung, LLM-Anbindung und Prompts",
-    localized_titles: {
-      de: { title: "10. Extra-Pfad: Python & KI-Engineering", concept: "Getrennter Pfad für moderne KI-Programmierung, LLM-Anbindung und Prompts" },
-      en: { title: "10. AI Engineering Track: Python & LLMs", concept: "Scripting, structured generation, tool use, and model APIs" },
-      id: { title: "10. Jalur Ekstra: Python & Rekayasa AI", concept: "Pemrograman AI modern, integrasi LLM, dan manipulasi prompt" },
-      zh: { title: "10. AI 专项工程：Python 与大模型开发", concept: "LLM 接口编排、结构化 JSON 输出与 AI 提示词工程" },
-      ko: { title: "10. AI 엔지니어링 트랙: Python과 LLM 연동", concept: "파이썬 기초, LLM API 호출 및 Pydantic 기반 구조화 출력" },
-      ja: { title: "10. AIエンジニアリング専攻: Python & LLM活用", concept: "スクリプト開発、LLM API連携、Pydantic構造化出力" }
-    }
-  }
+  { id: "cs-grundlagen", order: 1, title: "1. Informatik-Grundlagen", concept: "Daten, Algorithmen, Laufzeit, Speicher und passende Datenstrukturen" },
+  { id: "python-ki-lab", order: 2, title: "2. Python und Software-Grundlagen", concept: "Programmieren, testen, Dateien, Fehler und objektorientierte Modelle" },
+  { id: "ai-grundlagen", order: 3, title: "3. Grundlagen der Künstlichen Intelligenz", concept: "Suche, Wissen, Wahrscheinlichkeit, Optimierung und maschinelles Lernen" },
+  { id: "datenbanken-sql", order: 4, title: "4. Datenbanken und SQL", concept: "Abfragen, Beziehungen, Integrität, Indizes und sichere Datenzugriffe" },
+  { id: "web-grundlagen", order: 5, title: "5. Web-Grundlagen", concept: "Internet, HTML, CSS, JavaScript und asynchrone APIs" },
+  { id: "aspnet-web-api", order: 6, title: "6. Fullstack und Backend", concept: "Git, HTTP-APIs, Sessions, Validierung, Modelle und Migrationen" },
+  { id: "react-bausteine", order: 7, title: "7. Frontend Engineering", concept: "Komponenten, State, Formulare, TypeScript und zugängliche UI" },
+  { id: "ai-engineering", order: 8, title: "8. AI Engineering", concept: "LLMs, Retrieval, Tool-Nutzung, Evaluation und sichere Integration" },
+  { id: "cybersecurity", order: 9, title: "9. Cybersecurity", concept: "Threat Modeling, Webangriffe, Kontoschutz und Datenschutz" },
+  { id: "cs50-scratch", order: 10, title: "10. CS50 Scratch", concept: "Programmieren mit Ereignissen, Variablen, Schleifen und eigenen Projekten" },
+  { id: "cs50-r", order: 11, title: "11. CS50 R", concept: "Daten darstellen, umformen, analysieren, visualisieren und testen" },
+  { id: "cs50-2d", order: 12, title: "12. CS50 2D", concept: "Spielschleifen, Eingaben, Physik, Kollisionen und Spielzustände" },
+  { id: "cs50-business", order: 13, title: "13. CS50 Business", concept: "Informatik, Daten, KI, Internet und Sicherheit im Geschäftskontext" },
+  { id: "cs50-lawyers", order: 14, title: "14. CS50 for Lawyers", concept: "Technische Grundlagen für die Analyse von Recht und Technologie" },
+  { id: "cs50-mobile", order: 15, title: "15. CS50 Mobile (Archiv)", concept: "Historische Einführung in React Native und mobile Anwendungen" },
+  { id: "cs50-technology", order: 16, title: "16. CS50 Technology (Archiv)", concept: "Historische Einführung in Hardware, Internet und Web" },
 ];
 
 export const lessons: Lesson[] = curriculumData as Lesson[];
+
+export interface Cs50CourseWeek {
+  week: number | string;
+  title: string;
+  topic_outline: string;
+  transcript_url?: string;
+  course_page: string;
+  transcript_version?: string[];
+  lesson_ids?: string[];
+}
+
+export interface Cs50Course {
+  id: string;
+  title: string;
+  official: string;
+  syllabus_url: string;
+  status: "active" | "archived";
+  description: string;
+  weeks: Cs50CourseWeek[];
+}
+
+export interface Cs50ProfessionalCertificate {
+  id: string;
+  title: string;
+  provider: string;
+  courses: string[];
+  edx: string;
+  note?: string;
+}
+
+const cs50Catalog = cs50CourseData as {
+  checked_utc: string;
+  source_note: string;
+  courses: Cs50Course[];
+  professional_certificates: Cs50ProfessionalCertificate[];
+};
+
+export const cs50Courses = cs50Catalog.courses;
+export const cs50ProfessionalCertificates = cs50Catalog.professional_certificates;
 
 export function getTracks(): TrackMetadata[] {
   return tracksMetadata;
@@ -232,6 +161,10 @@ export function getLessonById(lessonId: string): Lesson | undefined {
 
 export function getAllLessonsLinear(): Lesson[] {
   return tracksMetadata.flatMap(track => getLessonsForTrack(track.id));
+}
+
+export function getFirstLesson(): Lesson | undefined {
+  return getAllLessonsLinear()[0];
 }
 
 export function getLocalizedLessonContent(lesson: Lesson, locale: SupportedLocale): {

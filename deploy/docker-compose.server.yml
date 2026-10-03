@@ -1,0 +1,64 @@
+services:
+  devforgecore:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile.production
+    restart: unless-stopped
+    environment:
+      HOSTNAME: 0.0.0.0
+      PISTON_URL: http://piston:2000
+    depends_on:
+      piston-init:
+        condition: service_completed_successfully
+    networks:
+      - polymath_intern
+      - devforge_runner
+
+  piston:
+    image: ghcr.io/engineer-man/piston@sha256:2f66b7456189c4d713aa986d98eccd0b6ee16d26c7ec5f21b30e942756fd127a
+    privileged: true
+    restart: unless-stopped
+    environment:
+      PISTON_DISABLE_NETWORKING: "true"
+      PISTON_MAX_CONCURRENT_JOBS: "3"
+      PISTON_MAX_PROCESS_COUNT: "32"
+      PISTON_MAX_OPEN_FILES: "256"
+      PISTON_OUTPUT_MAX_SIZE: "8192"
+      PISTON_COMPILE_TIMEOUT: "20000"
+      PISTON_COMPILE_CPU_TIME: "20000"
+      PISTON_COMPILE_MEMORY_LIMIT: "1073741824"
+      PISTON_RUN_TIMEOUT: "5000"
+      PISTON_RUN_CPU_TIME: "5000"
+      PISTON_RUN_MEMORY_LIMIT: "268435456"
+    volumes:
+      - piston_packages:/piston/packages
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:2000/api/v2/runtimes',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - devforge_runner
+
+  piston-init:
+    image: node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+    command: ["node", "/scripts/install-piston-runtimes.mjs"]
+    restart: "no"
+    volumes:
+      - ./install-piston-runtimes.mjs:/scripts/install-piston-runtimes.mjs:ro
+    depends_on:
+      piston:
+        condition: service_healthy
+    networks:
+      - devforge_runner
+
+networks:
+  polymath_intern:
+    external: true
+    name: polymath_intern
+  devforge_runner:
+    driver: bridge
+
+volumes:
+  piston_packages:

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { getTracks, getLessonsForTrack, getLocalizedLessonContent } from "@/lib/curriculum";
 import { useProgress } from "@/hooks/useProgress";
 import { useLanguage } from "@/components/language-context";
-import { BookOpen, CheckCircle, Circle, Scale, Home } from "lucide-react";
+import { BookOpen, CheckCircle, Circle, Scale, Home, GraduationCap } from "lucide-react";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -16,15 +16,17 @@ export function AppSidebar() {
   return (
     <aside className="w-72 border-r bg-card/40 backdrop-blur hidden md:flex flex-col h-full shrink-0">
       <div className="p-4 border-b flex items-center justify-between">
-        <Link href="/" className="group flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-black group-hover:scale-105 transition-transform">
-            ⚡
-          </div>
-          <div>
-            <h1 className="font-bold text-sm leading-tight tracking-tight">{t("app_title")}</h1>
-            <span className="text-[10px] uppercase font-bold text-primary tracking-wider">{t("app_subtitle")}</span>
-          </div>
-        </Link>
+        <div className="flex items-center space-x-2">
+          <Link href="/" className="group flex items-center space-x-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-300 to-primary border border-cyan-200/60 flex items-center justify-center text-slate-950 font-black group-hover:scale-105 transition-transform">
+              P
+            </div>
+            <div>
+              <h1 className="font-bold text-sm leading-tight tracking-tight">{t("app_title")}</h1>
+              <span className="text-[10px] uppercase font-bold text-primary tracking-wider">{t("app_subtitle")}</span>
+            </div>
+          </Link>
+        </div>
       </div>
 
       <div className="p-3 border-b space-y-1">
@@ -45,6 +47,15 @@ export function AppSidebar() {
         >
           <BookOpen size={16} />
           <span>{t("all_tracks")}</span>
+        </Link>
+        <Link
+          href="/courses"
+          className={`flex items-center space-x-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            pathname.startsWith("/courses") ? "bg-primary/15 text-primary font-semibold" : "text-muted-foreground hover:bg-muted hover:text-foreground"
+          }`}
+        >
+          <GraduationCap size={16} />
+          <span>{t("cs50_courses")}</span>
         </Link>
       </div>
 
