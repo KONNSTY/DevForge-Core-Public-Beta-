@@ -16,15 +16,13 @@ export function LessonPractice({ lesson }: { lesson: Lesson }) {
       if (saved) {
         const value = JSON.parse(saved) as { answers?: Record<number, number>; exerciseDone?: boolean };
         // Browser-only progress is hydrated after the stable server render.
-        // eslint-disable-next-line react-hooks/set-state-in-effect
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- Read saved, local-only practice answers after hydration.
         setAnswers(value.answers ?? {});
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setExerciseDone(value.exerciseDone ?? false);
       }
     } catch {
       // Ignore corrupted local practice state; lesson access and content are unaffected.
     }
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
   }, [storageKey]);
 

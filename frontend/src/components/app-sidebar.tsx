@@ -2,119 +2,87 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BookOpen, BriefcaseBusiness, Code2, GraduationCap, Home, Scale, Sparkles } from "lucide-react";
 import { getTracks, getLessonsForTrack, getLocalizedLessonContent } from "@/lib/curriculum";
 import { useProgress } from "@/hooks/useProgress";
 import { useLanguage } from "@/components/language-context";
-import { BookOpen, CheckCircle, Circle, Scale, Home, GraduationCap } from "lucide-react";
+
+const portfolioLinks = [
+  { href: "/#overview", title: "Überblick", icon: Home },
+  { href: "/#approach", title: "Schwerpunkte", icon: Sparkles },
+  { href: "/#work", title: "Ausgewählte Arbeit", icon: BriefcaseBusiness },
+  { href: "/#contact", title: "Kontakt", icon: Code2 },
+];
 
 export function AppSidebar() {
   const pathname = usePathname();
-  const tracks = getTracks();
   const { progress } = useProgress();
   const { locale, t } = useLanguage();
+  const isLesson = pathname.includes("/lessons/");
+
+  const navLink = (href: string, title: string, Icon: typeof Home, active: boolean) => (
+    <Link
+      key={href}
+      href={href}
+      aria-current={active ? "page" : undefined}
+      className={`sidebar-link ${active ? "sidebar-link-active" : ""}`}
+    >
+      <Icon size={16} aria-hidden="true" />
+      <span>{title}</span>
+    </Link>
+  );
 
   return (
-    <aside className="w-72 border-r bg-card/40 backdrop-blur hidden md:flex flex-col h-full shrink-0">
-      <div className="p-4 border-b flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <Link href="/" className="group flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-300 to-primary border border-cyan-200/60 flex items-center justify-center text-slate-950 font-black group-hover:scale-105 transition-transform">
-              P
-            </div>
-            <div>
-              <h1 className="font-bold text-sm leading-tight tracking-tight">{t("app_title")}</h1>
-              <span className="text-[10px] uppercase font-bold text-primary tracking-wider">{t("app_subtitle")}</span>
-            </div>
-          </Link>
-        </div>
-      </div>
-
-      <div className="p-3 border-b space-y-1">
-        <Link
-          href="/"
-          className={`flex items-center space-x-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-            pathname === "/" ? "bg-primary/15 text-primary font-semibold" : "text-muted-foreground hover:bg-muted hover:text-foreground"
-          }`}
-        >
-          <Home size={16} />
-          <span>{t("dashboard")}</span>
-        </Link>
-        <Link
-          href="/tracks"
-          className={`flex items-center space-x-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-            pathname === "/tracks" ? "bg-primary/15 text-primary font-semibold" : "text-muted-foreground hover:bg-muted hover:text-foreground"
-          }`}
-        >
-          <BookOpen size={16} />
-          <span>{t("all_tracks")}</span>
-        </Link>
-        <Link
-          href="/courses"
-          className={`flex items-center space-x-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-            pathname.startsWith("/courses") ? "bg-primary/15 text-primary font-semibold" : "text-muted-foreground hover:bg-muted hover:text-foreground"
-          }`}
-        >
-          <GraduationCap size={16} />
-          <span>{t("cs50_courses")}</span>
+    <aside className="app-sidebar hidden h-full w-[248px] shrink-0 flex-col md:flex" aria-label="Hauptnavigation">
+      <div className="border-b border-white/[0.08] p-5">
+        <Link href="/" className="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <span className="brand-mark" aria-hidden="true">K</span>
+          <span className="min-w-0"><span className="block truncate text-sm font-semibold tracking-tight text-white">Konstantin Regler</span><span className="mt-0.5 block text-[10px] font-medium uppercase tracking-[0.13em] text-indigo-300">Portfolio &amp; Engineering</span></span>
         </Link>
       </div>
 
-      {/* Track & Lesson Tree Navigation */}
-      <nav className="flex-1 overflow-y-auto p-3 space-y-4">
-        <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground px-2">
-          {t("curriculum")} (Linear & Open)
-        </div>
-        {tracks.map((track) => {
-          const lessons = getLessonsForTrack(track.id);
-          const locTrack = track.localized_titles?.[locale] || { title: track.title, concept: track.concept };
-
-          return (
-            <div key={track.id} className="space-y-1">
-              <div className="px-2 py-1 flex items-center justify-between text-xs font-semibold text-foreground/80">
-                <span className="truncate">{locTrack.title}</span>
-              </div>
-              <div className="space-y-0.5 pl-2 border-l border-border/40 ml-2">
-                {lessons.map((lesson) => {
-                  const isCompleted = progress[track.id]?.completedLessons?.includes(lesson.lesson_id);
-                  const isCurrent = pathname.includes(lesson.lesson_id);
-                  const locLesson = getLocalizedLessonContent(lesson, locale);
-
-                  return (
-                    <Link
-                      key={lesson.lesson_id}
-                      href={`/tracks/${track.id}/lessons/${lesson.lesson_id}`}
-                      className={`group flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs transition-colors ${
-                        isCurrent 
-                          ? "bg-primary text-primary-foreground font-semibold"
-                          : "text-muted-foreground hover:bg-muted/70 hover:text-foreground"
-                      }`}
-                    >
-                      <div className="flex items-center space-x-2 truncate">
-                        {isCompleted ? (
-                          <CheckCircle size={13} className={isCurrent ? "text-primary-foreground" : "text-emerald-500 shrink-0"} />
-                        ) : (
-                          <Circle size={13} className="shrink-0 opacity-40 group-hover:opacity-100" />
-                        )}
-                        <span className="truncate">{locLesson.title}</span>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
+      <nav className="space-y-1 px-3 py-5" aria-label="Portfolio">
+        <p className="sidebar-label">Portfolio</p>
+        {portfolioLinks.map(({ href, title, icon: Icon }) => navLink(href, title, Icon, false))}
       </nav>
 
-      {/* Bottom Legal & Footer */}
-      <div className="p-3 border-t bg-muted/20 space-y-1">
-        <Link
-          href="/impressum"
-          className="flex items-center space-x-2 px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-        >
-          <Scale size={14} />
-          <span>{t("imprint_privacy")}</span>
-        </Link>
+      <div className="mx-4 border-t border-white/[0.08]" />
+      <nav className="space-y-1 px-3 py-5" aria-label="Engineering-Lab">
+        <p className="sidebar-label">Engineering Lab</p>
+        {navLink("/tracks", "Lernpfade", BookOpen, pathname === "/tracks")}
+        {navLink("/courses", "Kursbibliothek", GraduationCap, pathname.startsWith("/courses"))}
+      </nav>
+
+      {isLesson && (
+        <nav className="min-h-0 flex-1 space-y-4 overflow-y-auto border-t border-white/[0.08] px-3 py-5" aria-label={t("curriculum")}>
+          <p className="sidebar-label">{t("curriculum")}</p>
+          {getTracks().map((track) => {
+            const lessons = getLessonsForTrack(track.id);
+            const trackTitle = track.localized_titles?.[locale]?.title || track.title;
+            return (
+              <div key={track.id}>
+                <p className="mb-1 truncate px-2 text-xs font-medium text-slate-400">{trackTitle}</p>
+                <div className="space-y-0.5 border-l border-white/10 pl-2">
+                  {lessons.map((lesson) => {
+                    const isCurrent = pathname.includes(lesson.lesson_id);
+                    const isCompleted = progress[track.id]?.completedLessons?.includes(lesson.lesson_id) ?? false;
+                    return (
+                      <Link key={lesson.lesson_id} href={`/tracks/${track.id}/lessons/${lesson.lesson_id}`} aria-current={isCurrent ? "page" : undefined} className={`lesson-nav-link ${isCurrent ? "lesson-nav-link-active" : ""}`}>
+                        <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${isCompleted ? "bg-emerald-400" : "bg-slate-600"}`} aria-hidden="true" />
+                        <span className="truncate">{getLocalizedLessonContent(lesson, locale).title}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </nav>
+      )}
+
+      <div className="mt-auto space-y-1 border-t border-white/[0.08] bg-white/[0.015] p-3">
+        <a href="https://github.com/KONNSTY" target="_blank" rel="noreferrer" className="sidebar-link"><Code2 size={15} aria-hidden="true" /><span>GitHub</span></a>
+        {navLink("/impressum", "Impressum & Datenschutz", Scale, pathname === "/impressum")}
       </div>
     </aside>
   );

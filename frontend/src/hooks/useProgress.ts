@@ -11,8 +11,33 @@ export type ProgressData = {
 const STORAGE_KEY = 'weblearn-progress';
 const CHANNEL_NAME = 'weblearn-progress-sync';
 
+function normalizeProgress(value: unknown): ProgressData {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+
+  return Object.fromEntries(
+    Object.entries(value).flatMap(([trackId, track]) => {
+      if (!track || typeof track !== 'object' || Array.isArray(track)) return [];
+
+      const record = track as Record<string, unknown>;
+      return [[trackId, {
+        completedLessons: Array.isArray(record.completedLessons)
+          ? record.completedLessons.filter((id): id is string => typeof id === 'string')
+          : [],
+        xp: typeof record.xp === 'number' && Number.isFinite(record.xp) && record.xp > 0 ? record.xp : 0,
+        lastAccessed: typeof record.lastAccessed === 'number' && Number.isFinite(record.lastAccessed)
+          ? record.lastAccessed
+          : 0,
+      }]];
+    }),
+  );
+}
+
 function persistProgress(data: ProgressData) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch {
+    // The in-memory progress still works when browser storage is unavailable.
+  }
 }
 
 export function useProgress() {
@@ -21,25 +46,30 @@ export function useProgress() {
 
   // Progress is intentionally local-only: there are no accounts or profile APIs.
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
         // Persisted progress is read after hydration to keep the server render deterministic.
         // eslint-disable-next-line react-hooks/set-state-in-effect
-        setProgress(JSON.parse(stored));
-      } catch (e) {
-        console.error('Failed to parse progress data', e);
+        setProgress(normalizeProgress(JSON.parse(stored)));
       }
+    } catch {
+      // Storage can be disabled by browser privacy settings; keep progress in memory.
+    } finally {
+      setIsHydrated(true);
     }
-    setIsHydrated(true);
   }, []);
 
   // Broadcast channel for cross-tab sync
   useEffect(() => {
     const onStorage = (event: StorageEvent) => {
-      if (event.key !== STORAGE_KEY || !event.newValue) return;
+      if (event.key !== STORAGE_KEY) return;
+      if (!event.newValue) {
+        setProgress({});
+        return;
+      }
       try {
-        setProgress(JSON.parse(event.newValue));
+        setProgress(normalizeProgress(JSON.parse(event.newValue)));
       } catch {
         // Ignore malformed data from another tab.
       }
@@ -47,7 +77,7 @@ export function useProgress() {
     window.addEventListener('storage', onStorage);
 
     const channel = typeof BroadcastChannel === 'undefined' ? null : new BroadcastChannel(CHANNEL_NAME);
-    if (channel) channel.onmessage = (event) => setProgress(event.data);
+    if (channel) channel.onmessage = (event) => setProgress(normalizeProgress(event.data));
 
     return () => {
       window.removeEventListener('storage', onStorage);
@@ -56,18 +86,19 @@ export function useProgress() {
   }, []);
 
   const updateProgress = useCallback((newData: ProgressData) => {
-    setProgress(newData);
-    persistProgress(newData);
+    const normalizedData = normalizeProgress(newData);
+    setProgress(normalizedData);
+    persistProgress(normalizedData);
     if (typeof BroadcastChannel !== 'undefined') {
       const channel = new BroadcastChannel(CHANNEL_NAME);
-      channel.postMessage(newData);
+      channel.postMessage(normalizedData);
       channel.close();
     }
   }, []);
 
   const markLessonComplete = useCallback((trackId: string, lessonId: string, xpReward: number) => {
     setProgress((prev) => {
-      const trackProgress = prev[trackId] || { completedLessons: [], xp: 0, lastAccessed: Date.now() };
+      const trackProgress = normalizeProgress(prev)[trackId] || { completedLessons: [], xp: 0, lastAccessed: Date.now() };
       
       if (trackProgress.completedLessons.includes(lessonId)) {
         return prev; // Already completed

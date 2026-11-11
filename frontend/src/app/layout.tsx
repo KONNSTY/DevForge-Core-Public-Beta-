@@ -19,8 +19,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "devForgeCore Powerd by Regler Productions - Polymath Productions",
-  description: "Kostenlose, accountfreie Fullstack-Lernplattform von Polymath Productions und Regler Productions.",
+  title: "Konstantin Regler — AI & Full-stack Engineer",
+  description: "Portfolio von Konstantin Regler: Full-stack Engineering, AI, Produktentwicklung und DevForge Core.",
+  openGraph: {
+    title: "Konstantin Regler — AI & Full-stack Engineer",
+    description: "Software Engineering, angewandte AI und sorgfältige Produktentwicklung.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -29,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="de" data-scroll-behavior="smooth" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-screen flex flex-col bg-background text-foreground font-sans">
         <ThemeProvider
           attribute="class"
@@ -43,7 +48,7 @@ export default function RootLayout({
                 {/* Skip to main content for WCAG 2.1 AA keyboard accessibility */}
                 <a
                   href="#main-content"
-                  className="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-primary focus:text-primary-foreground focus:z-50 focus:rounded-lg"
+                  className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-primary focus:p-3 focus:text-primary-foreground"
                 >
                   Skip to main content
                 </a>

@@ -2,89 +2,43 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { getAllLessonsLinear, getTracks } from "@/lib/curriculum";
+import { Zap } from "lucide-react";
 import { useProgress } from "@/hooks/useProgress";
-import { Zap, ChevronRight, BookOpen } from "lucide-react";
-import { RecruiterToggle } from "@/components/recruiter-toggle";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { SystemArchitectureInspector } from "@/components/architecture-inspector";
+import { RecruiterToggle } from "@/components/recruiter-toggle";
+
+const mobileLinks = [
+  { href: "/#overview", label: "Portfolio" },
+  { href: "/#work", label: "Arbeit" },
+  { href: "/tracks", label: "Lernpfade" },
+  { href: "/courses", label: "Kurse" },
+  { href: "/#contact", label: "Kontakt" },
+];
 
 export function AppHeader() {
   const pathname = usePathname();
   const { progress } = useProgress();
-  const tracks = getTracks();
-  const allLessons = getAllLessonsLinear();
-
-  // Calculate total XP across all tracks
-  const totalXp = Object.values(progress).reduce((acc, curr) => acc + (curr.xp || 0), 0);
-
-  // Derive breadcrumb from pathname
-  let breadcrumbTitle = "Dashboard";
-  let breadcrumbTrack = "";
-
-  if (pathname.startsWith("/tracks")) {
-    const segments = pathname.split("/").filter(Boolean);
-    if (segments.length === 1) {
-      breadcrumbTitle = "Alle Tracks";
-    } else if (segments.length >= 2) {
-      const trackId = segments[1];
-      const track = tracks.find(t => t.id === trackId);
-      if (track) breadcrumbTrack = track.title;
-
-      if (segments.length >= 4) {
-        const lessonId = segments[3];
-        const lesson = allLessons.find(l => l.lesson_id === lessonId);
-        if (lesson) breadcrumbTitle = lesson.title;
-      }
-    }
-  } else if (pathname === "/impressum") {
-    breadcrumbTitle = "Impressum & Datenschutz";
-  }
+  const totalXp = Object.values(progress).reduce((sum, track) => sum + (track.xp || 0), 0);
+  const isLearningRoute = pathname.startsWith("/tracks") || pathname.startsWith("/courses");
+  const pageTitle = pathname === "/" ? "Portfolio" : pathname.startsWith("/courses") ? "Kursbibliothek" : pathname.startsWith("/tracks") ? "Engineering Lab" : "Impressum & Datenschutz";
 
   return (
-    <header className="min-h-14 border-b flex items-center justify-between gap-2 px-3 py-2 sm:h-14 sm:px-6 sm:py-0 shrink-0 bg-background/80 backdrop-blur sticky top-0 z-30">
-      {/* Left: Breadcrumbs */}
-      <div className="min-w-0 flex flex-1 items-center space-x-1.5 overflow-hidden text-xs sm:space-x-2 sm:text-sm">
-        <Link href="/tracks" className="text-muted-foreground hover:text-foreground transition-colors font-medium flex items-center space-x-1 shrink-0">
-          <BookOpen size={14} className="mr-0.5" />
-          <span className="hidden sm:inline">DevForge</span>
-        </Link>
-        {breadcrumbTrack && (
-          <>
-            <ChevronRight size={13} className="text-muted-foreground/60 shrink-0" />
-            <span className="hidden max-w-[100px] truncate text-muted-foreground sm:inline sm:max-w-[160px]">
-              {breadcrumbTrack}
-            </span>
-          </>
-        )}
-        <ChevronRight size={13} className="text-muted-foreground/60 shrink-0" />
-        <span className="min-w-0 font-semibold text-foreground max-w-[120px] sm:max-w-[200px] truncate">
-          {breadcrumbTitle}
-        </span>
-      </div>
-
-      {/* Right: Architecture Inspector, Polymath CTA, Language Switcher, XP, Recruiter */}
-      <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
-        <SystemArchitectureInspector />
-
-        <a
-          href="https://reglerproductions.com/preise.html"
-          target="_blank"
-          rel="noreferrer"
-          className="hidden lg:inline-flex items-center rounded-md border border-cyan-400/40 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300 hover:bg-cyan-400/20 transition-colors"
-        >
-          Polymath Angebot
-        </a>
-
-        <LanguageSwitcher />
-
-        <div className="hidden sm:flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 font-mono text-xs font-bold">
-          <Zap size={13} className="fill-amber-500" />
-          <span>{totalXp} XP</span>
+    <header className="app-header sticky top-0 z-30 shrink-0">
+      <div className="flex min-h-14 items-center justify-between gap-3 px-4 sm:px-6">
+        <div className="flex min-w-0 items-center gap-2 text-sm">
+          <Link href="/" className="shrink-0 font-medium text-slate-400 transition-colors hover:text-white">Konstantin Regler</Link>
+          <span className="text-slate-700" aria-hidden="true">/</span>
+          <span className="truncate font-semibold text-slate-100" aria-current="page">{pageTitle}</span>
         </div>
-
-        <RecruiterToggle />
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          {isLearningRoute && <span className="hidden items-center gap-1.5 rounded-full border border-amber-300/10 bg-amber-300/[0.06] px-2.5 py-1 font-mono text-xs font-semibold text-amber-200 sm:inline-flex"><Zap size={13} aria-hidden="true" />{totalXp} XP</span>}
+          {(pathname === "/" || pathname.includes("/lessons/")) && <RecruiterToggle />}
+          <LanguageSwitcher />
+        </div>
       </div>
+      <nav className="mobile-navigation md:hidden" aria-label="Mobile Navigation">
+        {mobileLinks.map(({ href, label }) => <Link key={href} href={href} className="mobile-nav-link">{label}</Link>)}
+      </nav>
     </header>
   );
 }

@@ -5,7 +5,10 @@ export const runtime = "nodejs";
 const MAX_CODE_LENGTH = 20_000;
 const RATE_WINDOW_MS = 60_000;
 const RATE_LIMIT_PER_WINDOW = 20;
+const MAX_RATE_LIMIT_BUCKETS = 1_000;
+const OVERFLOW_CLIENT_ID = "\u0000overflow";
 const requestCounts = new Map<string, { count: number; resetAt: number }>();
+let lastBucketCleanupAt = 0;
 
 type SupportedLanguage = "python" | "csharp";
 
@@ -41,17 +44,27 @@ async function readBoundedBody(request: Request, maxBytes: number): Promise<stri
 
 function allowExecution(request: Request): boolean {
   const forwardedFor = request.headers.get("x-forwarded-for");
-  const clientId = forwardedFor?.split(",").at(-1)?.trim() || "unknown";
+  const forwardedClientId = forwardedFor?.split(",").at(-1)?.trim();
+  let clientId = forwardedClientId && forwardedClientId.length <= 128 ? forwardedClientId : "unknown";
   const now = Date.now();
-  const current = requestCounts.get(clientId);
+  let current = requestCounts.get(clientId);
+
+  if (!current && requestCounts.size >= MAX_RATE_LIMIT_BUCKETS - 1) {
+    if (now - lastBucketCleanupAt >= RATE_WINDOW_MS) {
+      for (const [key, bucket] of requestCounts) {
+        if (bucket.resetAt <= now) requestCounts.delete(key);
+      }
+      lastBucketCleanupAt = now;
+    }
+
+    if (requestCounts.size >= MAX_RATE_LIMIT_BUCKETS - 1) {
+      clientId = OVERFLOW_CLIENT_ID;
+      current = requestCounts.get(clientId);
+    }
+  }
 
   if (!current || current.resetAt <= now) {
     requestCounts.set(clientId, { count: 1, resetAt: now + RATE_WINDOW_MS });
-    if (requestCounts.size > 1_000) {
-      for (const [key, value] of requestCounts) {
-        if (value.resetAt <= now) requestCounts.delete(key);
-      }
-    }
     return true;
   }
 
